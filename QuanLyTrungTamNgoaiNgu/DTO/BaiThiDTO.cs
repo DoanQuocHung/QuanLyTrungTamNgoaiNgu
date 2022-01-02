@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -8,7 +10,7 @@ namespace DTO
     {
         public BaiThiDTO() { }
         public BaiThiDTO(string Id_BaiThi, string Id_GiaoVien1, string Id_GiaoVien2, string Cccd_TS,
-            string Id_PhongThi, string SoBaoDanh, string DiemNghe, string DiemNoi, string DiemDoc, 
+            string Id_PhongThi, string SoBaoDanh, string DiemNghe, string DiemNoi, string DiemDoc,
             string DiemViet)
         {
             this.Id_BaiThi = Id_BaiThi;
@@ -33,6 +35,5 @@ namespace DTO
         public string DiemNoi { get; set; }
         public string DiemDoc { get; set; }
         public string DiemViet { get; set; }
-
     }
 }

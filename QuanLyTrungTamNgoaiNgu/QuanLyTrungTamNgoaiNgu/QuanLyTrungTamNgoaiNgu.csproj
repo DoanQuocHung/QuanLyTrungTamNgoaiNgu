@@ -37,7 +37,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -108,12 +110,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{48b38312-717b-4255-a36f-e33a5da54ed6}</Project>
+      <Project>{22ad669d-0f68-42fc-b74b-7f14eb45fadb}</Project>
       <Name>BUS</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{8dffea7a-a707-412e-8ddc-d47dbc870757}</Project>
+      <Project>{81f167f7-c757-4c43-80ce-b62bd3c0f84e}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>

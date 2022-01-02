@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DTO
 {
     public class ThiSinhDTO
     {
         public ThiSinhDTO() { }
-        public ThiSinhDTO(string Cccd_TS, string HoTen_TS, string GioiTinh_TS, string NgaySinh_TS, 
+        public ThiSinhDTO(string Cccd_TS, string HoTen_TS, string GioiTinh_TS, string NgaySinh_TS,
             string NoiSinh_TS, string NgayCap_TS, string NoiCap_TS, string Sdt_TS, string Email_TS)
         {
             this.Cccd_TS = Cccd_TS;
@@ -30,6 +32,5 @@ namespace DTO
         public string NoiCap_TS { get; set; }
         public string Sdt_TS { get; set; }
         public string Email_TS { get; set; }
-
     }
 }

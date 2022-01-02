@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -25,6 +27,5 @@ namespace DTO
         public string Cccd_GV { get; set; }
         public string Sdt_GV { get; set; }
         public string Email_GV { get; set; }
-
     }
 }

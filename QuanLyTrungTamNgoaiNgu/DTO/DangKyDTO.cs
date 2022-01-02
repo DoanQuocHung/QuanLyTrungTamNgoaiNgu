@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DTO
 {
@@ -15,8 +17,8 @@ namespace DTO
             this.LePhiThi = LePhiThi;
         }
 
-        public string Cccd_TS  { get; set; }
-        public string Id_KhoaThi  { get; set; }
+        public string Cccd_TS { get; set; }
+        public string Id_KhoaThi { get; set; }
         public string TrinhDo { get; set; }
         public string LePhiThi { get; set; }
     }
