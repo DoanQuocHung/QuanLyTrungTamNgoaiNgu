@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F43A5F1-01B1-4E3F-886D-F90DA43F996A}</ProjectGuid>
+    <ProjectGuid>{5C4B2D6E-F8D7-4B53-A100-CC89C4E67ACD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>QuanLyTrungTamNgoaiNgu</RootNamespace>
     <AssemblyName>QuanLyTrungTamNgoaiNgu</AssemblyName>
@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +58,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyKetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKetQuaThi.Designer.cs">
+      <DependentUpon>QuanLyKetQuaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhoaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKhoaThi.Designer.cs">
+      <DependentUpon>QuanLyKhoaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyPhongThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyPhongThi.Designer.cs">
+      <DependentUpon>QuanLyPhongThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThiSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThiSinh.Designer.cs">
+      <DependentUpon>QuanLyThiSinh.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AppQuanLy.resx">
+      <DependentUpon>AppQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
