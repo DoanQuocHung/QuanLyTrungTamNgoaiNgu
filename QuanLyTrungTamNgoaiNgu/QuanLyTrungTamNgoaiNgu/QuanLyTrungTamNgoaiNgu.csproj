@@ -58,6 +58,12 @@
     <Compile Include="AppQuanLy.Designer.cs">
       <DependentUpon>AppQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="GhiDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GhiDiem.Designer.cs">
+      <DependentUpon>GhiDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -92,10 +98,25 @@
     <EmbeddedResource Include="AppQuanLy.resx">
       <DependentUpon>AppQuanLy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GhiDiem.resx">
+      <DependentUpon>GhiDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKetQuaThi.resx">
+      <DependentUpon>QuanLyKetQuaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhoaThi.resx">
+      <DependentUpon>QuanLyKhoaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyPhongThi.resx">
+      <DependentUpon>QuanLyPhongThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThiSinh.resx">
+      <DependentUpon>QuanLyThiSinh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,19 +145,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="thisinh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resource\phongthi.png" />
+    <None Include="Resource\ketqua.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\khoathi.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\ketqua.jpg" />
+    <None Include="Resource\phongthi.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource\thisinh.png" />
+    <None Include="Resource\thisinh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{2329f978-5c49-41f3-a298-a093be72451f}</Project>
+      <Project>{99609c11-f419-4c2c-a63d-827cdcbbae8d}</Project>
       <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
