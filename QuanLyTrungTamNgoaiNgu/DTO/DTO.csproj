@@ -49,6 +49,7 @@
     <Compile Include="BaiThiDTO.cs" />
     <Compile Include="DangKyDTO.cs" />
     <Compile Include="GiaoVienDTO.cs" />
+    <Compile Include="KetQuaThiDTO.cs" />
     <Compile Include="KhoaThiDTO.cs" />
     <Compile Include="PhongThiDTO.cs" />
     <Compile Include="Program.cs" />

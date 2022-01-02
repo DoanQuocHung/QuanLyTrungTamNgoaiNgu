@@ -13,27 +13,27 @@ namespace DAO
         DataProvider dataProvider = new DataProvider();
         public KetQuaThiDAO() { }
 
-        public List<BaiThiDTO> ListAll()
+        public List<KetQuaThiDTO> ListAll()
         {
-            List<BaiThiDTO> baiThi = new List<BaiThiDTO>();
+            List<KetQuaThiDTO> baiThi = new List<KetQuaThiDTO>();
             try
             {
-                string query = "select * from BaiThi";
+                string query = "SELECT BaiThi.Cccd_TS, HoTen_TS, Sdt_TS, Id_BaiThi, SoBaoDanh, Ten_PhongThi, DiemNghe, DiemNoi, DiemDoc, DiemViet FROM BaiThi JOIN ThiSinh ON BaiThi.Cccd_TS = ThiSinh.Cccd_TS JOIN PhongThi ON BaiThi.Id_PhongThi = PhongThi.Id_PhongThi";
                 DataTable data = dataProvider.ExecuteQuery(query);
                 Console.WriteLine(data.Rows);
                 foreach (DataRow item in data.Rows)
                 {
-                    string maBaiThi = item["Id_BaiThi"].ToString();
-                    string maGV1 = item["Id_GiaoVien1"].ToString();
-                    string maGV2 = item["Id_GiaoVien2"].ToString();
-                    string cccd = item["Cccd_TS"].ToString();
-                    string maPhongThi = item["Id_PhongThi"].ToString();
-                    string sobaodanh = item["SoBaoDanh"].ToString();
+                    string maBaiThi = item["Cccd_TS"].ToString();
+                    string maGV1 = item["HoTen_TS"].ToString();
+                    string maGV2 = item["Sdt_TS"].ToString();
+                    string cccd = item["Id_BaiThi"].ToString();
+                    string maPhongThi = item["SoBaoDanh"].ToString();
+                    string sobaodanh = item["Ten_PhongThi"].ToString();
                     string diemnghe = item["DiemNghe"].ToString();
                     string diemnoi = item["DiemNoi"].ToString();
                     string diemdoc = item["DiemDoc"].ToString();
                     string diemviet = item["DiemViet"].ToString();
-                    BaiThiDTO newBaiThi = new BaiThiDTO(maBaiThi, maGV1, maGV2, cccd, maPhongThi, sobaodanh, diemnghe, diemnoi, diemdoc, diemviet);
+                    KetQuaThiDTO newBaiThi = new KetQuaThiDTO(maBaiThi, maGV1, maGV2, cccd, maPhongThi, sobaodanh, diemnghe, diemnoi, diemdoc, diemviet);
 
                     baiThi.Add(newBaiThi);
                 }

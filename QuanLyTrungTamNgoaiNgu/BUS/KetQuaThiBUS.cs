@@ -10,7 +10,7 @@ namespace BUS
 {
     public class KetQuaThiBUS
     {
-        public List<BaiThiDTO> List()
+        public List<KetQuaThiDTO> List()
         {
             return new KetQuaThiDAO().ListAll();
         }

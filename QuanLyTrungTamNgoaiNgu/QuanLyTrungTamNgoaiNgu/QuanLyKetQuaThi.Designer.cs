@@ -31,15 +31,18 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbKhoaThi = new System.Windows.Forms.ComboBox();
+            this.btnTim2 = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtTenThiSinh = new System.Windows.Forms.TextBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btnInKetQua = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.datagridview_qlketquathi = new System.Windows.Forms.DataGridView();
             this.Cccd_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,43 +73,99 @@ namespace QuanLyTrungTamNgoaiNgu
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.cbKhoaThi);
+            this.panel7.Controls.Add(this.btnTim2);
             this.panel7.Controls.Add(this.btnTim);
+            this.panel7.Controls.Add(this.txtSDT);
+            this.panel7.Controls.Add(this.txtTenThiSinh);
             this.panel7.Controls.Add(this.txtCCCD);
-            this.panel7.Location = new System.Drawing.Point(687, 10);
+            this.panel7.Location = new System.Drawing.Point(510, 5);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(708, 106);
+            this.panel7.Size = new System.Drawing.Size(885, 111);
             this.panel7.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "CCCD - Khóa Thi";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Tên - SĐT";
             // 
             // cbKhoaThi
             // 
             this.cbKhoaThi.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoaThi.FormattingEnabled = true;
-            this.cbKhoaThi.Location = new System.Drawing.Point(421, 28);
+            this.cbKhoaThi.Location = new System.Drawing.Point(454, 8);
             this.cbKhoaThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbKhoaThi.Name = "cbKhoaThi";
-            this.cbKhoaThi.Size = new System.Drawing.Size(151, 42);
+            this.cbKhoaThi.Size = new System.Drawing.Size(290, 42);
             this.cbKhoaThi.TabIndex = 2;
+            // 
+            // btnTim2
+            // 
+            this.btnTim2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim2.Location = new System.Drawing.Point(755, 62);
+            this.btnTim2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTim2.Name = "btnTim2";
+            this.btnTim2.Size = new System.Drawing.Size(124, 45);
+            this.btnTim2.TabIndex = 1;
+            this.btnTim2.Text = "Tìm kiếm";
+            this.btnTim2.UseVisualStyleBackColor = true;
+            this.btnTim2.Click += new System.EventHandler(this.btnTim2_Click);
             // 
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(578, 28);
+            this.btnTim.Location = new System.Drawing.Point(755, 8);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(124, 45);
             this.btnTim.TabIndex = 1;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(454, 62);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(290, 42);
+            this.txtSDT.TabIndex = 0;
+            // 
+            // txtTenThiSinh
+            // 
+            this.txtTenThiSinh.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenThiSinh.Location = new System.Drawing.Point(178, 62);
+            this.txtTenThiSinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenThiSinh.Name = "txtTenThiSinh";
+            this.txtTenThiSinh.Size = new System.Drawing.Size(261, 42);
+            this.txtTenThiSinh.TabIndex = 0;
             // 
             // txtCCCD
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.Location = new System.Drawing.Point(6, 28);
+            this.txtCCCD.Location = new System.Drawing.Point(178, 8);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(408, 42);
+            this.txtCCCD.Size = new System.Drawing.Size(261, 42);
             this.txtCCCD.TabIndex = 0;
             // 
             // panel1
@@ -114,9 +173,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.btnChiTiet);
             this.panel1.Controls.Add(this.btnReload);
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnSua);
-            this.panel1.Controls.Add(this.btnThem);
+            this.panel1.Controls.Add(this.btnInKetQua);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.datagridview_qlketquathi);
             this.panel1.Location = new System.Drawing.Point(7, 124);
@@ -135,6 +192,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.btnChiTiet.TabIndex = 13;
             this.btnChiTiet.Text = "Chi tiết";
             this.btnChiTiet.UseVisualStyleBackColor = true;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
             // btnReload
             // 
@@ -146,39 +204,18 @@ namespace QuanLyTrungTamNgoaiNgu
             this.btnReload.TabIndex = 12;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // btnXoa
+            // btnInKetQua
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(957, 22);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(132, 60);
-            this.btnXoa.TabIndex = 11;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(810, 22);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(132, 60);
-            this.btnSua.TabIndex = 10;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(659, 22);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(132, 60);
-            this.btnThem.TabIndex = 9;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnInKetQua.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInKetQua.Location = new System.Drawing.Point(957, 22);
+            this.btnInKetQua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnInKetQua.Name = "btnInKetQua";
+            this.btnInKetQua.Size = new System.Drawing.Size(132, 60);
+            this.btnInKetQua.TabIndex = 11;
+            this.btnInKetQua.Text = "In";
+            this.btnInKetQua.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -313,9 +350,7 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnInKetQua;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView datagridview_qlketquathi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cccd_TS;
@@ -328,5 +363,10 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemNoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemViet;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTim2;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtTenThiSinh;
     }
 }

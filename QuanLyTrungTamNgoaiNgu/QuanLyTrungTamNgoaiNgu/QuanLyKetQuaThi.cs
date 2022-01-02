@@ -13,30 +13,30 @@ namespace QuanLyTrungTamNgoaiNgu
 {
     public partial class QuanLyKetQuaThi : Form
     {
-        List<ThiSinhDTO> listThiSinh;
-        List<BaiThiDTO> listBaiThi;
-        List<PhongThiDTO> listPhongThi;
+        
+        List<KetQuaThiDTO> listKetQuaThi;
         public QuanLyKetQuaThi()
         {
             InitializeComponent();
-            listBaiThi = new KetQuaThiBUS().List();
+            listKetQuaThi = new KetQuaThiBUS().List();
             datagridview_qlketquathi.AutoGenerateColumns = false;
-            BindGrid(listBaiThi);
+            BindGrid(listKetQuaThi);
         }
 
-        public void BindGrid(List<BaiThiDTO> list)
+        public void BindGrid(List<KetQuaThiDTO> list)
         {
             datagridview_qlketquathi.Rows.Clear();
             datagridview_qlketquathi.Refresh();
-            foreach (BaiThiDTO item in list)
+            foreach (KetQuaThiDTO item in list)
             {
                 
                 datagridview_qlketquathi.Rows.Add(item.Cccd_TS,
+                    item.Cccd_TS,
+                    item.HoTen_TS,
+                    item.Sdt_TS,
                     item.Id_BaiThi,
-                    item.Id_GiaoVien1,
-                    item.Id_GiaoVien2,
-                    item.Id_PhongThi,
                     item.SoBaoDanh,
+                    item.Ten_PhongThi,
                     item.DiemNghe,
                     item.DiemNoi, 
                     item.DiemDoc,
@@ -44,5 +44,28 @@ namespace QuanLyTrungTamNgoaiNgu
             }
         }
 
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            BindGrid(listKetQuaThi);
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string search = txtCCCD.Text;
+            List<KetQuaThiDTO> listsearch = new List<KetQuaThiDTO>();
+            listsearch = listKetQuaThi.FindAll(x => x.Cccd_TS.Contains(search));
+            BindGrid(listsearch);
+        }
+
+        private void btnTim2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
