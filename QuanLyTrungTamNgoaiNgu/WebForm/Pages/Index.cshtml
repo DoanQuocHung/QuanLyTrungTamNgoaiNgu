@@ -1,10 +1,60 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
-}
+    ViewData["Title"] = "Website Quản Lý Trung Tâm Ngoại Ngữ";
+    Layout = "_Layout";
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+}
+@using BUS;
+@using DTO;
+@using Microsoft.AspNetCore.Http;
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Danh sách Thí Sinh</h4>
+                        
+                        <a class="btn btn-primary mb-2" >Thêm</a>
+                        <form class="form-inline" method="post">
+                            
+                            <input type="text"  class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Tìm kiếm" required>
+                            <input type="submit"  class="btn btn-warning" value="Tìm" style="margin-left:">
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên</th>
+                                        <th>Mô Tả</th>
+                                        <th>Etc</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>aaa</td>
+                                        <td>bbb</td>
+                                        <td>ccc</td>
+                                        <td>ddd</td>
+                                        <td>
+                                            <form method="post">
+                                                <input type="submit" value="Sửa" class="btn btn-warning" />
+                                                <input type="submit" value="Xóa" class="btn btn-danger" />
+                                                <input type="submit" value="Chi tiết" class="btn btn-primary" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
