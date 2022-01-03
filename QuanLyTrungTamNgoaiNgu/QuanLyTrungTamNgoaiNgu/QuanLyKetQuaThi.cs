@@ -19,6 +19,13 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             InitializeComponent();
             listKetQuaThi = new KetQuaThiBUS().List();
+            cbKhoaThi.Items.Clear();
+            // đợi quản lý khoa thi xong sẽ sửa lại chỗ này
+            foreach (KetQuaThiDTO item in listKetQuaThi)
+            {
+                cbKhoaThi.Items.Add(item.Ten_KhoaThi);
+            }
+            cbKhoaThi.SelectedItem = listKetQuaThi[0].Ten_KhoaThi;
             datagridview_qlketquathi.AutoGenerateColumns = false;
             BindGrid(listKetQuaThi);
         }
@@ -30,7 +37,8 @@ namespace QuanLyTrungTamNgoaiNgu
             foreach (KetQuaThiDTO item in list)
             {
                 
-                datagridview_qlketquathi.Rows.Add(item.Cccd_TS,
+                datagridview_qlketquathi.Rows.Add(
+                    item.Ten_KhoaThi,
                     item.Cccd_TS,
                     item.HoTen_TS,
                     item.Sdt_TS,
@@ -57,15 +65,24 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string search = txtCCCD.Text;
-            List<KetQuaThiDTO> listsearch = new List<KetQuaThiDTO>();
-            listsearch = listKetQuaThi.FindAll(x => x.Cccd_TS.Contains(search));
-            BindGrid(listsearch);
+            string cccd = txtCCCD.Text;
+            string khoathi = cbKhoaThi.SelectedItem.ToString();
+            List<KetQuaThiDTO> listsearchKhoaThi = new List<KetQuaThiDTO>();
+            listsearchKhoaThi = listKetQuaThi.FindAll(x => x.Ten_KhoaThi.Contains(khoathi));
+            List<KetQuaThiDTO> listResultSearch = new List<KetQuaThiDTO>();
+            listResultSearch = listsearchKhoaThi.FindAll(x => x.Cccd_TS.Contains(cccd));
+            BindGrid(listResultSearch);
         }
 
         private void btnTim2_Click(object sender, EventArgs e)
         {
-
+            string ten = txtTenThiSinh.Text.ToLower();
+            string sdt = txtSDT.Text;
+            List<KetQuaThiDTO> listsearchTenTS = new List<KetQuaThiDTO>();
+            listsearchTenTS = listKetQuaThi.FindAll(x => x.HoTen_TS.ToLower().Contains(ten));
+            List<KetQuaThiDTO> listResultSearch = new List<KetQuaThiDTO>();
+            listResultSearch = listsearchTenTS.FindAll(x => x.Sdt_TS.Contains(sdt));
+            BindGrid(listResultSearch);
         }
     }
 }
