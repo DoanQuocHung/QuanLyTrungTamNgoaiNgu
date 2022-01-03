@@ -200,16 +200,16 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panelChildForm.Controls.Add(this.panel7);
             this.panelChildForm.Location = new System.Drawing.Point(291, 5);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1085, 595);
+            this.panelChildForm.Size = new System.Drawing.Size(939, 595);
             this.panelChildForm.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(5, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(378, 38);
+            this.label1.Size = new System.Drawing.Size(326, 35);
             this.label1.TabIndex = 2;
             this.label1.Text = "Trang Quản Lý Thí Sinh";
             // 
@@ -225,13 +225,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel8.Controls.Add(this.datagridview_qlthisinh);
             this.panel8.Location = new System.Drawing.Point(6, 74);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1071, 511);
+            this.panel8.Size = new System.Drawing.Size(926, 511);
             this.panel8.TabIndex = 1;
             // 
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(821, 17);
+            this.button11.Location = new System.Drawing.Point(679, 17);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(117, 48);
             this.button11.TabIndex = 6;
@@ -241,7 +241,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(949, 17);
+            this.button10.Location = new System.Drawing.Point(802, 17);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(117, 48);
             this.button10.TabIndex = 5;
@@ -251,7 +251,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(689, 17);
+            this.button9.Location = new System.Drawing.Point(556, 17);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(117, 48);
             this.button9.TabIndex = 4;
@@ -261,7 +261,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(558, 17);
+            this.button8.Location = new System.Drawing.Point(433, 17);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(117, 48);
             this.button8.TabIndex = 3;
@@ -271,7 +271,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(424, 17);
+            this.button7.Location = new System.Drawing.Point(310, 17);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 48);
             this.button7.TabIndex = 2;
@@ -295,7 +295,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.datagridview_qlthisinh.Name = "datagridview_qlthisinh";
             this.datagridview_qlthisinh.RowHeadersWidth = 51;
             this.datagridview_qlthisinh.RowTemplate.Height = 24;
-            this.datagridview_qlthisinh.Size = new System.Drawing.Size(1058, 424);
+            this.datagridview_qlthisinh.Size = new System.Drawing.Size(913, 424);
             this.datagridview_qlthisinh.TabIndex = 0;
             // 
             // panel7
@@ -304,7 +304,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.button5);
             this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Location = new System.Drawing.Point(509, 6);
+            this.panel7.Location = new System.Drawing.Point(364, 7);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(568, 62);
             this.panel7.TabIndex = 0;
@@ -341,7 +341,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1382, 604);
+            this.ClientSize = new System.Drawing.Size(1236, 604);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 9F);

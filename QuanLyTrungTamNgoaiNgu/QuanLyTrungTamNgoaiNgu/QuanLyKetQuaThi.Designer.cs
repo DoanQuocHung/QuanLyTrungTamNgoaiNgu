@@ -63,10 +63,10 @@ namespace QuanLyTrungTamNgoaiNgu
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 38);
+            this.label1.Size = new System.Drawing.Size(362, 35);
             this.label1.TabIndex = 7;
             this.label1.Text = "Trang Quản Lý Kết quả thi";
             // 
@@ -81,28 +81,28 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel7.Controls.Add(this.txtSDT);
             this.panel7.Controls.Add(this.txtTenThiSinh);
             this.panel7.Controls.Add(this.txtCCCD);
-            this.panel7.Location = new System.Drawing.Point(453, 4);
+            this.panel7.Location = new System.Drawing.Point(462, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(787, 89);
+            this.panel7.Size = new System.Drawing.Size(605, 89);
             this.panel7.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 13);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 20);
+            this.label4.Size = new System.Drawing.Size(130, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "CCCD - Khóa Thi";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 55);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(54, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên - SĐT";
             // 
@@ -110,15 +110,15 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             this.cbKhoaThi.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoaThi.FormattingEnabled = true;
-            this.cbKhoaThi.Location = new System.Drawing.Point(404, 6);
+            this.cbKhoaThi.Location = new System.Drawing.Point(314, 6);
             this.cbKhoaThi.Name = "cbKhoaThi";
-            this.cbKhoaThi.Size = new System.Drawing.Size(258, 37);
+            this.cbKhoaThi.Size = new System.Drawing.Size(172, 37);
             this.cbKhoaThi.TabIndex = 2;
             // 
             // btnTim2
             // 
             this.btnTim2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim2.Location = new System.Drawing.Point(671, 50);
+            this.btnTim2.Location = new System.Drawing.Point(492, 50);
             this.btnTim2.Name = "btnTim2";
             this.btnTim2.Size = new System.Drawing.Size(110, 36);
             this.btnTim2.TabIndex = 1;
@@ -129,7 +129,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(671, 6);
+            this.btnTim.Location = new System.Drawing.Point(492, 6);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(110, 36);
             this.btnTim.TabIndex = 1;
@@ -140,25 +140,25 @@ namespace QuanLyTrungTamNgoaiNgu
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(404, 50);
+            this.txtSDT.Location = new System.Drawing.Point(314, 50);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(258, 36);
+            this.txtSDT.Size = new System.Drawing.Size(172, 36);
             this.txtSDT.TabIndex = 0;
             // 
             // txtTenThiSinh
             // 
             this.txtTenThiSinh.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenThiSinh.Location = new System.Drawing.Point(158, 50);
+            this.txtTenThiSinh.Location = new System.Drawing.Point(138, 50);
             this.txtTenThiSinh.Name = "txtTenThiSinh";
-            this.txtTenThiSinh.Size = new System.Drawing.Size(232, 36);
+            this.txtTenThiSinh.Size = new System.Drawing.Size(170, 36);
             this.txtTenThiSinh.TabIndex = 0;
             // 
             // txtCCCD
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.Location = new System.Drawing.Point(158, 6);
+            this.txtCCCD.Location = new System.Drawing.Point(138, 6);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(232, 36);
+            this.txtCCCD.Size = new System.Drawing.Size(170, 36);
             this.txtCCCD.TabIndex = 0;
             // 
             // panel1
@@ -171,13 +171,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Controls.Add(this.datagridview_qlketquathi);
             this.panel1.Location = new System.Drawing.Point(6, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1234, 488);
+            this.panel1.Size = new System.Drawing.Size(1061, 536);
             this.panel1.TabIndex = 5;
             // 
             // btnChiTiet
             // 
             this.btnChiTiet.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChiTiet.Location = new System.Drawing.Point(983, 18);
+            this.btnChiTiet.Location = new System.Drawing.Point(816, 18);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(117, 48);
             this.btnChiTiet.TabIndex = 13;
@@ -188,7 +188,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(1111, 18);
+            this.btnReload.Location = new System.Drawing.Point(939, 18);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(117, 48);
             this.btnReload.TabIndex = 12;
@@ -199,7 +199,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // btnInKetQua
             // 
             this.btnInKetQua.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInKetQua.Location = new System.Drawing.Point(851, 18);
+            this.btnInKetQua.Location = new System.Drawing.Point(693, 18);
             this.btnInKetQua.Name = "btnInKetQua";
             this.btnInKetQua.Size = new System.Drawing.Size(117, 48);
             this.btnInKetQua.TabIndex = 11;
@@ -234,7 +234,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.datagridview_qlketquathi.Name = "datagridview_qlketquathi";
             this.datagridview_qlketquathi.RowHeadersWidth = 51;
             this.datagridview_qlketquathi.RowTemplate.Height = 24;
-            this.datagridview_qlketquathi.Size = new System.Drawing.Size(1222, 398);
+            this.datagridview_qlketquathi.Size = new System.Drawing.Size(1050, 443);
             this.datagridview_qlketquathi.TabIndex = 7;
             // 
             // Cccd_TS
@@ -242,76 +242,77 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Cccd_TS.HeaderText = "Cccd_TS";
             this.Cccd_TS.MinimumWidth = 8;
             this.Cccd_TS.Name = "Cccd_TS";
-            this.Cccd_TS.Width = 150;
+            this.Cccd_TS.Width = 95;
             // 
             // HoTen_TS
             // 
             this.HoTen_TS.HeaderText = "HoTen_TS";
             this.HoTen_TS.MinimumWidth = 8;
             this.HoTen_TS.Name = "HoTen_TS";
-            this.HoTen_TS.Width = 150;
+            this.HoTen_TS.Width = 140;
             // 
             // Sdt_TS
             // 
             this.Sdt_TS.HeaderText = "Sdt_TS";
             this.Sdt_TS.MinimumWidth = 8;
             this.Sdt_TS.Name = "Sdt_TS";
-            this.Sdt_TS.Width = 150;
+            this.Sdt_TS.Width = 105;
             // 
             // Id_BaiThi
             // 
             this.Id_BaiThi.HeaderText = "Id_BaiThi";
             this.Id_BaiThi.MinimumWidth = 8;
             this.Id_BaiThi.Name = "Id_BaiThi";
-            this.Id_BaiThi.Width = 150;
+            this.Id_BaiThi.Width = 110;
             // 
             // SoBaoDanh
             // 
             this.SoBaoDanh.HeaderText = "SoBaoDanh";
             this.SoBaoDanh.MinimumWidth = 8;
             this.SoBaoDanh.Name = "SoBaoDanh";
-            this.SoBaoDanh.Width = 150;
+            this.SoBaoDanh.Width = 90;
             // 
             // Ten_PhongThi
             // 
             this.Ten_PhongThi.HeaderText = "Ten_PhongThi";
             this.Ten_PhongThi.MinimumWidth = 8;
             this.Ten_PhongThi.Name = "Ten_PhongThi";
-            this.Ten_PhongThi.Width = 150;
+            this.Ten_PhongThi.Width = 140;
             // 
             // DiemNghe
             // 
             this.DiemNghe.HeaderText = "DiemNghe";
             this.DiemNghe.MinimumWidth = 8;
             this.DiemNghe.Name = "DiemNghe";
-            this.DiemNghe.Width = 150;
+            this.DiemNghe.Width = 80;
             // 
             // DiemNoi
             // 
             this.DiemNoi.HeaderText = "DiemNoi";
             this.DiemNoi.MinimumWidth = 8;
             this.DiemNoi.Name = "DiemNoi";
-            this.DiemNoi.Width = 150;
+            this.DiemNoi.Width = 80;
             // 
             // DiemDoc
             // 
             this.DiemDoc.HeaderText = "DiemDoc";
             this.DiemDoc.MinimumWidth = 8;
             this.DiemDoc.Name = "DiemDoc";
-            this.DiemDoc.Width = 150;
+            this.DiemDoc.Width = 80;
             // 
             // DiemViet
             // 
             this.DiemViet.HeaderText = "DiemViet";
             this.DiemViet.MinimumWidth = 8;
             this.DiemViet.Name = "DiemViet";
-            this.DiemViet.Width = 150;
+            this.DiemViet.Width = 80;
             // 
             // QuanLyKetQuaThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1247, 595);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1074, 640);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
@@ -340,6 +341,11 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button btnInKetQua;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView datagridview_qlketquathi;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTim2;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtTenThiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cccd_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt_TS;
@@ -350,10 +356,5 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemNoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemViet;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnTim2;
-        private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.TextBox txtTenThiSinh;
     }
 }
