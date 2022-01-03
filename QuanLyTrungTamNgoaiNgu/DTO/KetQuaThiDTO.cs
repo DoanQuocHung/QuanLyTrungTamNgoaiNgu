@@ -9,9 +9,10 @@ namespace DTO
     public class KetQuaThiDTO
     {
         public KetQuaThiDTO() { }
-        public KetQuaThiDTO(string Cccd_TS, string HoTen_TS, string Sdt_TS, string Id_BaiThi, string SoBaoDanh, string Ten_PhongThi, string DiemNghe, string DiemNoi, string DiemDoc,
+        public KetQuaThiDTO(string Ten_KhoaThi, string Cccd_TS, string HoTen_TS, string Sdt_TS, string Id_BaiThi, string SoBaoDanh, string Ten_PhongThi, string DiemNghe, string DiemNoi, string DiemDoc,
             string DiemViet) 
         {
+            this.Ten_KhoaThi = Ten_KhoaThi;
             this.Cccd_TS = Cccd_TS;
             this.HoTen_TS = HoTen_TS;
             this.Sdt_TS = Sdt_TS;
@@ -23,7 +24,7 @@ namespace DTO
             this.DiemDoc = DiemDoc;
             this.DiemViet = DiemViet;
         }
-
+        public string Ten_KhoaThi { get; set; }
         public string Cccd_TS { get; set; }
         public string HoTen_TS { get; set; }
         public string Sdt_TS { get; set; }

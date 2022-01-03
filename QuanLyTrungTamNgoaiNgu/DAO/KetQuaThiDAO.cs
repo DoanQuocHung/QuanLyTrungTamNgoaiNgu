@@ -18,22 +18,23 @@ namespace DAO
             List<KetQuaThiDTO> baiThi = new List<KetQuaThiDTO>();
             try
             {
-                string query = "SELECT BaiThi.Cccd_TS, HoTen_TS, Sdt_TS, Id_BaiThi, SoBaoDanh, Ten_PhongThi, DiemNghe, DiemNoi, DiemDoc, DiemViet FROM BaiThi JOIN ThiSinh ON BaiThi.Cccd_TS = ThiSinh.Cccd_TS JOIN PhongThi ON BaiThi.Id_PhongThi = PhongThi.Id_PhongThi";
+                string query = "SELECT Ten_KhoaThi, BaiThi.Cccd_TS, HoTen_TS, Sdt_TS, Id_BaiThi, SoBaoDanh, Ten_PhongThi, DiemNghe, DiemNoi, DiemDoc, DiemViet FROM BaiThi JOIN ThiSinh ON BaiThi.Cccd_TS = ThiSinh.Cccd_TS JOIN PhongThi ON BaiThi.Id_PhongThi = PhongThi.Id_PhongThi JOIN KhoaThi ON KhoaThi.Id_KhoaThi = PhongThi.Id_KhoaThi";
                 DataTable data = dataProvider.ExecuteQuery(query);
                 Console.WriteLine(data.Rows);
                 foreach (DataRow item in data.Rows)
                 {
-                    string maBaiThi = item["Cccd_TS"].ToString();
-                    string maGV1 = item["HoTen_TS"].ToString();
-                    string maGV2 = item["Sdt_TS"].ToString();
-                    string cccd = item["Id_BaiThi"].ToString();
-                    string maPhongThi = item["SoBaoDanh"].ToString();
-                    string sobaodanh = item["Ten_PhongThi"].ToString();
+                    string tenKhoaThi = item["Ten_KhoaThi"].ToString();
+                    string cccd = item["Cccd_TS"].ToString();
+                    string hoten = item["HoTen_TS"].ToString();
+                    string sdt = item["Sdt_TS"].ToString();
+                    string mabaithi = item["Id_BaiThi"].ToString();
+                    string sobaodanh = item["SoBaoDanh"].ToString();
+                    string tenphongthi = item["Ten_PhongThi"].ToString();
                     string diemnghe = item["DiemNghe"].ToString();
                     string diemnoi = item["DiemNoi"].ToString();
                     string diemdoc = item["DiemDoc"].ToString();
                     string diemviet = item["DiemViet"].ToString();
-                    KetQuaThiDTO newBaiThi = new KetQuaThiDTO(maBaiThi, maGV1, maGV2, cccd, maPhongThi, sobaodanh, diemnghe, diemnoi, diemdoc, diemviet);
+                    KetQuaThiDTO newBaiThi = new KetQuaThiDTO(tenKhoaThi, cccd, hoten, sdt, mabaithi, sobaodanh, tenphongthi, diemnghe, diemnoi, diemdoc, diemviet);
 
                     baiThi.Add(newBaiThi);
                 }
