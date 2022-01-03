@@ -13,9 +13,9 @@ namespace DAO
         //Học
         //public string connectionString = @"Data Source=DESKTOP-P8VHEBN\HOCDB1;Initial Catalog=QuanLyThiTiengAnh;USER ID=kidakai12; PASSWORD=songkhoe123";
         //Hùng
-        //public string connectionString = @"Data Source=DESKTOP-48AE0SM\SQLEXPRESS;Initial Catalog=QuanLyThiTiengAnh;Integrated Security=True";
+        public string connectionString = @"Data Source=DESKTOP-48AE0SM\SQLEXPRESS;Initial Catalog=QuanLyThiTiengAnh;Integrated Security=True";
         //Doanh
-        public string connectionString = @"Data Source=DESKTOP-TB623K0\DOANHTT;Initial Catalog=QuanLyThiTiengAnh;Integrated Security=True";
+        //public string connectionString = @"Data Source=DESKTOP-TB623K0\DOANHTT;Initial Catalog=QuanLyThiTiengAnh;Integrated Security=True";
         //Nguyen
         //public string connectionString = @"Data Source=LAPTOP-CEDHB3NK\NGUYEN;Initial Catalog=QuanLyThiTiengAnh; USER ID=SA; PASSWORD=nguyen";
 

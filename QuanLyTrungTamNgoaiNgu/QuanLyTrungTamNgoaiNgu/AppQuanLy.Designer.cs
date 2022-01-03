@@ -33,9 +33,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel6 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -50,10 +54,6 @@ namespace QuanLyTrungTamNgoaiNgu
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -76,16 +76,16 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 748);
+            this.panel1.Size = new System.Drawing.Size(280, 595);
             this.panel1.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel6.Controls.Add(this.button6);
-            this.panel6.Location = new System.Drawing.Point(7, 598);
+            this.panel6.Location = new System.Drawing.Point(6, 474);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(267, 142);
+            this.panel6.Size = new System.Drawing.Size(267, 111);
             this.panel6.TabIndex = 4;
             // 
             // button6
@@ -94,9 +94,9 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(5, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(258, 131);
+            this.button6.Size = new System.Drawing.Size(258, 100);
             this.button6.TabIndex = 1;
-            this.button6.Text = "         Ghi Điểm";
+            this.button6.Text = "           Ghi Điểm";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -105,28 +105,70 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(6, 450);
+            this.panel5.Location = new System.Drawing.Point(6, 357);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(267, 142);
+            this.panel5.Size = new System.Drawing.Size(267, 111);
             this.panel5.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.ketqua;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(5, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(258, 100);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "           Kết Quả Thi";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(6, 302);
+            this.panel4.Location = new System.Drawing.Point(6, 240);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(267, 142);
+            this.panel4.Size = new System.Drawing.Size(267, 111);
             this.panel4.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.khoathi;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(5, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(258, 100);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "           Khoa Thi";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(6, 154);
+            this.panel3.Location = new System.Drawing.Point(6, 123);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(267, 142);
+            this.panel3.Size = new System.Drawing.Size(267, 111);
             this.panel3.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.phongthi;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(5, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(258, 100);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "           Phòng Thi";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -134,8 +176,21 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 142);
+            this.panel2.Size = new System.Drawing.Size(267, 111);
             this.panel2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.thisinh;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(5, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 100);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "      Quản Lý Thí Sinh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelChildForm
             // 
@@ -145,14 +200,14 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panelChildForm.Controls.Add(this.panel7);
             this.panelChildForm.Location = new System.Drawing.Point(291, 5);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1085, 748);
+            this.panelChildForm.Size = new System.Drawing.Size(1085, 595);
             this.panelChildForm.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 27);
+            this.label1.Location = new System.Drawing.Point(5, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(378, 38);
             this.label1.TabIndex = 2;
@@ -168,9 +223,9 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel8.Controls.Add(this.button7);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.datagridview_qlthisinh);
-            this.panel8.Location = new System.Drawing.Point(6, 97);
+            this.panel8.Location = new System.Drawing.Point(6, 74);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1071, 643);
+            this.panel8.Size = new System.Drawing.Size(1071, 511);
             this.panel8.TabIndex = 1;
             // 
             // button11
@@ -236,11 +291,11 @@ namespace QuanLyTrungTamNgoaiNgu
             // datagridview_qlthisinh
             // 
             this.datagridview_qlthisinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridview_qlthisinh.Location = new System.Drawing.Point(6, 85);
+            this.datagridview_qlthisinh.Location = new System.Drawing.Point(6, 81);
             this.datagridview_qlthisinh.Name = "datagridview_qlthisinh";
             this.datagridview_qlthisinh.RowHeadersWidth = 51;
             this.datagridview_qlthisinh.RowTemplate.Height = 24;
-            this.datagridview_qlthisinh.Size = new System.Drawing.Size(1058, 552);
+            this.datagridview_qlthisinh.Size = new System.Drawing.Size(1058, 424);
             this.datagridview_qlthisinh.TabIndex = 0;
             // 
             // panel7
@@ -251,14 +306,14 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Location = new System.Drawing.Point(509, 6);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(568, 85);
+            this.panel7.Size = new System.Drawing.Size(568, 62);
             this.panel7.TabIndex = 0;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(374, 22);
+            this.comboBox1.Location = new System.Drawing.Point(372, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(73, 37);
             this.comboBox1.TabIndex = 2;
@@ -266,7 +321,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(453, 22);
+            this.button5.Location = new System.Drawing.Point(451, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 36);
             this.button5.TabIndex = 1;
@@ -276,72 +331,17 @@ namespace QuanLyTrungTamNgoaiNgu
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(5, 22);
+            this.textBox1.Location = new System.Drawing.Point(3, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(363, 36);
             this.textBox1.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.ketqua;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(5, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(258, 131);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "         Kết Quả Thi";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.khoathi;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(5, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(258, 131);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "         Khoa Thi";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.phongthi;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(5, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 131);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "         Phòng Thi";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.thisinh;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(5, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 131);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "      Quản Lý Thí Sinh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AppQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1382, 758);
+            this.ClientSize = new System.Drawing.Size(1382, 604);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 9F);

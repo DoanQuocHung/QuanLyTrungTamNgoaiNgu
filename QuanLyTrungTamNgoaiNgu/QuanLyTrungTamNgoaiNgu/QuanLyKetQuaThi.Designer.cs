@@ -64,9 +64,9 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 32);
+            this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 45);
+            this.label1.Size = new System.Drawing.Size(417, 38);
             this.label1.TabIndex = 7;
             this.label1.Text = "Trang Quản Lý Kết quả thi";
             // 
@@ -81,19 +81,18 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel7.Controls.Add(this.txtSDT);
             this.panel7.Controls.Add(this.txtTenThiSinh);
             this.panel7.Controls.Add(this.txtCCCD);
-            this.panel7.Location = new System.Drawing.Point(510, 5);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Location = new System.Drawing.Point(453, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(885, 111);
+            this.panel7.Size = new System.Drawing.Size(787, 89);
             this.panel7.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 16);
+            this.label4.Location = new System.Drawing.Point(3, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 25);
+            this.label4.Size = new System.Drawing.Size(140, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "CCCD - Khóa Thi";
             // 
@@ -101,9 +100,9 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 69);
+            this.label3.Location = new System.Drawing.Point(3, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 25);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên - SĐT";
             // 
@@ -111,19 +110,17 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             this.cbKhoaThi.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoaThi.FormattingEnabled = true;
-            this.cbKhoaThi.Location = new System.Drawing.Point(454, 8);
-            this.cbKhoaThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbKhoaThi.Location = new System.Drawing.Point(404, 6);
             this.cbKhoaThi.Name = "cbKhoaThi";
-            this.cbKhoaThi.Size = new System.Drawing.Size(290, 42);
+            this.cbKhoaThi.Size = new System.Drawing.Size(258, 37);
             this.cbKhoaThi.TabIndex = 2;
             // 
             // btnTim2
             // 
             this.btnTim2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim2.Location = new System.Drawing.Point(755, 62);
-            this.btnTim2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTim2.Location = new System.Drawing.Point(671, 50);
             this.btnTim2.Name = "btnTim2";
-            this.btnTim2.Size = new System.Drawing.Size(124, 45);
+            this.btnTim2.Size = new System.Drawing.Size(110, 36);
             this.btnTim2.TabIndex = 1;
             this.btnTim2.Text = "Tìm kiếm";
             this.btnTim2.UseVisualStyleBackColor = true;
@@ -132,10 +129,9 @@ namespace QuanLyTrungTamNgoaiNgu
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(755, 8);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTim.Location = new System.Drawing.Point(671, 6);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(124, 45);
+            this.btnTim.Size = new System.Drawing.Size(110, 36);
             this.btnTim.TabIndex = 1;
             this.btnTim.Text = "Tìm kiếm";
             this.btnTim.UseVisualStyleBackColor = true;
@@ -144,28 +140,25 @@ namespace QuanLyTrungTamNgoaiNgu
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(454, 62);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSDT.Location = new System.Drawing.Point(404, 50);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(290, 42);
+            this.txtSDT.Size = new System.Drawing.Size(258, 36);
             this.txtSDT.TabIndex = 0;
             // 
             // txtTenThiSinh
             // 
             this.txtTenThiSinh.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenThiSinh.Location = new System.Drawing.Point(178, 62);
-            this.txtTenThiSinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenThiSinh.Location = new System.Drawing.Point(158, 50);
             this.txtTenThiSinh.Name = "txtTenThiSinh";
-            this.txtTenThiSinh.Size = new System.Drawing.Size(261, 42);
+            this.txtTenThiSinh.Size = new System.Drawing.Size(232, 36);
             this.txtTenThiSinh.TabIndex = 0;
             // 
             // txtCCCD
             // 
             this.txtCCCD.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCCCD.Location = new System.Drawing.Point(178, 8);
-            this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCCCD.Location = new System.Drawing.Point(158, 6);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(261, 42);
+            this.txtCCCD.Size = new System.Drawing.Size(232, 36);
             this.txtCCCD.TabIndex = 0;
             // 
             // panel1
@@ -176,19 +169,17 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Controls.Add(this.btnInKetQua);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.datagridview_qlketquathi);
-            this.panel1.Location = new System.Drawing.Point(7, 124);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(6, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1388, 895);
+            this.panel1.Size = new System.Drawing.Size(1234, 488);
             this.panel1.TabIndex = 5;
             // 
             // btnChiTiet
             // 
             this.btnChiTiet.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChiTiet.Location = new System.Drawing.Point(1106, 22);
-            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChiTiet.Location = new System.Drawing.Point(983, 18);
             this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(132, 60);
+            this.btnChiTiet.Size = new System.Drawing.Size(117, 48);
             this.btnChiTiet.TabIndex = 13;
             this.btnChiTiet.Text = "Chi tiết";
             this.btnChiTiet.UseVisualStyleBackColor = true;
@@ -197,10 +188,9 @@ namespace QuanLyTrungTamNgoaiNgu
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(1250, 22);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReload.Location = new System.Drawing.Point(1111, 18);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(132, 60);
+            this.btnReload.Size = new System.Drawing.Size(117, 48);
             this.btnReload.TabIndex = 12;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -209,10 +199,9 @@ namespace QuanLyTrungTamNgoaiNgu
             // btnInKetQua
             // 
             this.btnInKetQua.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInKetQua.Location = new System.Drawing.Point(957, 22);
-            this.btnInKetQua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnInKetQua.Location = new System.Drawing.Point(851, 18);
             this.btnInKetQua.Name = "btnInKetQua";
-            this.btnInKetQua.Size = new System.Drawing.Size(132, 60);
+            this.btnInKetQua.Size = new System.Drawing.Size(117, 48);
             this.btnInKetQua.TabIndex = 11;
             this.btnInKetQua.Text = "In";
             this.btnInKetQua.UseVisualStyleBackColor = true;
@@ -221,9 +210,9 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 34);
+            this.label2.Location = new System.Drawing.Point(3, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 34);
+            this.label2.Size = new System.Drawing.Size(236, 29);
             this.label2.TabIndex = 8;
             this.label2.Text = "Danh sách Kết quả thi";
             // 
@@ -241,12 +230,11 @@ namespace QuanLyTrungTamNgoaiNgu
             this.DiemNoi,
             this.DiemDoc,
             this.DiemViet});
-            this.datagridview_qlketquathi.Location = new System.Drawing.Point(7, 108);
-            this.datagridview_qlketquathi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.datagridview_qlketquathi.Location = new System.Drawing.Point(6, 86);
             this.datagridview_qlketquathi.Name = "datagridview_qlketquathi";
             this.datagridview_qlketquathi.RowHeadersWidth = 51;
             this.datagridview_qlketquathi.RowTemplate.Height = 24;
-            this.datagridview_qlketquathi.Size = new System.Drawing.Size(1375, 785);
+            this.datagridview_qlketquathi.Size = new System.Drawing.Size(1222, 398);
             this.datagridview_qlketquathi.TabIndex = 7;
             // 
             // Cccd_TS
@@ -321,14 +309,13 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             // QuanLyKetQuaThi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1403, 1029);
+            this.ClientSize = new System.Drawing.Size(1247, 595);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QuanLyKetQuaThi";
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
