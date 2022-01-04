@@ -36,14 +36,23 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.datagridview_qlthisinh = new System.Windows.Forms.DataGridView();
+            this.Grid_Danhsachthisinh = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Cccd_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiSinh_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayCap_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiCap_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sdt_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlthisinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Danhsachthisinh)).BeginInit();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +65,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.datagridview_qlthisinh);
+            this.panel1.Controls.Add(this.Grid_Danhsachthisinh);
             this.panel1.Location = new System.Drawing.Point(6, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 560);
@@ -69,7 +78,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(117, 48);
             this.button11.TabIndex = 13;
-            this.button11.Text = "Chi tiết";
+            this.button11.Text = "Kết quả";
             this.button11.UseVisualStyleBackColor = true;
             // 
             // button10
@@ -122,15 +131,25 @@ namespace QuanLyTrungTamNgoaiNgu
             this.label2.TabIndex = 8;
             this.label2.Text = "Danh sách Thí sinh";
             // 
-            // datagridview_qlthisinh
+            // Grid_Danhsachthisinh
             // 
-            this.datagridview_qlthisinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridview_qlthisinh.Location = new System.Drawing.Point(6, 81);
-            this.datagridview_qlthisinh.Name = "datagridview_qlthisinh";
-            this.datagridview_qlthisinh.RowHeadersWidth = 51;
-            this.datagridview_qlthisinh.RowTemplate.Height = 24;
-            this.datagridview_qlthisinh.Size = new System.Drawing.Size(1048, 473);
-            this.datagridview_qlthisinh.TabIndex = 7;
+            this.Grid_Danhsachthisinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_Danhsachthisinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cccd_TS,
+            this.HoTen_TS,
+            this.GioiTinh_TS,
+            this.NgaySinh_TS,
+            this.NoiSinh_TS,
+            this.NgayCap_TS,
+            this.NoiCap_TS,
+            this.Sdt_TS,
+            this.Email_TS});
+            this.Grid_Danhsachthisinh.Location = new System.Drawing.Point(6, 81);
+            this.Grid_Danhsachthisinh.Name = "Grid_Danhsachthisinh";
+            this.Grid_Danhsachthisinh.RowHeadersWidth = 51;
+            this.Grid_Danhsachthisinh.RowTemplate.Height = 24;
+            this.Grid_Danhsachthisinh.Size = new System.Drawing.Size(1048, 473);
+            this.Grid_Danhsachthisinh.TabIndex = 7;
             // 
             // label1
             // 
@@ -180,6 +199,64 @@ namespace QuanLyTrungTamNgoaiNgu
             this.textBox1.Size = new System.Drawing.Size(363, 36);
             this.textBox1.TabIndex = 0;
             // 
+            // Cccd_TS
+            // 
+            this.Cccd_TS.HeaderText = "Cccd_TS";
+            this.Cccd_TS.MinimumWidth = 6;
+            this.Cccd_TS.Name = "Cccd_TS";
+            // 
+            // HoTen_TS
+            // 
+            this.HoTen_TS.HeaderText = "HoTen_TS";
+            this.HoTen_TS.MinimumWidth = 6;
+            this.HoTen_TS.Name = "HoTen_TS";
+            this.HoTen_TS.Width = 125;
+            // 
+            // GioiTinh_TS
+            // 
+            this.GioiTinh_TS.HeaderText = "GioiTinh_TS";
+            this.GioiTinh_TS.MinimumWidth = 6;
+            this.GioiTinh_TS.Name = "GioiTinh_TS";
+            this.GioiTinh_TS.Width = 90;
+            // 
+            // NgaySinh_TS
+            // 
+            this.NgaySinh_TS.HeaderText = "NgaySinh_TS";
+            this.NgaySinh_TS.MinimumWidth = 6;
+            this.NgaySinh_TS.Name = "NgaySinh_TS";
+            this.NgaySinh_TS.Width = 110;
+            // 
+            // NoiSinh_TS
+            // 
+            this.NoiSinh_TS.HeaderText = "NoiSinh_TS";
+            this.NoiSinh_TS.MinimumWidth = 6;
+            this.NoiSinh_TS.Name = "NoiSinh_TS";
+            // 
+            // NgayCap_TS
+            // 
+            this.NgayCap_TS.HeaderText = "NgayCap_TS";
+            this.NgayCap_TS.MinimumWidth = 6;
+            this.NgayCap_TS.Name = "NgayCap_TS";
+            // 
+            // NoiCap_TS
+            // 
+            this.NoiCap_TS.HeaderText = "NoiCap_TS";
+            this.NoiCap_TS.MinimumWidth = 6;
+            this.NoiCap_TS.Name = "NoiCap_TS";
+            // 
+            // Sdt_TS
+            // 
+            this.Sdt_TS.HeaderText = "Sdt_TS";
+            this.Sdt_TS.MinimumWidth = 6;
+            this.Sdt_TS.Name = "Sdt_TS";
+            // 
+            // Email_TS
+            // 
+            this.Email_TS.HeaderText = "Email_TS";
+            this.Email_TS.MinimumWidth = 6;
+            this.Email_TS.Name = "Email_TS";
+            this.Email_TS.Width = 125;
+            // 
             // QuanLyThiSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,7 +271,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlthisinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Danhsachthisinh)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.ResumeLayout(false);
@@ -216,6 +293,15 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView datagridview_qlthisinh;
+        private System.Windows.Forms.DataGridView Grid_Danhsachthisinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cccd_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoiSinh_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCap_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoiCap_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sdt_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email_TS;
     }
 }
