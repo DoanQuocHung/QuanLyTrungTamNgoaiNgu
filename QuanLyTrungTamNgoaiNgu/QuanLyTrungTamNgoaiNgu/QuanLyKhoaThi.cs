@@ -85,7 +85,17 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void button11_Click(object sender, EventArgs e)
         {
-            parent.quanlyphongthi();
+            if (datagridview_qlkhoathi.RowCount != 0)
+            {
+                int selectedrowindex = datagridview_qlkhoathi.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = datagridview_qlkhoathi.Rows[selectedrowindex];
+                string cellValue = Convert.ToString(selectedRow.Cells["Id_KhoaThi"].Value);
+                parent.quanlyphongthi(cellValue);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 khóa thi để xem chi tiết các phòng thi");
+            }
         }
         private void button10_Click(object sender, EventArgs e)
         {

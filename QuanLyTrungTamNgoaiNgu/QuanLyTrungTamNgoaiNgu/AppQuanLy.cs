@@ -57,9 +57,9 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             OpenChildForm(new QuanLyPhongThi());
         }
-        public void quanlyphongthi()
+        public void quanlyphongthi(string khoa)
         {
-            OpenChildForm(new QuanLyPhongThi());
+            OpenChildForm(new QuanLyPhongThi(khoa));
         }
 
         //Button chuyển trang Quản Lý Khoa Thi

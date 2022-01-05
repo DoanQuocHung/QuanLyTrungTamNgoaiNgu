@@ -15,7 +15,7 @@ namespace QuanLyTourDuLich
         public PhongThiBUS phongThiBUS = new PhongThiBUS();
         public BaiThiBUS baiThiBUS = new BaiThiBUS();
 
-        public QuanLyPhongThi_Them(List<PhongThiDTO> list)
+        public QuanLyPhongThi_Them(List<PhongThiDTO> list,PhongThiDTO phongmoi)
         {
             InitializeComponent();
             this.list = list;

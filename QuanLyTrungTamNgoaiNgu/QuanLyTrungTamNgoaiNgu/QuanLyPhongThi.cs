@@ -11,15 +11,46 @@ namespace QuanLyTrungTamNgoaiNgu
     public partial class QuanLyPhongThi : Form
     {
         List<PhongThiDTO> list;
+        List<PhongThiDTO> listsearch;
+        List<KhoaThiDTO> listkhoa;
         public QuanLyPhongThi()
         {
             InitializeComponent();
             list = new PhongThiBUS().ListAll();
+            listkhoa = new KhoaThiBUS().List();
+            listsearch = new List<PhongThiDTO>();
             datagridview_qlPhongThi.AutoGenerateColumns = false;
-            List<string> listtype = new List<string> { "Tên Phòng", "Tên Khóa thi", "Trình độ", "Ca thi"};
+            List<string> listtype = new List<string> { "Tên Phòng", "Ca thi"};
             cbSearch.DataSource = listtype;
             cbSearch.SelectedIndex = 0;
-            BindGrid(list);
+
+            //Lấy danh sách theo khóa và trình độ
+            foreach (KhoaThiDTO item in listkhoa)
+                cb_khoathi.Items.Add(item.Id_KhoaThi);
+            cb_khoathi.SelectedIndex = 0;
+            List<string> trinhdo = new List<string> { "A2", "B1" };
+            cb_trinhdo.DataSource = trinhdo;
+            cb_trinhdo.SelectedIndex = 0;
+            listbasekhoa();
+        }
+        public QuanLyPhongThi(string khoa)
+        {
+            InitializeComponent();
+            list = new PhongThiBUS().ListAll();
+            listkhoa = new KhoaThiBUS().List();
+            listsearch = new List<PhongThiDTO>();
+            datagridview_qlPhongThi.AutoGenerateColumns = false;
+            List<string> listtype = new List<string> { "Tên Phòng", "Ca thi" };
+            cbSearch.DataSource = listtype;
+            cbSearch.SelectedIndex = 0;
+
+            //Lấy danh sách theo khóa và trình độ
+            foreach (KhoaThiDTO item in listkhoa)
+                cb_khoathi.Items.Add(item.Id_KhoaThi);
+            cb_khoathi.SelectedItem = khoa;
+            List<string> trinhdo = new List<string> { "A2", "B1" };
+            cb_trinhdo.DataSource = trinhdo;
+            cb_trinhdo.SelectedIndex = 0;
         }
         public void BindGrid(List<PhongThiDTO> list)
         {
@@ -27,7 +58,13 @@ namespace QuanLyTrungTamNgoaiNgu
             datagridview_qlPhongThi.Refresh();
             foreach (PhongThiDTO item in list)
             {
-                datagridview_qlPhongThi.Rows.Add(item.Id_PhongThi, item.Ten_PhongThi, item.Id_KhoaThi, new PhongThiBUS().getTenKhoa(item.Id_KhoaThi), item.TrinhDo, item.CaThi);
+                datagridview_qlPhongThi.Rows.Add(
+                    item.Id_PhongThi, 
+                    item.Ten_PhongThi, 
+                    item.Id_KhoaThi, 
+                    new PhongThiBUS().getTenKhoa(item.Id_KhoaThi), 
+                    item.TrinhDo, 
+                    item.CaThi);
             }
         }
         public void Search()
@@ -40,12 +77,6 @@ namespace QuanLyTrungTamNgoaiNgu
             {
                 case "Tên Phòng":
                     listsearch = list.FindAll(x => x.Ten_PhongThi.Contains(searchkey));
-                    break;
-                case "Tên Khóa thi":
-                    listsearch = list.FindAll(x => x.Id_KhoaThi.Contains(searchkey));
-                    break;
-                case "Trình độ":
-                    listsearch = list.FindAll(x => x.TrinhDo.Contains(searchkey));
                     break;
                 case "Ca thi":
                     listsearch = list.FindAll(x => x.CaThi.Contains(searchkey));
@@ -68,7 +99,27 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btnTao_Click(object sender, System.EventArgs e)
         {
-            using (var form = new QuanLyPhongThi_Them(list))
+            string idphongthi = new PhongThiBUS().MakeID();
+            string stt = "";
+            if (listsearch.Count == 0)
+                stt = "01";
+            if(listsearch.Count <9)
+                stt = "0"+ (listsearch.Count+1);
+            else stt = (listsearch.Count+1).ToString();
+            string trinhdo = cb_trinhdo.SelectedItem.ToString();
+            string tenphongthi = trinhdo + "P" + stt;
+            string khoathi = cb_khoathi.SelectedItem.ToString();
+            PhongThiDTO phongmoi = new PhongThiDTO(idphongthi,tenphongthi,khoathi,trinhdo," ");
+            using (var form = new ThemPhongThi(list,phongmoi))
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    list = form.list;
+                    listbasekhoa();
+                }
+            }
+            /*using (var form = new QuanLyPhongThi_Them(list,phongmoi))
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
@@ -76,7 +127,7 @@ namespace QuanLyTrungTamNgoaiNgu
                     list = form.list;
                     BindGrid(list);
                 }
-            }
+            }*/
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -94,7 +145,7 @@ namespace QuanLyTrungTamNgoaiNgu
                     {
                         MessageBox.Show("Xóa thành công");
                         list.RemoveAll(x => x.Id_PhongThi.Equals(cellValue));
-                        BindGrid(list);
+                        listbasekhoa();
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -118,7 +169,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 using (var form = new ChiTietPhongThi(list.Find(x => x.Id_PhongThi.Equals(cellValue))))
                 {
                     var result = form.ShowDialog();
-                    BindGrid(list);
+                    listbasekhoa();
                 }
             }
         }
@@ -127,7 +178,28 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             txtSearch.Text = "";
             cbSearch.SelectedIndex = 1;
-            BindGrid(list);
+            listbasekhoa();
+        }
+        private void listbasekhoa()
+        {
+            try
+            {
+                if(cb_khoathi.SelectedItem != null && cb_trinhdo.SelectedItem != null)
+                listsearch = list.FindAll(x => 
+                            x.Id_KhoaThi == cb_khoathi.SelectedItem.ToString() &&
+                            x.TrinhDo == cb_trinhdo.SelectedItem.ToString());
+                BindGrid(listsearch);
+            }
+            catch (Exception e) { }
+        }
+        private void cb_khoathi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listbasekhoa();
+        }
+
+        private void cb_trinhdo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listbasekhoa();
         }
     }
 }
