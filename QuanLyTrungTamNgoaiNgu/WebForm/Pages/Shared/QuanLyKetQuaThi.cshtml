@@ -23,16 +23,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Danh sách Kết Quả Thi</h4>
-                        
+
                         <form class="form-inline" method="post">
-                            @{
-                                /*string searchHoTen = HttpContext.Session.GetString("searchHoTen");
-                                string search = HttpContext.Session.GetString("searchSDT");
-                                listsearchHoTen = listKetQuaThi.FindAll(x => x.Ten_KhoaThi.Contains(searchHoTen));
-                                listKetQuaThi = listsearchHoTen.FindAll(x => x.Cccd_TS.Contains(search));
-                                HttpContext.Session.Remove("searchHoTen");
-                                HttpContext.Session.Remove("searchSDT");+*/
-                            }
                             <input type="text" asp-for="searchHoTen" class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Tìm kiếm">
 
                             <input type="text" asp-for="searchSDT" class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Tìm kiếm">
@@ -46,6 +38,7 @@
                                 <thead>
                                     <tr>
                                         <th>Tên khoá thi</th>
+                                        <th>Ngày thi</th>
                                         <th>CCCD</th>
                                         <th>Họ tên</th>
                                         <th>Số điện thoại</th>
@@ -65,6 +58,7 @@
 
                                             <tr>
                                                 <td>@item.Ten_KhoaThi</td>
+                                                <td>@item.NgayThi</td>
                                                 <td>@item.Cccd_TS</td>
                                                 <td>@item.HoTen_TS</td>
                                                 <td>@item.Sdt_TS</td>
@@ -76,9 +70,9 @@
                                                 <td>@item.DiemDoc</td>
                                                 <td>@item.DiemViet</td>
 
-                                                <form asp-method="post">
                                                 <td>
                                                     <input type="hidden" asp-for="ketquathi.Ten_KhoaThi" value="@item.Ten_KhoaThi" />
+                                                    <input type="hidden" asp-for="ketquathi.NgayThi" value="@item.NgayThi" />
                                                     <input type="hidden" asp-for="ketquathi.Cccd_TS" value="@item.Cccd_TS" />
                                                     <input type="hidden" asp-for="ketquathi.HoTen_TS" value="@item.HoTen_TS" />
                                                     <input type="hidden" asp-for="ketquathi.Sdt_TS" value="@item.Sdt_TS" />
@@ -90,7 +84,6 @@
                                                     <input type="hidden" asp-for="ketquathi.DiemDoc" value="@item.DiemDoc" />
                                                     <input type="hidden" asp-for="ketquathi.DiemViet" value="@item.DiemViet" />
                                                 </td>
-                                                </form>
 
                                             </tr>
                                         }

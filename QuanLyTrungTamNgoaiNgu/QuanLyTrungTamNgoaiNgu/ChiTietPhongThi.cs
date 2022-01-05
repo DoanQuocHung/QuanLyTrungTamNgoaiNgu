@@ -18,7 +18,7 @@ namespace QuanLyTourDuLich
             list = new BaiThiBUS().ListBaiThi_MaPhong(phongThiDTO.Id_PhongThi);
             datagridview_dsTS.AutoGenerateColumns = false;
             txt1.Text = phongThiDTO.Ten_PhongThi;
-            txt2.Text = phongThiDTO.Id_KhoaThi;
+            txt2.Text = new PhongThiBUS().getTenKhoa(phongThiDTO.Id_KhoaThi);
             txt3.Text = phongThiDTO.CaThi;
 
             BindGrid(list);

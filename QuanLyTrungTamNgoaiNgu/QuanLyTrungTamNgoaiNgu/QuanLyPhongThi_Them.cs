@@ -32,7 +32,7 @@ namespace QuanLyTourDuLich
             int f = 0;
             int t = 0;
             
-            string maKhoa = cboKhoaThi.Text;
+            string maKhoa = new PhongThiBUS().getMaKhoa(cboKhoaThi.Text);
             int thisinhA2 = phongThiBUS.CountThiSinh(maKhoa, "A2");
             int thisinhB1 = phongThiBUS.CountThiSinh(maKhoa, "B1");
             if (thisinhA2 < thiSinhToiThieu && thisinhB1 < thiSinhToiThieu)

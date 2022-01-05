@@ -13,13 +13,18 @@ namespace WebForm.Pages.Shared
     {
         [BindProperty]
         public KetQuaThiDTO ketquathi { set; get; }
-        [BindProperty]
-        public List<ThiSinhDTO> listKhoaThi { set; get; }
+        
         public void OnGet()
         {
 
         }
 
+        public IActionResult OnPostDetail()
+        {
+            HttpContext.Session.SetString("ngaythi", ketquathi.NgayThi);
+            HttpContext.Session.SetString("sbd", ketquathi.SoBaoDanh);
+            return RedirectToPage("/Shared/XemGiayChungNhan");
+        }
         
     }
 }
