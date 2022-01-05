@@ -43,6 +43,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.IdPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7.SuspendLayout();
@@ -172,6 +173,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.IdPhong,
             this.Column1,
             this.Column2,
+            this.Column5,
             this.Column3,
             this.Column4});
             this.datagridview_qlPhongThi.Location = new System.Drawing.Point(7, 101);
@@ -188,7 +190,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.IdPhong.MinimumWidth = 8;
             this.IdPhong.Name = "IdPhong";
             this.IdPhong.Visible = false;
-            this.IdPhong.Width = 150;
+            this.IdPhong.Width = 220;
             // 
             // Column1
             // 
@@ -196,7 +198,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
+            this.Column1.Width = 220;
             // 
             // Column2
             // 
@@ -204,7 +206,15 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
+            this.Column2.Visible = false;
+            this.Column2.Width = 220;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Khóa Thi";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 220;
             // 
             // Column3
             // 
@@ -212,7 +222,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.Column3.Width = 220;
             // 
             // Column4
             // 
@@ -220,7 +230,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
+            this.Column4.Width = 222;
             // 
             // QuanLyPhongThi
             // 
@@ -261,6 +271,7 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }

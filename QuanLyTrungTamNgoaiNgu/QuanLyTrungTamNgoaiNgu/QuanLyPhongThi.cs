@@ -16,9 +16,9 @@ namespace QuanLyTrungTamNgoaiNgu
             InitializeComponent();
             list = new PhongThiBUS().ListAll();
             datagridview_qlPhongThi.AutoGenerateColumns = false;
-            List<string> listtype = new List<string> { "Tên Phòng", "Mã Khóa thi", "Trình độ", "Ca thi"};
+            List<string> listtype = new List<string> { "Tên Phòng", "Tên Khóa thi", "Trình độ", "Ca thi"};
             cbSearch.DataSource = listtype;
-            cbSearch.SelectedIndex = 1;
+            cbSearch.SelectedIndex = 0;
             BindGrid(list);
         }
         public void BindGrid(List<PhongThiDTO> list)
@@ -27,7 +27,7 @@ namespace QuanLyTrungTamNgoaiNgu
             datagridview_qlPhongThi.Refresh();
             foreach (PhongThiDTO item in list)
             {
-                datagridview_qlPhongThi.Rows.Add(item.Id_PhongThi, item.Ten_PhongThi, item.Id_KhoaThi, item.TrinhDo, item.CaThi);
+                datagridview_qlPhongThi.Rows.Add(item.Id_PhongThi, item.Ten_PhongThi, item.Id_KhoaThi, new PhongThiBUS().getTenKhoa(item.Id_KhoaThi), item.TrinhDo, item.CaThi);
             }
         }
         public void Search()
@@ -41,7 +41,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 case "Tên Phòng":
                     listsearch = list.FindAll(x => x.Ten_PhongThi.Contains(searchkey));
                     break;
-                case "Mã Khóa thi":
+                case "Tên Khóa thi":
                     listsearch = list.FindAll(x => x.Id_KhoaThi.Contains(searchkey));
                     break;
                 case "Trình độ":

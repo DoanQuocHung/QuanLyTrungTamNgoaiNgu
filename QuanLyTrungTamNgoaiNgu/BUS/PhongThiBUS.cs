@@ -53,6 +53,14 @@ namespace BUS
         {
             return phongThiDAO.Update(caThi, maPhong);
         }
-        
+        public string getTenKhoa(string maKhoa)
+        {
+            return phongThiDAO.getTenKhoa(maKhoa);
+        }
+        public string getMaKhoa(string tenKhoa)
+        {
+            return phongThiDAO.getMaKhoa(tenKhoa);
+        }
+
     }
 }

@@ -49,7 +49,7 @@ namespace DAO
 
                 foreach (DataRow row in data.Rows)
                 {
-                    string maPhong = row["Id_KhoaThi"].ToString();
+                    string maPhong = row["Ten_KhoaThi"].ToString();
 
                     list.Add(maPhong);
                 }
@@ -195,6 +195,41 @@ namespace DAO
                 Debug.WriteLine(ex.Message);
             }
             return false;
+        }
+        public string getTenKhoa(string maKhoa)
+        {
+            string s = "";
+            DataProvider dataProvider = new DataProvider();
+            string query = "select Ten_KhoaThi from KhoaThi where Id_KhoaThi = '" + maKhoa + "'";
+            try
+            {
+                DataTable data = dataProvider.ExecuteQuery(query);
+                DataRow dataRow = data.Rows[0];
+                s = dataRow["Ten_KhoaThi"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return s;
+        }
+
+        public string getMaKhoa(string tenKhoa)
+        {
+            string s = "";
+            DataProvider dataProvider = new DataProvider();
+            string query = "select Id_KhoaThi from KhoaThi where Id_KhoaThi = '" + tenKhoa + "'";
+            try
+            {
+                DataTable data = dataProvider.ExecuteQuery(query);
+                DataRow dataRow = data.Rows[0];
+                s = dataRow["Id_KhoaThi"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return s;
         }
     }
 }
