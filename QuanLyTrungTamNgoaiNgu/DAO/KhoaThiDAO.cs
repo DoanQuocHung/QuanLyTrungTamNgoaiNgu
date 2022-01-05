@@ -26,7 +26,7 @@ namespace DAO
                     string matour = item["Id_KhoaThi"].ToString();
                     string tentour = item["Ten_KhoaThi"].ToString();
                     string dacdiem = item["NgayThi"].ToString();
-                    KhoaThiDTO newKhoa = new KhoaThiDTO();
+                    KhoaThiDTO newKhoa = new KhoaThiDTO(matour,tentour,dacdiem);
 
                     khoas.Add(newKhoa);
                 }
@@ -66,7 +66,7 @@ namespace DAO
             try
             {
                 string query = "insert into KhoaThi" +
-                    "values( @MAKHOA , @TENKHOA , @NGAYTHI )";
+                    " values( @MAKHOA , @TENKHOA , @NGAYTHI )";
 
                 object[] para = new object[]
                 {
@@ -80,7 +80,7 @@ namespace DAO
             }
             catch (Exception e)
             {
-                return false;
+                Console.WriteLine(e);
             }
             return false;
         }
@@ -127,9 +127,9 @@ namespace DAO
             while (true)
             {
                 if (count < 10)
-                    id = "KHOA" + count;
+                    id = "0"+count;
                 else
-                    id = "KHOA" + count;
+                    id = count.ToString();
                 if (Exist(id) == 0)
                     break;
                 else count++;

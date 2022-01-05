@@ -40,11 +40,11 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.datagridview_qlkhoathi = new System.Windows.Forms.DataGridView();
             this.Id_KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten_KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlkhoathi)).BeginInit();
@@ -169,16 +169,6 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 29);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Danh sách Khoa thi";
-            // 
             // datagridview_qlkhoathi
             // 
             this.datagridview_qlkhoathi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -216,6 +206,16 @@ namespace QuanLyTrungTamNgoaiNgu
             this.NgayThi.Name = "NgayThi";
             this.NgayThi.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(212, 29);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Danh sách Khoa thi";
+            // 
             // QuanLyKhoaThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,10 +251,10 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView datagridview_qlkhoathi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_KhoaThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_KhoaThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayThi;
+        private System.Windows.Forms.Label label2;
     }
 }

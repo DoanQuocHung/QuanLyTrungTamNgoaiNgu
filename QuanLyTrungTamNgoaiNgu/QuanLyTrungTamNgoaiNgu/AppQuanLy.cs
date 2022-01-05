@@ -53,7 +53,11 @@ namespace QuanLyTrungTamNgoaiNgu
         }
 
         //Button chuyển trang Quản Lý Phòng Thi
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QuanLyPhongThi());
+        }
+        public void quanlyphongthi()
         {
             OpenChildForm(new QuanLyPhongThi());
         }
@@ -78,7 +82,7 @@ namespace QuanLyTrungTamNgoaiNgu
 
         //Hàm xử lý chuyển trang ==========================================================================================================
         private Form activeForm = null;
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -92,6 +96,9 @@ namespace QuanLyTrungTamNgoaiNgu
             childForm.Show();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
