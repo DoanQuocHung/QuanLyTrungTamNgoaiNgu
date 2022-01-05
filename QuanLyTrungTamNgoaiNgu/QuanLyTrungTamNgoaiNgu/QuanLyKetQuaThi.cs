@@ -15,17 +15,19 @@ namespace QuanLyTrungTamNgoaiNgu
     {
         
         List<KetQuaThiDTO> listKetQuaThi;
+        List<KhoaThiDTO> listKhoaThi;
         public QuanLyKetQuaThi()
         {
             InitializeComponent();
             listKetQuaThi = new KetQuaThiBUS().List();
+            listKhoaThi = new KhoaThiBUS().List();
             cbKhoaThi.Items.Clear();
-            // đợi quản lý khoa thi xong sẽ sửa lại chỗ này
-            foreach (KetQuaThiDTO item in listKetQuaThi)
+            
+            foreach (KhoaThiDTO item in listKhoaThi)
             {
                 cbKhoaThi.Items.Add(item.Ten_KhoaThi);
             }
-            cbKhoaThi.SelectedItem = listKetQuaThi[0].Ten_KhoaThi;
+            cbKhoaThi.SelectedItem = listKhoaThi[0].Ten_KhoaThi;
             datagridview_qlketquathi.AutoGenerateColumns = false;
             BindGrid(listKetQuaThi);
         }
