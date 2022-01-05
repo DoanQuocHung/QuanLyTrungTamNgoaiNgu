@@ -40,9 +40,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.txtTenThiSinh = new System.Windows.Forms.TextBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnChiTiet = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
-            this.btnInKetQua = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.datagridview_qlketquathi = new System.Windows.Forms.DataGridView();
             this.Ten_KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,9 +170,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.btnChiTiet);
             this.panel1.Controls.Add(this.btnReload);
-            this.panel1.Controls.Add(this.btnInKetQua);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.datagridview_qlketquathi);
             this.panel1.Location = new System.Drawing.Point(7, 124);
@@ -182,18 +178,6 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1194, 670);
             this.panel1.TabIndex = 5;
-            // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChiTiet.Location = new System.Drawing.Point(918, 22);
-            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(132, 60);
-            this.btnChiTiet.TabIndex = 13;
-            this.btnChiTiet.Text = "Chi tiết";
-            this.btnChiTiet.UseVisualStyleBackColor = true;
-            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
             // btnReload
             // 
@@ -206,17 +190,6 @@ namespace QuanLyTrungTamNgoaiNgu
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // btnInKetQua
-            // 
-            this.btnInKetQua.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInKetQua.Location = new System.Drawing.Point(780, 22);
-            this.btnInKetQua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnInKetQua.Name = "btnInKetQua";
-            this.btnInKetQua.Size = new System.Drawing.Size(132, 60);
-            this.btnInKetQua.TabIndex = 11;
-            this.btnInKetQua.Text = "In";
-            this.btnInKetQua.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -291,6 +264,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.SoBaoDanh.HeaderText = "SoBaoDanh";
             this.SoBaoDanh.MinimumWidth = 8;
             this.SoBaoDanh.Name = "SoBaoDanh";
+            this.SoBaoDanh.Width = 150;
             // 
             // Ten_PhongThi
             // 
@@ -357,9 +331,7 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnChiTiet;
         private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Button btnInKetQua;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView datagridview_qlketquathi;
         private System.Windows.Forms.Label label4;

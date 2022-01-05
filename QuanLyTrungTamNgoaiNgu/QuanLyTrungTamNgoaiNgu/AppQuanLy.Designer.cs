@@ -277,6 +277,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button7.TabIndex = 2;
             this.button7.Text = "Thêm";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label2
             // 
@@ -378,7 +379,7 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;

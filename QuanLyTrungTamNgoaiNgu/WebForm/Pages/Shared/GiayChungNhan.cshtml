@@ -1,5 +1,5 @@
 ﻿@page
-@model WebForm.Pages.Shared.QuanLyKetQuaThiModel
+@model WebForm.Pages.Shared.GiayChungNhanModel
 @{
     ViewData["Title"] = "Website Quản Lý Trung Tâm Ngoại Ngữ";
     Layout = "_Layout";
@@ -8,12 +8,14 @@
 @using DTO;
 @using Microsoft.AspNetCore.Http;
 @{
+    string sbd = HttpContext.Session.GetString("searchSBDgiaychungnhan");
     List<KetQuaThiDTO> listKetQuaThi = new List<KetQuaThiDTO>();
-    List<KetQuaThiDTO> listsearchHoTen = new List<KetQuaThiDTO>();
-    KetQuaThiBUS bus = new KetQuaThiBUS();
-    KetQuaThiBUS bus2 = new KetQuaThiBUS();
-    listKetQuaThi = new KetQuaThiBUS().List();
-    listsearchHoTen = bus2.List();
+    //List<ThiSinhDTO> listThiSinh = new List<ThiSinhDTO>();
+    KetQuaThiBUS busKQT = new KetQuaThiBUS();
+    //ThiSinhBUS busTS = new ThiSinhBUS();
+    listKetQuaThi = busKQT.List().FindAll(x => x.SoBaoDanh.Equals(sbd));
+    //
+    //listThiSinh = busTS.List();
 }
 
 <div class="main-panel">
@@ -22,24 +24,15 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Danh sách Kết Quả Thi</h4>
-                        
+                        <h4 class="card-title">Giấy chứng nhận kết quả thi</h4>
+
                         <form class="form-inline" method="post">
-                            @{
-                                /*string searchHoTen = HttpContext.Session.GetString("searchHoTen");
-                                string search = HttpContext.Session.GetString("searchSDT");
-                                listsearchHoTen = listKetQuaThi.FindAll(x => x.Ten_KhoaThi.Contains(searchHoTen));
-                                listKetQuaThi = listsearchHoTen.FindAll(x => x.Cccd_TS.Contains(search));
-                                HttpContext.Session.Remove("searchHoTen");
-                                HttpContext.Session.Remove("searchSDT");+*/
-                            }
-                            <input type="text" asp-for="searchHoTen" class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Tìm kiếm">
-
-                            <input type="text" asp-for="searchSDT" class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Tìm kiếm">
-
-                            <input type="submit" asp-page-handler="search" class="btn btn-warning" value="Tìm" style="margin-left:">
-                            <input type="text" asp-for="searchSBD" class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Số báo danh">
-                            <input type="submit" asp-page-handler="giaychungnhan" value="Giấy chứng nhận" class="btn btn-warning" />
+                            @*@{
+                                string strSoBaoDanh = HttpContext.Session.GetString("search");
+                                listKetQuaThi = listKetQuaThi.FindAll(x => x.SoBaoDanh.Contains(strSoBaoDanh));
+                                HttpContext.Session.Remove("search");
+                            }*@
+                            
                         </form>
                         <div class="table-responsive">
                             <table class="table table-striped">

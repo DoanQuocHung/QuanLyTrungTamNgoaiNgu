@@ -11,7 +11,7 @@ namespace DAO
     public class DataProvider
     {
         //Học
-        //public string connectionString = @"Data Source=DESKTOP-P8VHEBN\HOCDB1;Initial Catalog=QuanLyThiTiengAnh;USER ID=kidakai12; PASSWORD=songkhoe123";
+        //public string connectionString = @"Data Source=DESKTOP-P8VHEBN\HOCDB;Initial Catalog=QuanLyThiTiengAnh;USER ID=sa; PASSWORD=123456";
         //Hùng
         //public string connectionString = @"Data Source=DESKTOP-48AE0SM\SQLEXPRESS;Initial Catalog=QuanLyThiTiengAnh;Integrated Security=True";
         //Doanh
