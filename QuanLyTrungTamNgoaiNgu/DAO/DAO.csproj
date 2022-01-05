@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaiThiDAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="KetQuaThiDAO.cs" />
     <Compile Include="KhoaThiDAO.cs" />
+    <Compile Include="PhongThiDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThiSinhDAO.cs" />

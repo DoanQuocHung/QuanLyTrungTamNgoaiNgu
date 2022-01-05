@@ -58,6 +58,12 @@
     <Compile Include="AppQuanLy.Designer.cs">
       <DependentUpon>AppQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietPhongThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietPhongThi.Designer.cs">
+      <DependentUpon>ChiTietPhongThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GhiDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     <Compile Include="QuanLyPhongThi.Designer.cs">
       <DependentUpon>QuanLyPhongThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyPhongThi_Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyPhongThi_Them.Designer.cs">
+      <DependentUpon>QuanLyPhongThi_Them.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyThiSinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="AppQuanLy.resx">
       <DependentUpon>AppQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietPhongThi.resx">
+      <DependentUpon>ChiTietPhongThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GhiDiem.resx">
       <DependentUpon>GhiDiem.cs</DependentUpon>
@@ -114,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyPhongThi.resx">
       <DependentUpon>QuanLyPhongThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyPhongThi_Them.resx">
+      <DependentUpon>QuanLyPhongThi_Them.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyThiSinh.resx">
       <DependentUpon>QuanLyThiSinh.cs</DependentUpon>

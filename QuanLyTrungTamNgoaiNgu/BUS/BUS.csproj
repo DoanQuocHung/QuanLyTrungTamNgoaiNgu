@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaiThiBUS.cs" />
     <Compile Include="KetQuaThiBUS.cs" />
     <Compile Include="KhoaThiBUS.cs" />
+    <Compile Include="PhongThiBUS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThiSinhBUS.cs" />
