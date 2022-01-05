@@ -1,0 +1,72 @@
+﻿@page
+@model WebForm.Pages.Shared.ThiSinhDangKyModel
+@{
+    ViewData["Title"] = "Website Quản Lý Trung Tâm Ngoại Ngữ";
+    Layout = "_Layout";
+}
+@using BUS;
+@{
+
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Thí Sinh Đăng Ký</h4>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">CMND</label>
+                                <input type="text" class="form-control" placeholder="CMND">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Họ tên</label>
+                                <input type="text" class="form-control" placeholder="Họ tên">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Giới tính</label>
+                                <select class="form-control">
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Ngày sinh</label>
+                                <input type="date" required class="form-control" placeholder="Ngày sinh">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Nơi sinh</label>
+                                <input type="text" class="form-control" placeholder="Nơi sinh">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Ngày cấp</label>
+                                <input type="date" required class="form-control" placeholder="Ngày cấp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Nơi cấp</label>
+                                <input type="text" class="form-control" placeholder="Nơi sinh">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">SĐT</label>
+                                <input type="text" class="form-control" placeholder="Số điện thoại">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Email</label>
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Trình độ</label>
+                                <select class="form-control">
+                                    <option>Trình độ 1</option>
+                                    <option>Trình độ 2</option>
+                                </select>
+                            </div>
+                            <input type="submit" value="Đăng ký" class="btn btn-primary mr-2" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

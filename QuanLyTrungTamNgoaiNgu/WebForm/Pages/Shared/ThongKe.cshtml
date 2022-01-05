@@ -1,0 +1,92 @@
+﻿@page
+@model WebForm.Pages.Shared.ThongKeModel
+@{
+    ViewData["Title"] = "Website Quản Lý Trung Tâm Ngoại Ngữ";
+    Layout = "_Layout";
+}
+@using BUS;
+@{
+
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Thống kê trình độ A1</h4>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Số lượng khóa thi</label>
+                                <input type="text" class="form-control" placeholder="5" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Phòng thi</label>
+                                <input type="text" class="form-control" placeholder="2" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Thí sinh</label>
+                                <input type="text" class="form-control" placeholder="abc" readonly>
+                            </div>
+                            <input type="submit" value="Tìm" class="btn btn-primary mr-2" />
+                            <a class="btn btn-light">Hủy</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Thống kê trình độ B11</h4>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Số lượng khóa thi</label>
+                                <input type="text" class="form-control" placeholder="5" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Phòng thi</label>
+                                <input type="text" class="form-control" placeholder="2" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Thí sinh</label>
+                                <input type="text" class="form-control" placeholder="abc" readonly>
+                            </div>
+                            <input type="submit" value="Tìm" class="btn btn-primary mr-2" />
+                            <a class="btn btn-light">Hủy</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <h4 class="card-title">Thống kê tổng</h4>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã địa điểm</th>
+                                        <th>Tên địa điểm</th>
+                                        <th>Thứ tự</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>53275531</td>
+                                        <td>12 May 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Messsy</td>
+                                        <td>53275532</td>
+                                        <td>15 May 2017</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

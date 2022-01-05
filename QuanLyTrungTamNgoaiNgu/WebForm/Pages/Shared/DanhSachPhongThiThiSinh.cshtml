@@ -1,0 +1,66 @@
+﻿@page
+@model WebForm.Pages.Shared.DanhSachPhongThiThiSinhModel
+@{
+    ViewData["Title"] = "Website Quản Lý Trung Tâm Ngoại Ngữ";
+    Layout = "_Layout";
+}
+@using BUS;
+@using DTO;
+@using Microsoft.AspNetCore.Http;
+@{
+
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Danh sách Phòng Thi của Thí Sinh</h4>
+
+                        <form class="form-inline" method="post">
+                            <label for="exampleInputName1">Khóa Thi</label>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+
+                            <label for="exampleInputName1" style="margin-left:5px">Phòng Thi</label>
+                            <select class="form-control" style="margin-left:5px">
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+
+                            <label for="exampleInputName1" style="margin-left:5px">Chứng Chỉ</label>
+                            <select class="form-control" style="margin-left:5px">
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>CCCD</th>
+                                        <th>Họ tên Thí Sinh</th>
+                                        <th>ID phòng thi</th>
+                                        <th>Tên phòng thi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>aaa</td>
+                                        <td>bbb</td>
+                                        <td>ccc</td>
+                                        <td>ddd</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
