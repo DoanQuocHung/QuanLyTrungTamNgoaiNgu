@@ -41,6 +41,8 @@ namespace QuanLyTrungTamNgoaiNgu
                 
                 datagridview_qlketquathi.Rows.Add(
                     item.Ten_KhoaThi,
+                    item.NgayThi,
+                    item.TrinhDo,
                     item.Cccd_TS,
                     item.HoTen_TS,
                     item.Sdt_TS,

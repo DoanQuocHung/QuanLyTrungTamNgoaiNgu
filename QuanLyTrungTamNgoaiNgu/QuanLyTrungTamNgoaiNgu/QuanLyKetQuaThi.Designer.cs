@@ -44,6 +44,8 @@ namespace QuanLyTrungTamNgoaiNgu
             this.label2 = new System.Windows.Forms.Label();
             this.datagridview_qlketquathi = new System.Windows.Forms.DataGridView();
             this.Ten_KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrinhDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cccd_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -206,6 +208,8 @@ namespace QuanLyTrungTamNgoaiNgu
             this.datagridview_qlketquathi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridview_qlketquathi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ten_KhoaThi,
+            this.NgayThi,
+            this.TrinhDo,
             this.Cccd_TS,
             this.HoTen_TS,
             this.Sdt_TS,
@@ -230,6 +234,20 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Ten_KhoaThi.MinimumWidth = 8;
             this.Ten_KhoaThi.Name = "Ten_KhoaThi";
             this.Ten_KhoaThi.Width = 150;
+            // 
+            // NgayThi
+            // 
+            this.NgayThi.HeaderText = "NgayThi";
+            this.NgayThi.MinimumWidth = 8;
+            this.NgayThi.Name = "NgayThi";
+            this.NgayThi.Width = 150;
+            // 
+            // TrinhDo
+            // 
+            this.TrinhDo.HeaderText = "TrinhDo";
+            this.TrinhDo.MinimumWidth = 8;
+            this.TrinhDo.Name = "TrinhDo";
+            this.TrinhDo.Width = 150;
             // 
             // Cccd_TS
             // 
@@ -340,6 +358,8 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtTenThiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_KhoaThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrinhDo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cccd_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt_TS;
