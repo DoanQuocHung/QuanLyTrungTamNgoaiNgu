@@ -12,7 +12,7 @@
     List<KetQuaThiDTO> listsearchHoTen = new List<KetQuaThiDTO>();
     KetQuaThiBUS bus = new KetQuaThiBUS();
     KetQuaThiBUS bus2 = new KetQuaThiBUS();
-    listKetQuaThi = bus.List();
+    listKetQuaThi = new KetQuaThiBUS().List();
     listsearchHoTen = bus2.List();
 }
 
@@ -26,12 +26,12 @@
                         
                         <form class="form-inline" method="post">
                             @{
-                                string searchHoTen = HttpContext.Session.GetString("searchHoTen");
+                                /*string searchHoTen = HttpContext.Session.GetString("searchHoTen");
                                 string search = HttpContext.Session.GetString("searchSDT");
                                 listsearchHoTen = listKetQuaThi.FindAll(x => x.Ten_KhoaThi.Contains(searchHoTen));
                                 listKetQuaThi = listsearchHoTen.FindAll(x => x.Cccd_TS.Contains(search));
                                 HttpContext.Session.Remove("searchHoTen");
-                                HttpContext.Session.Remove("searchSDT");
+                                HttpContext.Session.Remove("searchSDT");+*/
                             }
                             <input type="text" asp-for="searchHoTen" class="form-control mb-2 mr-sm-2" style="margin-left:" placeholder="Tìm kiếm">
 

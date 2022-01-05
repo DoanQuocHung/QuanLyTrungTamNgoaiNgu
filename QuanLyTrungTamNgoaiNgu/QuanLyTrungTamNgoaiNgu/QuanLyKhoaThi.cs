@@ -84,7 +84,6 @@ namespace QuanLyTrungTamNgoaiNgu
         private void button11_Click(object sender, EventArgs e)
         {
             
-            if (frm != null)
                 
         }
         private void button10_Click(object sender, EventArgs e)

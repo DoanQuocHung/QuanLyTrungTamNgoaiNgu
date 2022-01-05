@@ -16,8 +16,8 @@ namespace DAO
         public List<KetQuaThiDTO> ListAll()
         {
             List<KetQuaThiDTO> baiThi = new List<KetQuaThiDTO>();
-            try
-            {
+            /*try
+            {*/
                 string query = "SELECT  Ten_KhoaThi, " +
                     "                   BaiThi.Cccd_TS, " +
                     "                   HoTen_TS, Sdt_TS, " +
@@ -56,11 +56,11 @@ namespace DAO
 
                     baiThi.Add(newBaiThi);
                 }
-            }
+            /*}
             catch (Exception e)
             {
                 Console.WriteLine("Lỗi DB tại ListAll " + e);
-            }
+            }*/
 
             return baiThi;
         }
