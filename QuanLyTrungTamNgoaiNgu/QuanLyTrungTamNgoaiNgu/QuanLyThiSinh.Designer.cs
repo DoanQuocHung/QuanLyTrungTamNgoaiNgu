@@ -31,17 +31,10 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.Grid_Danhsachthisinh = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Cccd_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +44,15 @@ namespace QuanLyTrungTamNgoaiNgu
             this.NoiCap_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cb_trinhdo = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cb_khoathi = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Danhsachthisinh)).BeginInit();
             this.panel7.SuspendLayout();
@@ -59,12 +61,14 @@ namespace QuanLyTrungTamNgoaiNgu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.cb_trinhdo);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.cb_khoathi);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Grid_Danhsachthisinh);
             this.panel1.Location = new System.Drawing.Point(6, 74);
             this.panel1.Name = "panel1";
@@ -74,27 +78,17 @@ namespace QuanLyTrungTamNgoaiNgu
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(814, 18);
+            this.button11.Location = new System.Drawing.Point(937, 18);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(117, 48);
             this.button11.TabIndex = 13;
             this.button11.Text = "Kết quả";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(937, 18);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(117, 48);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Reload";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(691, 18);
+            this.button9.Location = new System.Drawing.Point(814, 18);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(117, 48);
             this.button9.TabIndex = 11;
@@ -104,7 +98,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(568, 18);
+            this.button8.Location = new System.Drawing.Point(691, 18);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(117, 48);
             this.button8.TabIndex = 10;
@@ -114,22 +108,12 @@ namespace QuanLyTrungTamNgoaiNgu
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(443, 18);
+            this.button7.Location = new System.Drawing.Point(566, 18);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(117, 48);
             this.button7.TabIndex = 9;
             this.button7.Text = "Thêm";
             this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 29);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Danh sách Thí sinh";
             // 
             // Grid_Danhsachthisinh
             // 
@@ -150,6 +134,69 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Grid_Danhsachthisinh.RowTemplate.Height = 24;
             this.Grid_Danhsachthisinh.Size = new System.Drawing.Size(1048, 473);
             this.Grid_Danhsachthisinh.TabIndex = 7;
+            // 
+            // Cccd_TS
+            // 
+            this.Cccd_TS.HeaderText = "Cccd_TS";
+            this.Cccd_TS.MinimumWidth = 6;
+            this.Cccd_TS.Name = "Cccd_TS";
+            this.Cccd_TS.Width = 125;
+            // 
+            // HoTen_TS
+            // 
+            this.HoTen_TS.HeaderText = "HoTen_TS";
+            this.HoTen_TS.MinimumWidth = 6;
+            this.HoTen_TS.Name = "HoTen_TS";
+            this.HoTen_TS.Width = 125;
+            // 
+            // GioiTinh_TS
+            // 
+            this.GioiTinh_TS.HeaderText = "GioiTinh_TS";
+            this.GioiTinh_TS.MinimumWidth = 6;
+            this.GioiTinh_TS.Name = "GioiTinh_TS";
+            this.GioiTinh_TS.Width = 90;
+            // 
+            // NgaySinh_TS
+            // 
+            this.NgaySinh_TS.HeaderText = "NgaySinh_TS";
+            this.NgaySinh_TS.MinimumWidth = 6;
+            this.NgaySinh_TS.Name = "NgaySinh_TS";
+            this.NgaySinh_TS.Width = 110;
+            // 
+            // NoiSinh_TS
+            // 
+            this.NoiSinh_TS.HeaderText = "NoiSinh_TS";
+            this.NoiSinh_TS.MinimumWidth = 6;
+            this.NoiSinh_TS.Name = "NoiSinh_TS";
+            this.NoiSinh_TS.Width = 125;
+            // 
+            // NgayCap_TS
+            // 
+            this.NgayCap_TS.HeaderText = "NgayCap_TS";
+            this.NgayCap_TS.MinimumWidth = 6;
+            this.NgayCap_TS.Name = "NgayCap_TS";
+            this.NgayCap_TS.Width = 125;
+            // 
+            // NoiCap_TS
+            // 
+            this.NoiCap_TS.HeaderText = "NoiCap_TS";
+            this.NoiCap_TS.MinimumWidth = 6;
+            this.NoiCap_TS.Name = "NoiCap_TS";
+            this.NoiCap_TS.Width = 125;
+            // 
+            // Sdt_TS
+            // 
+            this.Sdt_TS.HeaderText = "Sdt_TS";
+            this.Sdt_TS.MinimumWidth = 6;
+            this.Sdt_TS.Name = "Sdt_TS";
+            this.Sdt_TS.Width = 125;
+            // 
+            // Email_TS
+            // 
+            this.Email_TS.HeaderText = "Email_TS";
+            this.Email_TS.MinimumWidth = 6;
+            this.Email_TS.Name = "Email_TS";
+            this.Email_TS.Width = 125;
             // 
             // label1
             // 
@@ -199,63 +246,45 @@ namespace QuanLyTrungTamNgoaiNgu
             this.textBox1.Size = new System.Drawing.Size(363, 36);
             this.textBox1.TabIndex = 0;
             // 
-            // Cccd_TS
+            // cb_trinhdo
             // 
-            this.Cccd_TS.HeaderText = "Cccd_TS";
-            this.Cccd_TS.MinimumWidth = 6;
-            this.Cccd_TS.Name = "Cccd_TS";
+            this.cb_trinhdo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_trinhdo.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_trinhdo.FormattingEnabled = true;
+            this.cb_trinhdo.Location = new System.Drawing.Point(297, 19);
+            this.cb_trinhdo.Name = "cb_trinhdo";
+            this.cb_trinhdo.Size = new System.Drawing.Size(122, 37);
+            this.cb_trinhdo.TabIndex = 18;
             // 
-            // HoTen_TS
+            // label3
             // 
-            this.HoTen_TS.HeaderText = "HoTen_TS";
-            this.HoTen_TS.MinimumWidth = 6;
-            this.HoTen_TS.Name = "HoTen_TS";
-            this.HoTen_TS.Width = 125;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(214, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 22);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Trình độ";
             // 
-            // GioiTinh_TS
+            // cb_khoathi
             // 
-            this.GioiTinh_TS.HeaderText = "GioiTinh_TS";
-            this.GioiTinh_TS.MinimumWidth = 6;
-            this.GioiTinh_TS.Name = "GioiTinh_TS";
-            this.GioiTinh_TS.Width = 90;
+            this.cb_khoathi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_khoathi.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_khoathi.FormattingEnabled = true;
+            this.cb_khoathi.Location = new System.Drawing.Point(69, 18);
+            this.cb_khoathi.Name = "cb_khoathi";
+            this.cb_khoathi.Size = new System.Drawing.Size(122, 37);
+            this.cb_khoathi.TabIndex = 16;
             // 
-            // NgaySinh_TS
+            // label2
             // 
-            this.NgaySinh_TS.HeaderText = "NgaySinh_TS";
-            this.NgaySinh_TS.MinimumWidth = 6;
-            this.NgaySinh_TS.Name = "NgaySinh_TS";
-            this.NgaySinh_TS.Width = 110;
-            // 
-            // NoiSinh_TS
-            // 
-            this.NoiSinh_TS.HeaderText = "NoiSinh_TS";
-            this.NoiSinh_TS.MinimumWidth = 6;
-            this.NoiSinh_TS.Name = "NoiSinh_TS";
-            // 
-            // NgayCap_TS
-            // 
-            this.NgayCap_TS.HeaderText = "NgayCap_TS";
-            this.NgayCap_TS.MinimumWidth = 6;
-            this.NgayCap_TS.Name = "NgayCap_TS";
-            // 
-            // NoiCap_TS
-            // 
-            this.NoiCap_TS.HeaderText = "NoiCap_TS";
-            this.NoiCap_TS.MinimumWidth = 6;
-            this.NoiCap_TS.Name = "NoiCap_TS";
-            // 
-            // Sdt_TS
-            // 
-            this.Sdt_TS.HeaderText = "Sdt_TS";
-            this.Sdt_TS.MinimumWidth = 6;
-            this.Sdt_TS.Name = "Sdt_TS";
-            // 
-            // Email_TS
-            // 
-            this.Email_TS.HeaderText = "Email_TS";
-            this.Email_TS.MinimumWidth = 6;
-            this.Email_TS.Name = "Email_TS";
-            this.Email_TS.Width = 125;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 22);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Khóa";
             // 
             // QuanLyThiSinh
             // 
@@ -288,11 +317,9 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView Grid_Danhsachthisinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cccd_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen_TS;
@@ -303,5 +330,9 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiCap_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email_TS;
+        private System.Windows.Forms.ComboBox cb_trinhdo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cb_khoathi;
+        private System.Windows.Forms.Label label2;
     }
 }

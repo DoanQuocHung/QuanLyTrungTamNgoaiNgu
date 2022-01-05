@@ -18,7 +18,6 @@ namespace QuanLyTrungTamNgoaiNgu
             InitializeComponent();
             list = new PhongThiBUS().ListAll();
             listkhoa = new KhoaThiBUS().List();
-            listsearch = new List<PhongThiDTO>();
             datagridview_qlPhongThi.AutoGenerateColumns = false;
             List<string> listtype = new List<string> { "Tên Phòng", "Ca thi"};
             cbSearch.DataSource = listtype;
@@ -38,7 +37,6 @@ namespace QuanLyTrungTamNgoaiNgu
             InitializeComponent();
             list = new PhongThiBUS().ListAll();
             listkhoa = new KhoaThiBUS().List();
-            listsearch = new List<PhongThiDTO>();
             datagridview_qlPhongThi.AutoGenerateColumns = false;
             List<string> listtype = new List<string> { "Tên Phòng", "Ca thi" };
             cbSearch.DataSource = listtype;
@@ -116,7 +114,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 if (result == DialogResult.OK)
                 {
                     list = form.list;
-                    listbasekhoa();
+                    BindGrid(list);
                 }
             }
             /*using (var form = new QuanLyPhongThi_Them(list,phongmoi))
@@ -145,7 +143,7 @@ namespace QuanLyTrungTamNgoaiNgu
                     {
                         MessageBox.Show("Xóa thành công");
                         list.RemoveAll(x => x.Id_PhongThi.Equals(cellValue));
-                        listbasekhoa();
+                        BindGrid(list);
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -169,7 +167,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 using (var form = new ChiTietPhongThi(list.Find(x => x.Id_PhongThi.Equals(cellValue))))
                 {
                     var result = form.ShowDialog();
-                    listbasekhoa();
+                    BindGrid(list);
                 }
             }
         }
@@ -178,7 +176,7 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             txtSearch.Text = "";
             cbSearch.SelectedIndex = 1;
-            listbasekhoa();
+            BindGrid(list);
         }
         private void listbasekhoa()
         {

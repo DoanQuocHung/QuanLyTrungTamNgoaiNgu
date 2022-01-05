@@ -5,8 +5,9 @@
     Layout = "_Layout";
 }
 @using BUS;
+@using DTO;
 @{
-
+    KhoaThiDTO khoa = new KhoaThiBUS().List().Last<KhoaThiDTO>();
 }
 <div class="main-panel">
     <div class="content-wrapper">
@@ -18,50 +19,51 @@
                         <form class="forms-sample" method="post">
                             <div class="form-group">
                                 <label for="exampleInputName1">CMND</label>
-                                <input type="text" class="form-control" placeholder="CMND">
+                                <input type="text" asp-for="dangky.Cccd_TS" class="form-control" placeholder="CMND">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Họ tên</label>
-                                <input type="text" class="form-control" placeholder="Họ tên">
+                                <input type="text" asp-for="dangky.HoTen_TS" class="form-control" placeholder="Họ tên">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Giới tính</label>
-                                <select class="form-control">
+                                <select class="form-control" asp-for="dangky.GioiTinh_TS">
                                     <option>Nam</option>
                                     <option>Nữ</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Ngày sinh</label>
-                                <input type="date" required class="form-control" placeholder="Ngày sinh">
+                                <input type="date" asp-for="dangky.NgaySinh_TS" required class="form-control" placeholder="Ngày sinh">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Nơi sinh</label>
-                                <input type="text" class="form-control" placeholder="Nơi sinh">
+                                <input type="text" asp-for="dangky.NoiSinh_TS" class="form-control" placeholder="Nơi sinh">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Ngày cấp</label>
-                                <input type="date" required class="form-control" placeholder="Ngày cấp">
+                                <input type="date" asp-for="dangky.NgayCap_TS" required class="form-control" placeholder="Ngày cấp">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Nơi cấp</label>
-                                <input type="text" class="form-control" placeholder="Nơi sinh">
+                                <input type="text" asp-for="dangky.NoiCap_TS" class="form-control" placeholder="Nơi sinh">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">SĐT</label>
-                                <input type="text" class="form-control" placeholder="Số điện thoại">
+                                <input type="text" asp-for="dangky.Sdt_TS" class="form-control" placeholder="Số điện thoại">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Email</label>
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="text" asp-for="dangky.Email_TS" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Trình độ</label>
-                                <select class="form-control">
+                                <select class="form-control" asp-for="dangky2.TrinhDo">
                                     <option>Trình độ 1</option>
                                     <option>Trình độ 2</option>
                                 </select>
                             </div>
+                            <input type="hidden" asp-for="dangky2.Id_KhoaThi" value="@khoa.Id_KhoaThi">
                             <input type="submit" value="Đăng ký" class="btn btn-primary mr-2" />
                         </form>
                     </div>
