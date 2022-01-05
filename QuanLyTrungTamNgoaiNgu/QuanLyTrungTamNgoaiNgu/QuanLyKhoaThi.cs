@@ -14,10 +14,12 @@ namespace QuanLyTrungTamNgoaiNgu
     public partial class QuanLyKhoaThi : Form
     {
         List<KhoaThiDTO> list;
-        public QuanLyKhoaThi()
+        AppQuanLy parent;
+        public QuanLyKhoaThi(AppQuanLy form)
         {
             InitializeComponent();
             list = new KhoaThiBUS().List();
+            parent = form;
             BindGrid(list);
         }
         public void BindGrid(List<KhoaThiDTO> list)
@@ -83,12 +85,11 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void button11_Click(object sender, EventArgs e)
         {
-            
-                
+            parent.quanlyphongthi();
         }
         private void button10_Click(object sender, EventArgs e)
         {
-
+            BindGrid(list);
         }
 
         private void button5_Click(object sender, EventArgs e)

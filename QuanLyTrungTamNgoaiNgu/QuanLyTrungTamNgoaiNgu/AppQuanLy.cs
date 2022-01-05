@@ -65,7 +65,7 @@ namespace QuanLyTrungTamNgoaiNgu
         //Button chuyển trang Quản Lý Khoa Thi
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new QuanLyKhoaThi());
+            OpenChildForm(new QuanLyKhoaThi(this));
         }
 
         //Button chuyển trang Quản Lý Kết quả thi

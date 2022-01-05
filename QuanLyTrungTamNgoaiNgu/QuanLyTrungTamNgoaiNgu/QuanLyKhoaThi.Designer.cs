@@ -31,9 +31,9 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_searchkhoa = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_searchkhoa = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -63,22 +63,22 @@ namespace QuanLyTrungTamNgoaiNgu
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel7.Controls.Add(this.comboBox1);
+            this.panel7.Controls.Add(this.cb_searchkhoa);
             this.panel7.Controls.Add(this.button5);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.txt_searchkhoa);
             this.panel7.Location = new System.Drawing.Point(503, 6);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(568, 62);
             this.panel7.TabIndex = 6;
             // 
-            // comboBox1
+            // cb_searchkhoa
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(372, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(73, 37);
-            this.comboBox1.TabIndex = 2;
+            this.cb_searchkhoa.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_searchkhoa.FormattingEnabled = true;
+            this.cb_searchkhoa.Location = new System.Drawing.Point(372, 12);
+            this.cb_searchkhoa.Name = "cb_searchkhoa";
+            this.cb_searchkhoa.Size = new System.Drawing.Size(73, 37);
+            this.cb_searchkhoa.TabIndex = 2;
             // 
             // button5
             // 
@@ -91,13 +91,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox1
+            // txt_searchkhoa
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(363, 36);
-            this.textBox1.TabIndex = 0;
+            this.txt_searchkhoa.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_searchkhoa.Location = new System.Drawing.Point(3, 12);
+            this.txt_searchkhoa.Name = "txt_searchkhoa";
+            this.txt_searchkhoa.Size = new System.Drawing.Size(363, 36);
+            this.txt_searchkhoa.TabIndex = 0;
             // 
             // panel1
             // 
@@ -242,9 +242,9 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_searchkhoa;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_searchkhoa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
