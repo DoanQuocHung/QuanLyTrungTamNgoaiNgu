@@ -18,7 +18,25 @@ namespace DAO
             List<KetQuaThiDTO> baiThi = new List<KetQuaThiDTO>();
             try
             {
-                string query = "SELECT Ten_KhoaThi, BaiThi.Cccd_TS, HoTen_TS, Sdt_TS, Id_BaiThi, SoBaoDanh, Ten_PhongThi, DiemNghe, DiemNoi, DiemDoc, DiemViet FROM BaiThi JOIN ThiSinh ON BaiThi.Cccd_TS = ThiSinh.Cccd_TS JOIN PhongThi ON BaiThi.Id_PhongThi = PhongThi.Id_PhongThi JOIN KhoaThi ON KhoaThi.Id_KhoaThi = PhongThi.Id_KhoaThi";
+                string query = "SELECT  Ten_KhoaThi, " +
+                    "                   BaiThi.Cccd_TS, " +
+                    "                   HoTen_TS, Sdt_TS, " +
+                    "                   Id_BaiThi, " +
+                    "                   SoBaoDanh, " +
+                    "                   Ten_PhongThi, " +
+                    "                   DiemNghe, " +
+                    "                   DiemNoi, " +
+                    "                   DiemDoc, " +
+                    "                   DiemViet " +
+                    "           FROM    BaiThi " +
+                    "                   JOIN " +
+                    "                   ThiSinh " +
+                    "                   ON BaiThi.Cccd_TS = ThiSinh.Cccd_TS " +
+                    "                   JOIN " +
+                    "                   PhongThi " +
+                    "                   ON BaiThi.Id_PhongThi = PhongThi.Id_PhongThi " +
+                    "                   JOIN " +
+                    "                   KhoaThi ON KhoaThi.Id_KhoaThi = PhongThi.Id_KhoaThi";
                 DataTable data = dataProvider.ExecuteQuery(query);
                 Console.WriteLine(data.Rows);
                 foreach (DataRow item in data.Rows)

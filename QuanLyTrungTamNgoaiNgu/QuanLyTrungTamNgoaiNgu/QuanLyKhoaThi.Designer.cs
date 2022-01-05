@@ -41,10 +41,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.datagridview_qlthisinh = new System.Windows.Forms.DataGridView();
+            this.datagridview_qlkhoathi = new System.Windows.Forms.DataGridView();
+            this.Id_KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlthisinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlkhoathi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,6 +89,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button5.TabIndex = 1;
             this.button5.Text = "Tìm kiếm";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
@@ -104,7 +108,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.datagridview_qlthisinh);
+            this.panel1.Controls.Add(this.datagridview_qlkhoathi);
             this.panel1.Location = new System.Drawing.Point(10, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 560);
@@ -119,6 +123,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button11.TabIndex = 13;
             this.button11.Text = "Chi tiết";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -129,6 +134,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button10.TabIndex = 12;
             this.button10.Text = "Reload";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -139,6 +145,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button9.TabIndex = 11;
             this.button9.Text = "Xóa";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -149,6 +156,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button8.TabIndex = 10;
             this.button8.Text = "Sửa";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -159,6 +167,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.button7.TabIndex = 9;
             this.button7.Text = "Thêm";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label2
             // 
@@ -170,15 +179,42 @@ namespace QuanLyTrungTamNgoaiNgu
             this.label2.TabIndex = 8;
             this.label2.Text = "Danh sách Khoa thi";
             // 
-            // datagridview_qlthisinh
+            // datagridview_qlkhoathi
             // 
-            this.datagridview_qlthisinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridview_qlthisinh.Location = new System.Drawing.Point(6, 81);
-            this.datagridview_qlthisinh.Name = "datagridview_qlthisinh";
-            this.datagridview_qlthisinh.RowHeadersWidth = 51;
-            this.datagridview_qlthisinh.RowTemplate.Height = 24;
-            this.datagridview_qlthisinh.Size = new System.Drawing.Size(1048, 473);
-            this.datagridview_qlthisinh.TabIndex = 7;
+            this.datagridview_qlkhoathi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagridview_qlkhoathi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridview_qlkhoathi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_KhoaThi,
+            this.Ten_KhoaThi,
+            this.NgayThi});
+            this.datagridview_qlkhoathi.Location = new System.Drawing.Point(6, 81);
+            this.datagridview_qlkhoathi.Name = "datagridview_qlkhoathi";
+            this.datagridview_qlkhoathi.RowHeadersWidth = 51;
+            this.datagridview_qlkhoathi.RowTemplate.Height = 24;
+            this.datagridview_qlkhoathi.Size = new System.Drawing.Size(1048, 473);
+            this.datagridview_qlkhoathi.TabIndex = 7;
+            // 
+            // Id_KhoaThi
+            // 
+            this.Id_KhoaThi.HeaderText = "Id_KhoaThi";
+            this.Id_KhoaThi.MinimumWidth = 6;
+            this.Id_KhoaThi.Name = "Id_KhoaThi";
+            this.Id_KhoaThi.ReadOnly = true;
+            this.Id_KhoaThi.Visible = false;
+            // 
+            // Ten_KhoaThi
+            // 
+            this.Ten_KhoaThi.HeaderText = "Khóa Thi";
+            this.Ten_KhoaThi.MinimumWidth = 6;
+            this.Ten_KhoaThi.Name = "Ten_KhoaThi";
+            this.Ten_KhoaThi.ReadOnly = true;
+            // 
+            // NgayThi
+            // 
+            this.NgayThi.HeaderText = "Ngày bắt đầu khóa thi";
+            this.NgayThi.MinimumWidth = 6;
+            this.NgayThi.Name = "NgayThi";
+            this.NgayThi.ReadOnly = true;
             // 
             // QuanLyKhoaThi
             // 
@@ -196,7 +232,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlthisinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlkhoathi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +252,9 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView datagridview_qlthisinh;
+        private System.Windows.Forms.DataGridView datagridview_qlkhoathi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_KhoaThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten_KhoaThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThi;
     }
 }
