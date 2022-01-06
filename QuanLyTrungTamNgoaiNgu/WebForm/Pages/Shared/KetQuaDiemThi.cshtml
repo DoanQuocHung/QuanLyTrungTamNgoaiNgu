@@ -13,8 +13,6 @@
     List<KhoaThiDTO> listkhoathi = new List<KhoaThiDTO>();
     KetQuaThiBUS bus = new KetQuaThiBUS();
     KhoaThiBUS busKhoaThi = new KhoaThiBUS();
-    list = bus.List();
-    listkhoathi = busKhoaThi.List();
 }
 <div class="main-panel">
     <div class="content-wrapper">
@@ -29,6 +27,7 @@
                                 string search = HttpContext.Session.GetString("searchgiaychungnhan");
                                 if (search != null)
                                 {
+                                    list = bus.List();
                                     list = list.FindAll(x => x.HoTen_TS.Contains(search));
                                     if (list == null)
                                     {
@@ -41,7 +40,7 @@
                             @*<label for="exampleInputName1">Chọn khóa thi</label>
                             <select class="form-control" asp-for="ketquathi.Id_KhoaThi" asp-items="@(new SelectList(Model.khoaThi,"Id_KhoaThi"))"></select>*@
 
-                            <input type="text" asp-for="searchvalue" class="form-control mb-2 mr-sm-2" style="margin-left:5px" placeholder="Họ tên/SĐT">
+                            <input type="text" asp-for="searchvalue" required class="form-control mb-2 mr-sm-2" style="margin-left:5px" placeholder="Họ tên/SĐT">
                             <input type="submit" asp-page-handler="search" class="btn btn-warning" value="Tìm" style="margin-left:5px">
 
                         </form>
@@ -92,7 +91,6 @@
                                                     <input type="hidden" asp-for="ketquathi.DiemNoi" value="@item.DiemNoi" />
                                                     <input type="hidden" asp-for="ketquathi.DiemDoc" value="@item.DiemDoc" />
                                                     <input type="hidden" asp-for="ketquathi.DiemViet" value="@item.DiemViet" />
-                                                    <input type="submit" asp-page-handler="giaychungnhan" value="Xem" class="btn btn-primary" />
                                                 </td>
 
                                             </tr>
