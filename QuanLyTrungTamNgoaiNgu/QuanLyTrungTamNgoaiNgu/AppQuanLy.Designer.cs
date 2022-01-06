@@ -91,6 +91,7 @@ namespace QuanLyTrungTamNgoaiNgu
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = global::QuanLyTrungTamNgoaiNgu.Properties.Resources.ghidiem;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(5, 5);
             this.button6.Name = "button6";
