@@ -7,8 +7,11 @@
 @using BUS;
 @using DTO;
 @using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
 @{
-
+    ThiSinhDTO khoa = new ThiSinhBUS().List().Last<ThiSinhDTO>();
+    var str = HttpContext.Session.GetString("giaychungnhan");
+    var obj = JsonConvert.DeserializeObject<ThiSinhDTO>(str);
 }
 
 <div class="main-panel">
@@ -21,24 +24,24 @@
                         <form class="forms-sample" method="post">
                             <label for="exampleInputName1">Tiếng Anh trình độ 10</label>
                             <div class="form-group">
-                                <label for="exampleInputName1">Họ tên</label>
-                                <input type="text" class="form-control" placeholder="Họ tên" readonly>
+                                <label for="exampleInputName1">Họ tên: </label>
+                                <label for="exampleInputName1" value="@obj.HoTen_TS"></label>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputName1">Ngày sinh</label>
-                                <input type="date" required class="form-control" placeholder="Ngày sinh" readonly>
+                                <label for="exampleInputName1">Ngày sinh: </label>
+                                <label for="exampleInputName1" value="@obj.NgaySinh_TS"></label>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputName1">Nơi sinh</label>
-                                <input type="text" class="form-control" placeholder="Nơi sinh" readonly>
+                                <label for="exampleInputName1">Nơi sinh: </label>
+                                <label for="exampleInputName1" value="@obj.NoiSinh_TS"></label>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputName1">Ký tên</label>
                                 <img src="~/images/Signature.png" />
                             </div>
-                            <input type="submit" value="Đăng ký" class="btn btn-primary mr-2" />
+                            <input type="submit" value="Xác nhận" class="btn btn-primary mr-2" />
                         </form>
-                        
+
                     </div>
                 </div>
             </div>

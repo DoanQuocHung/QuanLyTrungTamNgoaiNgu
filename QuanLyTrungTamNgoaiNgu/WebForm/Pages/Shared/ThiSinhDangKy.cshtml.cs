@@ -22,6 +22,13 @@ namespace WebForm.Pages.Shared
 
         public IActionResult OnPost()
         {
+            //if ((dangky.Cccd_TS).Equals(null) || (dangky.HoTen_TS).Equals(null) || (dangky.GioiTinh_TS).Equals(null) ||
+            //    (dangky.NgaySinh_TS).Equals(null) || (dangky.NoiSinh_TS).Equals(null) || (dangky.NgayCap_TS).Equals(null) ||
+            //    (dangky.NoiCap_TS).Equals(null) || (dangky.Sdt_TS).Equals(null) || (dangky.Email_TS).Equals(null))
+            //{
+
+            //    return;
+            //}
             if (new ThiSinhBUS().Insert(new ThiSinhDTO(dangky.Cccd_TS, dangky.HoTen_TS, dangky.GioiTinh_TS, dangky.NgaySinh_TS,
                 dangky.NoiSinh_TS, dangky.NgayCap_TS, dangky.NoiCap_TS, dangky.Sdt_TS, dangky.Email_TS)))
             {
