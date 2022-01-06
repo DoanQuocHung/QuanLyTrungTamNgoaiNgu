@@ -116,7 +116,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 if (result == DialogResult.OK)
                 {
                     list = form.list;
-                    BindGrid(list);
+                    listbasekhoa();
                 }
             }
             /*using (var form = new QuanLyPhongThi_Them(list,phongmoi))
@@ -145,7 +145,7 @@ namespace QuanLyTrungTamNgoaiNgu
                     {
                         MessageBox.Show("Xóa thành công");
                         list.RemoveAll(x => x.Id_PhongThi.Equals(cellValue));
-                        BindGrid(list);
+                        listbasekhoa();
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -164,12 +164,17 @@ namespace QuanLyTrungTamNgoaiNgu
                 int selectedrowindex = datagridview_qlPhongThi.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = datagridview_qlPhongThi.Rows[selectedrowindex];
                 string cellValue = Convert.ToString(selectedRow.Cells["IdPhong"].Value);
-                int s = 0;
+                string cellValue2 = cb_khoathi.SelectedItem.ToString();
+                string cellValue3 = Convert.ToString(selectedRow.Cells["CaThi"].Value);
 
-                using (var form = new ChiTietPhongThi(list.Find(x => x.Id_PhongThi.Equals(cellValue))))
+                using (var form = new ChiTietPhongThi(cellValue,cellValue2,cellValue3))
                 {
                     var result = form.ShowDialog();
-                    BindGrid(list);
+                    if (result == DialogResult.OK)
+                    {
+                        list.Find(x=>x.Id_PhongThi == cellValue).CaThi = form.cathi;
+                        listbasekhoa();
+                    }
                 }
             }
         }
