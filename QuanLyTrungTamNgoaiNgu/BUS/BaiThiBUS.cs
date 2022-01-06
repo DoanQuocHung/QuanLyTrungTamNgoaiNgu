@@ -17,6 +17,10 @@ namespace BUS
         {
             return baiThiDAO.ListBaiThi();
         }
+        public bool UpdateDiemThi(string nghe, string noi, string doc, string viet, string id)
+        {
+            return baiThiDAO.UpdateDiemThi(nghe, noi, doc, viet, id);
+        }
         public bool Delete(string maBaiThi)
         {
             return baiThiDAO.Delete(maBaiThi);

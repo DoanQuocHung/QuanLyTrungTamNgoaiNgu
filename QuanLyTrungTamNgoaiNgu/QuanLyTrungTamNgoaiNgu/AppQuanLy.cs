@@ -15,6 +15,7 @@ namespace QuanLyTrungTamNgoaiNgu
         public AppQuanLy()
         {
             InitializeComponent();
+            OpenChildForm(new QuanLyThiSinh());
         }
 
         //Quản lý Thí sinh ==============================================================================================================

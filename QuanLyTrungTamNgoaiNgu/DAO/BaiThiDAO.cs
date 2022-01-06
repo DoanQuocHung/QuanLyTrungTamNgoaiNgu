@@ -109,15 +109,15 @@ namespace DAO
             object[] para = new object[]
             {
                 baiThiDTO.Id_BaiThi,
-                DBNull.Value,
-                DBNull.Value,
+                baiThiDTO.Id_GiaoVien1,
+                baiThiDTO.Id_GiaoVien2,
                 baiThiDTO.Cccd_TS,
                 baiThiDTO.Id_PhongThi,
                 baiThiDTO.SoBaoDanh,
-                DBNull.Value,
-                DBNull.Value,
-                DBNull.Value,
-                DBNull.Value
+                baiThiDTO.DiemNghe,
+                baiThiDTO.DiemNoi,
+                baiThiDTO.DiemDoc,
+                baiThiDTO.DiemViet
             };
             try
             {
@@ -129,6 +129,24 @@ namespace DAO
             {
                 Debug.WriteLine(ex.Message);
             }
+            return false;
+        }
+        public bool UpdateDiemThi(string nghe, string noi, string doc, string viet, string id)
+        {
+            string query = "update BaiThi set " +
+                "DiemNghe = @NGAYCAPTS , " +
+                "DiemNoi = @NOICAPTS , " +
+                "DiemDoc = @SDTTS , " +
+                "DiemViet = @EMAILTS " +
+                "where Id_BaiThi = @oldCCCDTS ";
+            object[] para = new object[]
+            {
+               nghe,noi,doc,viet,id
+            };
+
+                DataProvider dataProvider = new DataProvider();
+                if (dataProvider.ExecuteNonQuery(query, para) > 0)
+                    return true;
             return false;
         }
         public string getTenThiSinh(string cccd)

@@ -18,43 +18,68 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Danh sách Phòng Thi của Thí Sinh</h4>
-
+                        @{
+                            List<PhongThiDTO> listphong = new List<PhongThiDTO>();
+                            List<BaiThiDTO> listbaithi = new List<BaiThiDTO>();
+                            try
+                            {
+                                if (HttpContext.Session.GetString("layphongthi") == "true")
+                                {
+                                    string khoaphong = HttpContext.Session.GetString("khoaphongthi");
+                                    listphong = new PhongThiBUS().ListAll().FindAll(x => x.Id_KhoaThi == khoaphong);
+                                }
+                            }
+                            catch (Exception e) { }
+                            try
+                            {
+                                if (HttpContext.Session.GetString("laydanhsach") == "true")
+                                {
+                                    string khoaphong = HttpContext.Session.GetString("khoaphongthi");
+                                    string ma = HttpContext.Session.GetString("maphongthi");
+                                    listbaithi = new BaiThiBUS().ListBaiThi().FindAll(x=>x.Id_PhongThi == ma);
+                                }
+                            }
+                            catch (Exception e) { }
+                        }
                         <form class="form-inline" method="post">
                             <label for="exampleInputName1">Khóa Thi</label>
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
+                            <select class="form-control"
+                                    asp-for="khoa" asp-items="@(new SelectList(Model.listkhoa,"Id_KhoaThi", "Ten_KhoaThi"))">
                             </select>
 
                             <label for="exampleInputName1" style="margin-left:5px">Phòng Thi</label>
-                            <select class="form-control" style="margin-left:5px">
-                                <option>1</option>
-                                <option>2</option>
+                            <select class="form-control" style="margin-left:5px"
+                                    asp-for="phong" asp-items="@(new SelectList(listphong,"Id_PhongThi", "Ten_PhongThi"))">
                             </select>
-
-                            <label for="exampleInputName1" style="margin-left:5px">Chứng Chỉ</label>
-                            <select class="form-control" style="margin-left:5px">
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
+                            <input type="submit" asp-page-handler="getting" value="Lấy Phòng Thi" class="btn btn-primary mr-2" />
+                            <input type="submit" asp-page-handler="list" value="Lấy Danh sách" class="btn btn-primary mr-2" />
                         </form>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>CCCD</th>
+                                        <th>Số báo danh</th>
                                         <th>Họ tên Thí Sinh</th>
-                                        <th>ID phòng thi</th>
-                                        <th>Tên phòng thi</th>
+                                        <th>Giới tính</th>
+                                        <th>SĐT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>aaa</td>
-                                        <td>bbb</td>
-                                        <td>ccc</td>
-                                        <td>ddd</td>
-                                    </tr>
+                                    @{
+                                        List<ThiSinhDTO> thisinhs = new ThiSinhBUS().List();
+                                        foreach (BaiThiDTO item in listbaithi)
+                                        {
+                                            string ten = thisinhs.Find(x=>x.Cccd_TS == item.Cccd_TS).HoTen_TS;
+                                            string gioitinh = thisinhs.Find(x => x.Cccd_TS == item.Cccd_TS).GioiTinh_TS;
+                                            string sdt = thisinhs.Find(x => x.Cccd_TS == item.Cccd_TS).Sdt_TS;
+                                        <tr>
+                                            <td>@item.SoBaoDanh</td>
+                                            <td>@ten</td>
+                                            <td>@gioitinh</td>
+                                            <td>@sdt</td>
+                                        </tr>
+                                            }
+                                        }
                                 </tbody>
                             </table>
                         </div>

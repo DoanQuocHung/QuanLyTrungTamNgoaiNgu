@@ -5,8 +5,16 @@
     Layout = "_Layout";
 }
 @using BUS;
-@{
+@using DTO;
 
+@using Microsoft.AspNetCore.Http;
+@{
+    List<KetQuaThiDTO> list = new List<KetQuaThiDTO>();
+    List<KhoaThiDTO> listkhoathi = new List<KhoaThiDTO>();
+    KetQuaThiBUS bus = new KetQuaThiBUS();
+    KhoaThiBUS busKhoaThi = new KhoaThiBUS();
+    list = bus.List();
+    listkhoathi = busKhoaThi.List();
 }
 <div class="main-panel">
     <div class="content-wrapper">
@@ -17,31 +25,79 @@
                         <h4 class="card-title">Kết Quả Điểm Thi</h4>
 
                         <form class="form-inline" method="post">
-                            <label for="exampleInputName1">Chọn khóa thi</label>
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                            <input type="submit" class="btn btn-warning" value="Tìm" style="margin-left:5px">
-                            <input type="text" class="form-control mb-2 mr-sm-2" style="margin-left:5px" placeholder="Họ tên/SĐT">
+                            @{
+                                string search = HttpContext.Session.GetString("searchgiaychungnhan");
+                                if (search != null)
+                                {
+                                    list = list.FindAll(x => x.HoTen_TS.Contains(search));
+                                    if (list == null)
+                                    {
+                                        list = list.FindAll(x => x.Sdt_TS.Contains(search));
+                                    }
+
+                                    HttpContext.Session.Remove("searchgiaychungnhan");
+                                }
+                            }
+                            @*<label for="exampleInputName1">Chọn khóa thi</label>
+                            <select class="form-control" asp-for="ketquathi.Id_KhoaThi" asp-items="@(new SelectList(Model.khoaThi,"Id_KhoaThi"))"></select>*@
+
+                            <input type="text" asp-for="searchvalue" class="form-control mb-2 mr-sm-2" style="margin-left:5px" placeholder="Họ tên/SĐT">
+                            <input type="submit" asp-page-handler="search" class="btn btn-warning" value="Tìm" style="margin-left:5px">
+
                         </form>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Số báo danh</th>
+                                        <th>Ngày thi</th>
+                                        <th>CCCD</th>
+                                        <th>Họ tên</th>
+                                        <th>Số điện thoại</th>
                                         <th>Phòng Thi</th>
-                                        <th>Kết quả thi</th>
-                                        <th>Tên phòng thi</th>
+                                        <th>Điểm thi</th>
+                                        <th>Điểm nghe</th>
+                                        <th>Điểm nói</th>
+                                        <th>Điểm đọc</th>
+                                        <th>Điểm viết</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>aaa</td>
-                                        <td>bbb</td>
-                                        <td>ccc</td>
-                                        <td>ddd</td>
-                                    </tr>
+                                    @{
+                                        foreach (KetQuaThiDTO item in list)
+                                        {
+
+                                            <tr>
+                                                <td>@item.SoBaoDanh</td>
+                                                <td>@item.NgayThi</td>
+                                                <td>@item.Cccd_TS</td>
+                                                <td>@item.HoTen_TS</td>
+                                                <td>@item.Sdt_TS</td>
+                                                <td>@item.Ten_PhongThi</td>
+                                                <td>chua co</td>
+                                                <td>@item.DiemNghe</td>
+                                                <td>@item.DiemNoi</td>
+                                                <td>@item.DiemDoc</td>
+                                                <td>@item.DiemViet</td>
+
+                                                <td>
+                                                    <input type="hidden" asp-for="ketquathi.SoBaoDanh" value="@item.SoBaoDanh" />
+                                                    <input type="hidden" asp-for="ketquathi.NgayThi" value="@item.NgayThi" />
+                                                    <input type="hidden" asp-for="ketquathi.Cccd_TS" value="@item.Cccd_TS" />
+                                                    <input type="hidden" asp-for="ketquathi.HoTen_TS" value="@item.HoTen_TS" />
+                                                    <input type="hidden" asp-for="ketquathi.Sdt_TS" value="@item.Sdt_TS" />
+                                                    <input type="hidden" asp-for="ketquathi.Ten_PhongThi" value="@item.Ten_PhongThi" />
+                                                    
+                                                    <input type="hidden" asp-for="ketquathi.DiemNghe" value="@item.DiemNghe" />
+                                                    <input type="hidden" asp-for="ketquathi.DiemNoi" value="@item.DiemNoi" />
+                                                    <input type="hidden" asp-for="ketquathi.DiemDoc" value="@item.DiemDoc" />
+                                                    <input type="hidden" asp-for="ketquathi.DiemViet" value="@item.DiemViet" />
+                                                    <input type="submit" asp-page-handler="giaychungnhan" value="Xem" class="btn btn-primary" />
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    }
                                 </tbody>
                             </table>
                         </div>
