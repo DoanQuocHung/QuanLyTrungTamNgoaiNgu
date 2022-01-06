@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaiThiDAO.cs" />
+    <Compile Include="DangKyDAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="KetQuaThiDAO.cs" />
     <Compile Include="KhoaThiDAO.cs" />

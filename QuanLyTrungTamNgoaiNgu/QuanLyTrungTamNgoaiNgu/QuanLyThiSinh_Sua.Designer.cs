@@ -30,16 +30,18 @@ namespace QuanLyTrungTamNgoaiNgu
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cb_gioitinh = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbTrinhDo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtNoiCap = new System.Windows.Forms.TextBox();
+            this.txtNoiSinh = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,16 +57,18 @@ namespace QuanLyTrungTamNgoaiNgu
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.dtNgayCap);
+            this.panel1.Controls.Add(this.dtNgaySinh);
+            this.panel1.Controls.Add(this.cb_gioitinh);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.cbTrinhDo);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtSDT);
+            this.panel1.Controls.Add(this.txtNoiCap);
+            this.panel1.Controls.Add(this.txtNoiSinh);
+            this.panel1.Controls.Add(this.txtHoTen);
+            this.panel1.Controls.Add(this.txtCCCD);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -74,94 +78,124 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(5, 6);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 485);
+            this.panel1.Size = new System.Drawing.Size(488, 561);
             this.panel1.TabIndex = 1;
+            // 
+            // dtNgayCap
+            // 
+            this.dtNgayCap.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayCap.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayCap.Location = new System.Drawing.Point(121, 242);
+            this.dtNgayCap.Name = "dtNgayCap";
+            this.dtNgayCap.Size = new System.Drawing.Size(349, 33);
+            this.dtNgayCap.TabIndex = 23;
+            // 
+            // dtNgaySinh
+            // 
+            this.dtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtNgaySinh.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgaySinh.Location = new System.Drawing.Point(122, 151);
+            this.dtNgaySinh.Name = "dtNgaySinh";
+            this.dtNgaySinh.Size = new System.Drawing.Size(349, 33);
+            this.dtNgaySinh.TabIndex = 22;
+            // 
+            // cb_gioitinh
+            // 
+            this.cb_gioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_gioitinh.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.cb_gioitinh.FormattingEnabled = true;
+            this.cb_gioitinh.Location = new System.Drawing.Point(120, 105);
+            this.cb_gioitinh.Name = "cb_gioitinh";
+            this.cb_gioitinh.Size = new System.Drawing.Size(350, 33);
+            this.cb_gioitinh.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label10.Location = new System.Drawing.Point(16, 441);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 25);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Trình độ";
+            // 
+            // cbTrinhDo
+            // 
+            this.cbTrinhDo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTrinhDo.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTrinhDo.FormattingEnabled = true;
+            this.cbTrinhDo.Items.AddRange(new object[] {
+            "A2",
+            "B1"});
+            this.cbTrinhDo.Location = new System.Drawing.Point(122, 438);
+            this.cbTrinhDo.Name = "cbTrinhDo";
+            this.cbTrinhDo.Size = new System.Drawing.Size(350, 33);
+            this.cbTrinhDo.TabIndex = 19;
+            this.cbTrinhDo.Tag = "";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.button1.Location = new System.Drawing.Point(374, 430);
+            this.button1.Location = new System.Drawing.Point(375, 502);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 42);
             this.button1.TabIndex = 18;
             this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // textBox9
+            // txtEmail
             // 
-            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox9.Location = new System.Drawing.Point(121, 385);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(350, 32);
-            this.textBox9.TabIndex = 17;
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.txtEmail.Location = new System.Drawing.Point(121, 385);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(350, 32);
+            this.txtEmail.TabIndex = 17;
             // 
-            // textBox8
+            // txtSDT
             // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox8.Location = new System.Drawing.Point(121, 338);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(350, 32);
-            this.textBox8.TabIndex = 16;
+            this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.txtSDT.Location = new System.Drawing.Point(121, 338);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(350, 32);
+            this.txtSDT.TabIndex = 16;
             // 
-            // textBox7
+            // txtNoiCap
             // 
-            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox7.Location = new System.Drawing.Point(121, 293);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(350, 32);
-            this.textBox7.TabIndex = 15;
+            this.txtNoiCap.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.txtNoiCap.Location = new System.Drawing.Point(121, 293);
+            this.txtNoiCap.Name = "txtNoiCap";
+            this.txtNoiCap.Size = new System.Drawing.Size(350, 32);
+            this.txtNoiCap.TabIndex = 15;
             // 
-            // textBox6
+            // txtNoiSinh
             // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox6.Location = new System.Drawing.Point(121, 245);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(350, 32);
-            this.textBox6.TabIndex = 14;
+            this.txtNoiSinh.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.txtNoiSinh.Location = new System.Drawing.Point(121, 200);
+            this.txtNoiSinh.Name = "txtNoiSinh";
+            this.txtNoiSinh.Size = new System.Drawing.Size(350, 32);
+            this.txtNoiSinh.TabIndex = 13;
             // 
-            // textBox5
+            // txtHoTen
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox5.Location = new System.Drawing.Point(121, 200);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(350, 32);
-            this.textBox5.TabIndex = 13;
+            this.txtHoTen.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.txtHoTen.Location = new System.Drawing.Point(121, 63);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(350, 32);
+            this.txtHoTen.TabIndex = 10;
             // 
-            // textBox4
+            // txtCCCD
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox4.Location = new System.Drawing.Point(121, 154);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(350, 32);
-            this.textBox4.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox3.Location = new System.Drawing.Point(121, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(350, 32);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox2.Location = new System.Drawing.Point(121, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(350, 32);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.textBox1.Location = new System.Drawing.Point(121, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(350, 32);
-            this.textBox1.TabIndex = 9;
+            this.txtCCCD.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.txtCCCD.Location = new System.Drawing.Point(121, 19);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.ReadOnly = true;
+            this.txtCCCD.Size = new System.Drawing.Size(350, 32);
+            this.txtCCCD.TabIndex = 9;
             // 
             // label9
             // 
@@ -258,7 +292,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(499, 496);
+            this.ClientSize = new System.Drawing.Size(510, 587);
             this.Controls.Add(this.panel1);
             this.Name = "QuanLyThiSinh_Sua";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -272,16 +306,18 @@ namespace QuanLyTrungTamNgoaiNgu
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dtNgayCap;
+        private System.Windows.Forms.DateTimePicker dtNgaySinh;
+        private System.Windows.Forms.ComboBox cb_gioitinh;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbTrinhDo;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtNoiCap;
+        private System.Windows.Forms.TextBox txtNoiSinh;
+        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

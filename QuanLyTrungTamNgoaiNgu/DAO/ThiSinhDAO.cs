@@ -152,17 +152,16 @@ namespace DAO
 
         public bool Update(ThiSinhDTO thisinh)
         {
-            string query = "update dbo.ThiSinh set " +
-                "Cccd_TS = @CCCDTS  " +
-                "HoTen_TS = @HOTENTS  " +
-                "GioiTinh_TS = @GIOITINHTS  " +
-                "NgaySinh_TS = @NGAYSINHTS  " +
-                "NoiSinh_TS = @NOISINHTS  " +
-                "NgayCap_TS = @NGAYCAPTS  " +
-                "NoiCap_TS = @NOICAPTS  " +
-                "Sdt_TS = @SDTTS  " +
-                "Email_TS = @EMAILTS  " +
-                "where Id_DiaDiem = @oldCCCDTS ";
+            string query = "update ThiSinh set " +
+                "HoTen_TS = @HOTENTS  , " +
+                "GioiTinh_TS = @GIOITINHTS , " +
+                "NgaySinh_TS = @NGAYSINHTS , " +
+                "NoiSinh_TS = @NOISINHTS , " +
+                "NgayCap_TS = @NGAYCAPTS , " +
+                "NoiCap_TS = @NOICAPTS , " +
+                "Sdt_TS = @SDTTS , " +
+                "Email_TS = @EMAILTS " +
+                "where Cccd_TS = @oldCCCDTS ";
 
             object[] para = new object[]
             {
@@ -189,7 +188,7 @@ namespace DAO
         public bool Insert(ThiSinhDTO thisinh)
         {
             string query = "insert into ThiSinh " +
-                "values( @CCCDTS , @HOTENTS, @GIOITINHTS , @NGAYSINHTS, @NOISINHTS , @NgayCap_TS, @NoiCap_TS , @Sdt_TS, @Email_TS )";
+                "values( @CCCDTS , @HOTENTS , @GIOITINHTS , @NGAYSINHTS , @NOISINHTS , @NgayCap_TS , @NoiCap_TS , @Sdt_TS , @Email_TS )";
 
             object[] para = new object[]
             {

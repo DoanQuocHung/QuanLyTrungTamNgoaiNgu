@@ -14,37 +14,79 @@ namespace QuanLyTrungTamNgoaiNgu
 {
     public partial class QuanLyThiSinh_Them : Form
     {
-        public List<ThiSinhDTO> list { get; set; }
-        public QuanLyThiSinh_Them(List<ThiSinhDTO> list)
+        public ThiSinhDTO thisinh { get; set; }
+        public DangKyDTO dangky { get; set; }
+        public QuanLyThiSinh_Them(string khoathi,string trinhdo)
         {
             InitializeComponent();
-            this.list = list;
+            dangky = new DangKyDTO();
+            thisinh = new ThiSinhDTO();
+            dangky.LePhiThi = "500.000 VND";
+            dangky.Id_KhoaThi = khoathi;
+            dangky.TrinhDo = trinhdo;
+            List<string> trinhdocb = new List<string> { "A2", "B1" };
+            List<string> gioi = new List<string> { "Nam", "Nữ" };
+            cb_gioitinh.DataSource = gioi;
+            cbTrinhDo.DataSource = trinhdocb;
             //textBox1.Text = new ThiSinhBUS().MakeID();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cccd_ts = textBox1.Text;
-            string hoten_ts = textBox2.Text;
-            string gioitinh_ts = textBox3.Text;
-            string ngaysinh_ts = textBox4.Text;
-            string noisinh_ts = textBox5.Text;
-            string ngaycap_ts = textBox6.Text;
-            string noicap_ts = textBox7.Text;
-            string sdt_ts = textBox8.Text;
-            string email_ts = textBox9.Text;
-            if (cccd_ts.Equals(""))
+            thisinh.Cccd_TS = txtCCCD.Text;
+            thisinh.HoTen_TS = txtHoTen.Text;
+            thisinh.GioiTinh_TS = cb_gioitinh.SelectedItem.ToString();
+            thisinh.NgaySinh_TS = dtNgaySinh.Text;
+            thisinh.NoiSinh_TS = txtNoiSinh.Text;
+            thisinh.NgayCap_TS = dtNgayCap.Text;
+            thisinh.NoiCap_TS = txtNoiCap.Text;
+            thisinh.Sdt_TS = txtSDT.Text;
+            thisinh.Email_TS = txtEmail.Text;
+            if (thisinh.Cccd_TS == ""
+                || thisinh.HoTen_TS == "" 
+                || thisinh.NoiSinh_TS == ""
+                || thisinh.NoiCap_TS == ""
+                || thisinh.Sdt_TS == ""
+                || thisinh.Email_TS == "")
             {
-                MessageBox.Show("Xin hãy nhập CCCD");
+                MessageBox.Show("Xin hãy nhập đầy đủ thông tin");
                 return;
             }
-            if (new ThiSinhBUS().Insert(new ThiSinhDTO(cccd_ts, hoten_ts, gioitinh_ts, ngaysinh_ts, noisinh_ts, ngaycap_ts,
-                noicap_ts, sdt_ts, email_ts)))
+            dangky.Cccd_TS = thisinh.Cccd_TS;
+            if (new ThiSinhBUS().Exists(thisinh.Cccd_TS))
             {
-                MessageBox.Show("Thêm thành công");
-                this.list.Add(new ThiSinhDTO(cccd_ts, hoten_ts, gioitinh_ts, ngaysinh_ts, noisinh_ts, ngaycap_ts,
-                noicap_ts, sdt_ts, email_ts));
-                this.DialogResult = DialogResult.OK;
+                if (new DangKyBUS().Insert(dangky))
+                {
+                    MessageBox.Show("Đăng ký thành công");
+                    this.DialogResult = DialogResult.OK;
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Thí Sinh Đã đăng ký rồi");
+                    this.DialogResult = DialogResult.Cancel;
+                    Hide();
+                }
+            }
+            else if (new ThiSinhBUS().Insert(thisinh))
+            {
+                if (new DangKyBUS().Insert(dangky))
+                {
+                    MessageBox.Show("Đăng ký thành công");
+                    this.DialogResult = DialogResult.OK;
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Thí Sinh Đã đăng ký rồi");
+                    this.DialogResult = DialogResult.Cancel;
+                    Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Thí Sinh Đã đăng ký rồi");
+                this.DialogResult = DialogResult.Cancel;
                 Hide();
             }
         }

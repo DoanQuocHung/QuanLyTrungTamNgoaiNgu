@@ -32,7 +32,7 @@ namespace WebForm.Pages.Shared
         public IActionResult OnPostGiaychungnhan()
         {
             HttpContext.Session.SetString("searchSBDgiaychungnhan", searchSBD);
-            return RedirectToPage("/Shared/GiayChungNhan");
+            return RedirectToPage("/Shared/XemGiayChungNhan");
         }
 
     }

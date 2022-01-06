@@ -40,6 +40,13 @@ namespace BUS
         {
             return new ThiSinhDAO().Delete(cccdts);
         }
+        public bool Exists(string id)
+        {
+            if (new ThiSinhDAO().Exist(id) == 0)
+                return false;
+            return true;
+
+        }
         //public String MakeID()
         //{
         //    return new ThiSinhDAO().MakeID();

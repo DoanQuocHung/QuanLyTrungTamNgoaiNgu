@@ -18,6 +18,7 @@ namespace QuanLyTrungTamNgoaiNgu
             InitializeComponent();
             list = new PhongThiBUS().ListAll();
             listkhoa = new KhoaThiBUS().List();
+            listsearch = new List<PhongThiDTO>();
             datagridview_qlPhongThi.AutoGenerateColumns = false;
             List<string> listtype = new List<string> { "Tên Phòng", "Ca thi"};
             cbSearch.DataSource = listtype;
@@ -37,6 +38,7 @@ namespace QuanLyTrungTamNgoaiNgu
             InitializeComponent();
             list = new PhongThiBUS().ListAll();
             listkhoa = new KhoaThiBUS().List();
+            listsearch = new List<PhongThiDTO>();
             datagridview_qlPhongThi.AutoGenerateColumns = false;
             List<string> listtype = new List<string> { "Tên Phòng", "Ca thi" };
             cbSearch.DataSource = listtype;

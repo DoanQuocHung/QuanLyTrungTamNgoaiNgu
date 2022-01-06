@@ -45,7 +45,43 @@ namespace DAO
 
             return list;
         }
+        public List<BaiThiDTO> ListBaiThi()
+        {
+            DataProvider dataProvider = new DataProvider();
 
+            List<BaiThiDTO> list = new List<BaiThiDTO>();
+            string query = "select * from BaiThi";
+
+            try
+            {
+                DataTable data = dataProvider.ExecuteQuery(query);
+
+                foreach (DataRow item in data.Rows)
+                {
+                    string maBaiThi = item["Id_BaiThi"].ToString();
+                    string maGV1 = item["Id_GiaoVien1"].ToString();
+                    string maGV2 = item["Id_GiaoVien2"].ToString();
+                    string cccdTS = item["Cccd_TS"].ToString();
+                    string sbd = item["SoBaoDanh"].ToString();
+                    string maPhong = item["Id_PhongThi"].ToString();
+                    string diemNghe = item["DiemNghe"].ToString();
+                    string diemNoi = item["DiemNoi"].ToString();
+                    string diemDoc = item["DiemDoc"].ToString();
+                    string diemViet = item["DiemViet"].ToString();
+
+                    BaiThiDTO baiThiDTO = new BaiThiDTO(maBaiThi, maGV1, maGV2, cccdTS, maPhong, sbd, diemNghe, diemNoi, diemDoc, diemViet);
+
+                    list.Add(baiThiDTO);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Hiển thị lỗi trong Immediate Window
+                Debug.WriteLine(ex.Message);
+            }
+
+            return list;
+        }
         public bool Delete(string maBaiThi)
         {
             string query = "delete BaiThi where Id_BaiThi = @MABAITHI";

@@ -53,6 +53,9 @@ namespace QuanLyTrungTamNgoaiNgu
             this.NoiCap_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email_TS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LePhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhoaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrinhDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Danhsachthisinh)).BeginInit();
             this.panel7.SuspendLayout();
@@ -84,6 +87,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.cb_trinhdo.Name = "cb_trinhdo";
             this.cb_trinhdo.Size = new System.Drawing.Size(122, 37);
             this.cb_trinhdo.TabIndex = 18;
+            this.cb_trinhdo.SelectedIndexChanged += new System.EventHandler(this.cb_trinhdo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -104,6 +108,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.cb_khoathi.Name = "cb_khoathi";
             this.cb_khoathi.Size = new System.Drawing.Size(122, 37);
             this.cb_khoathi.TabIndex = 16;
+            this.cb_khoathi.SelectedIndexChanged += new System.EventHandler(this.cb_khoathi_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -170,7 +175,10 @@ namespace QuanLyTrungTamNgoaiNgu
             this.NgayCap_TS,
             this.NoiCap_TS,
             this.Sdt_TS,
-            this.Email_TS});
+            this.Email_TS,
+            this.LePhi,
+            this.KhoaThi,
+            this.TrinhDo});
             this.Grid_Danhsachthisinh.Location = new System.Drawing.Point(6, 81);
             this.Grid_Danhsachthisinh.Name = "Grid_Danhsachthisinh";
             this.Grid_Danhsachthisinh.RowHeadersWidth = 51;
@@ -228,64 +236,92 @@ namespace QuanLyTrungTamNgoaiNgu
             // 
             // Cccd_TS
             // 
-            this.Cccd_TS.HeaderText = "Cccd_TS";
+            this.Cccd_TS.HeaderText = "CMND/CCCD";
             this.Cccd_TS.MinimumWidth = 6;
             this.Cccd_TS.Name = "Cccd_TS";
             this.Cccd_TS.Width = 105;
             // 
             // HoTen_TS
             // 
-            this.HoTen_TS.HeaderText = "HoTen_TS";
+            this.HoTen_TS.HeaderText = "Họ Tên";
             this.HoTen_TS.MinimumWidth = 6;
             this.HoTen_TS.Name = "HoTen_TS";
             this.HoTen_TS.Width = 125;
             // 
             // GioiTinh_TS
             // 
-            this.GioiTinh_TS.HeaderText = "GioiTinh_TS";
+            this.GioiTinh_TS.HeaderText = "Giới tính";
             this.GioiTinh_TS.MinimumWidth = 6;
             this.GioiTinh_TS.Name = "GioiTinh_TS";
             this.GioiTinh_TS.Width = 90;
             // 
             // NgaySinh_TS
             // 
-            this.NgaySinh_TS.HeaderText = "NgaySinh_TS";
+            this.NgaySinh_TS.HeaderText = "Ngày Sinh";
             this.NgaySinh_TS.MinimumWidth = 6;
             this.NgaySinh_TS.Name = "NgaySinh_TS";
             this.NgaySinh_TS.Width = 110;
             // 
             // NoiSinh_TS
             // 
-            this.NoiSinh_TS.HeaderText = "NoiSinh_TS";
+            this.NoiSinh_TS.HeaderText = "Nơi Sinh";
             this.NoiSinh_TS.MinimumWidth = 6;
             this.NoiSinh_TS.Name = "NoiSinh_TS";
+            this.NoiSinh_TS.Width = 125;
             // 
             // NgayCap_TS
             // 
-            this.NgayCap_TS.HeaderText = "NgayCap_TS";
+            this.NgayCap_TS.HeaderText = "Ngày Cấp";
             this.NgayCap_TS.MinimumWidth = 6;
             this.NgayCap_TS.Name = "NgayCap_TS";
+            this.NgayCap_TS.Width = 125;
             // 
             // NoiCap_TS
             // 
-            this.NoiCap_TS.HeaderText = "NoiCap_TS";
+            this.NoiCap_TS.HeaderText = "Nơi Cấp";
             this.NoiCap_TS.MinimumWidth = 6;
             this.NoiCap_TS.Name = "NoiCap_TS";
             this.NoiCap_TS.Width = 125;
             // 
             // Sdt_TS
             // 
-            this.Sdt_TS.HeaderText = "Sdt_TS";
+            this.Sdt_TS.HeaderText = "SDT";
             this.Sdt_TS.MinimumWidth = 6;
             this.Sdt_TS.Name = "Sdt_TS";
             this.Sdt_TS.Width = 125;
             // 
             // Email_TS
             // 
-            this.Email_TS.HeaderText = "Email_TS";
+            this.Email_TS.HeaderText = "Email";
             this.Email_TS.MinimumWidth = 6;
             this.Email_TS.Name = "Email_TS";
             this.Email_TS.Width = 125;
+            // 
+            // LePhi
+            // 
+            this.LePhi.HeaderText = "Lệ Phí";
+            this.LePhi.MinimumWidth = 6;
+            this.LePhi.Name = "LePhi";
+            this.LePhi.ReadOnly = true;
+            this.LePhi.Width = 125;
+            // 
+            // KhoaThi
+            // 
+            this.KhoaThi.HeaderText = "Khóa Thi";
+            this.KhoaThi.MinimumWidth = 6;
+            this.KhoaThi.Name = "KhoaThi";
+            this.KhoaThi.ReadOnly = true;
+            this.KhoaThi.Visible = false;
+            this.KhoaThi.Width = 125;
+            // 
+            // TrinhDo
+            // 
+            this.TrinhDo.HeaderText = "Trình độ";
+            this.TrinhDo.MinimumWidth = 6;
+            this.TrinhDo.Name = "TrinhDo";
+            this.TrinhDo.ReadOnly = true;
+            this.TrinhDo.Visible = false;
+            this.TrinhDo.Width = 125;
             // 
             // QuanLyThiSinh
             // 
@@ -335,5 +371,8 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiCap_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt_TS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email_TS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LePhi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KhoaThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrinhDo;
     }
 }

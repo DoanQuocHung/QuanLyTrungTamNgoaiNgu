@@ -13,6 +13,10 @@ namespace BUS
         {
             return baiThiDAO.ListBaiThi_MaPhong(maPhong);
         }
+        public List<BaiThiDTO> ListBaiThi()
+        {
+            return baiThiDAO.ListBaiThi();
+        }
         public bool Delete(string maBaiThi)
         {
             return baiThiDAO.Delete(maBaiThi);

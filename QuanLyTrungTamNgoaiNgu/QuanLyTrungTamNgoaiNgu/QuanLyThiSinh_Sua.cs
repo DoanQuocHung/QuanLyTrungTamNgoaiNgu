@@ -14,56 +14,76 @@ namespace QuanLyTrungTamNgoaiNgu
 {
     public partial class QuanLyThiSinh_Sua : Form
     {
-        public List<ThiSinhDTO> list { get; set; }
-        public QuanLyThiSinh_Sua(List<ThiSinhDTO> list, string id)
+        public ThiSinhDTO thisinh { get; set; }
+        public DangKyDTO dangky { get; set; }
+        public QuanLyThiSinh_Sua(ThiSinhDTO thisinh, DangKyDTO dangky)
         {
             InitializeComponent();
-            this.list = list;
-            ThiSinhDTO edit = list.Find(x => x.Cccd_TS.Equals(id));
-
-            textBox1.Text = id;
-            textBox2.Text = edit.HoTen_TS;
-            textBox2.Text = edit.GioiTinh_TS;
-            textBox2.Text = edit.NgaySinh_TS;
-            textBox2.Text = edit.NoiSinh_TS;
-            textBox2.Text = edit.NgayCap_TS;
-            textBox2.Text = edit.NoiCap_TS;
-            textBox2.Text = edit.Sdt_TS;
-            textBox2.Text = edit.Email_TS;
+            this.thisinh = thisinh;
+            this.dangky = dangky;
+            List<string> trinhdocb = new List<string> { "A2", "B1" };
+            List<string> gioi = new List<string> { "Nam", "Nữ" };
+            cb_gioitinh.DataSource = gioi;
+            cbTrinhDo.DataSource = trinhdocb;
+            txtCCCD.Text = thisinh.Cccd_TS;
+            txtHoTen.Text = thisinh.HoTen_TS;
+            txtEmail.Text = thisinh.Email_TS;
+            txtNoiCap.Text = thisinh.NoiCap_TS;
+            txtNoiSinh.Text = thisinh.NoiSinh_TS;
+            txtSDT.Text = thisinh.Sdt_TS;
+            cbTrinhDo.SelectedItem = dangky.TrinhDo;
+            cb_gioitinh.SelectedItem = thisinh.GioiTinh_TS;
+            dtNgayCap.Value = DateTime.ParseExact(thisinh.NgayCap_TS, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            dtNgaySinh.Value = DateTime.ParseExact(thisinh.NgaySinh_TS, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cccd_ts = textBox1.Text;
-            string hoten_ts = textBox2.Text;
-            string gioitinh_ts = textBox3.Text;
-            string ngaysinh_ts = textBox4.Text;
-            string noisinh_ts = textBox5.Text;
-            string ngaycap_ts = textBox6.Text;
-            string noicap_ts = textBox7.Text;
-            string sdt_ts = textBox8.Text;
-            string email_ts = textBox9.Text;
-            if (hoten_ts.Equals(""))
+        
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            thisinh.Cccd_TS = txtCCCD.Text;
+            thisinh.HoTen_TS = txtHoTen.Text;
+            thisinh.GioiTinh_TS = cb_gioitinh.SelectedItem.ToString();
+            thisinh.NgaySinh_TS = dtNgaySinh.Text;
+            thisinh.NoiSinh_TS = txtNoiSinh.Text;
+            thisinh.NgayCap_TS = dtNgayCap.Text;
+            thisinh.NoiCap_TS = txtNoiCap.Text;
+            thisinh.Sdt_TS = txtSDT.Text;
+            thisinh.Email_TS = txtEmail.Text;
+            if (thisinh.Cccd_TS == ""
+                || thisinh.HoTen_TS == ""
+                || thisinh.NoiSinh_TS == ""
+                || thisinh.NoiCap_TS == ""
+                || thisinh.Sdt_TS == ""
+                || thisinh.Email_TS == "")
             {
-                MessageBox.Show("Xin hãy nhập tên địa điểm");
+                MessageBox.Show("Xin hãy nhập đầy đủ thông tin");
                 return;
             }
-            if (new ThiSinhBUS().Update(new ThiSinhDTO(cccd_ts, hoten_ts, gioitinh_ts, ngaysinh_ts, noisinh_ts, ngaycap_ts,
-                noicap_ts, sdt_ts, email_ts)))
+            if (new ThiSinhBUS().Update(thisinh))
             {
-                MessageBox.Show("Sửa thành công");
-                //list.Find(x => x.Cccd_TS.Equals(cccd_ts)).HoTen_TS = hoten_ts;
-                //    .Gioi = gioitinh_ts
-                //    .HoTen_TS = ngaysinh_ts
-                //    .HoTen_TS = noisinh_ts
-                //    .HoTen_TS = ngaycap_ts
-                //    .HoTen_TS = noicap_ts
-                //    .HoTen_TS = sdt_ts
-                //    .HoTen_TS = email_ts;
-                //this.DialogResult = DialogResult.OK;
+                if (new DangKyBUS().Update(dangky))
+                {
+                    MessageBox.Show("Cập nhật thông tin thành công");
+                    this.DialogResult = DialogResult.OK;
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin thất bại");
+                    this.DialogResult = DialogResult.Cancel;
+                    Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thông tin thất bại");
+                this.DialogResult = DialogResult.Cancel;
                 Hide();
             }
         }
-
     }
 }

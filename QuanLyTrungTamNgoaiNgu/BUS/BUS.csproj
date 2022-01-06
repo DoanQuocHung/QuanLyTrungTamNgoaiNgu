@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaiThiBUS.cs" />
+    <Compile Include="DangKyBUS.cs" />
     <Compile Include="KetQuaThiBUS.cs" />
     <Compile Include="KhoaThiBUS.cs" />
     <Compile Include="PhongThiBUS.cs" />
