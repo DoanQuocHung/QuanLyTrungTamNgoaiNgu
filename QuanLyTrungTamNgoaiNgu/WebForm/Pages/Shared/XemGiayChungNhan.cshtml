@@ -8,16 +8,25 @@
 @using DTO;
 @using Microsoft.AspNetCore.Http;
 @{
-
-    string ngaythi = HttpContext.Session.GetString("ngaythi");
-    string sbd = HttpContext.Session.GetString("sbd");
-    //string sbd = "A2002";
-    //string ngaythi = "02/10/2021";
-    List<KetQuaThiDTO> listKetQuaThiSBD = new List<KetQuaThiDTO>();
-    List<KetQuaThiDTO> listKetQuaThi = new List<KetQuaThiDTO>();
-    KetQuaThiBUS busKQT1 = new KetQuaThiBUS();
-    listKetQuaThiSBD = busKQT1.List().FindAll(x => x.SoBaoDanh.Equals(sbd));
-    listKetQuaThi = listKetQuaThiSBD.FindAll(x => x.NgayThi.Equals(ngaythi));
+    string nghe = "";
+    string noi = "";
+    string doc = "";
+    string viet = "";
+    string ten = "";
+    string chungchi = "";
+    try
+    {
+        if (HttpContext.Session.GetString("xemchungchi") == "true")
+        {
+            nghe = HttpContext.Session.GetString("nghe");
+            noi = HttpContext.Session.GetString("noi");
+            doc = HttpContext.Session.GetString("doc");
+            viet = HttpContext.Session.GetString("viet");
+            ten = HttpContext.Session.GetString("ten");
+            chungchi = HttpContext.Session.GetString("chungchi");
+        }
+    }
+    catch (Exception e) { }
 }
 
 <div class="main-panel">
@@ -28,63 +37,12 @@
                     <div class="card-body">
 
                         <h2 style="text-align: center;">CHỨNG CHỈ NGOẠI NGỮ</h2>
-                        <h3 style="text-align: center;">Ngôn ngữ: Tiếng Anh</h3>
-                        @{
-                            foreach (KetQuaThiDTO item in listKetQuaThi)
-                            {
-                                <table style="width:15%">
-                                    <tr>
-                                        <td><h3>Trình độ:</h3></td>
-                                        <td><h3>@item.TrinhDo </h3></td>
-                                    </tr>
-                                </table>
-                                <table style="width:20%">
-
-                                    <tr>
-                                        <td>Họ tên:</td>
-                                        <td>@item.HoTen_TS</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Ngày sinh:</td>
-                                        <td>@item.NgaySinh_TS</td>
-                                    </tr>
-                                </table>
-                                <table style="width:100%">
-                                    <tr>
-                                        <td>
-                                            Đã tham dự kỳ thi đánh giá năng lực ngoại ngữ theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam.
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table style="width:20%">
-                                    <tr>
-                                        <td>Điểm thi:</td>
-                                        <td></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Điểm nghe:</td>
-                                        <td>@item.DiemNghe</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Điểm nói:</td>
-                                        <td>@item.DiemNoi</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Điểm đọc:</td>
-                                        <td>@item.DiemDoc</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Điểm viết:</td>
-                                        <td>@item.DiemViet</td>
-                                    </tr>
-                                </table>
-                            }
-                        }
+                        <h3 style="text-align: center;">Loại : @chungchi</h3>
+                        <h2 style="text-align: left;">Họ Tên: @ten</h2>
+                        <h2 style="text-align: left;">Điểm Nghe: @nghe</h2>
+                        <h2 style="text-align: left;">Điểm Đọc: @doc</h2>
+                        <h2 style="text-align: left;">Điểm Viết: @viet</h2>
+                        <h2 style="text-align: left;">Điểm Nói: @noi</h2>
                     </div>
                 </div>
             </div>

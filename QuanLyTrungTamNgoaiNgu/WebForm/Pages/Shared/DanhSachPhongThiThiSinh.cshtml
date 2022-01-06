@@ -21,6 +21,7 @@
                         @{
                             List<PhongThiDTO> listphong = new List<PhongThiDTO>();
                             List<BaiThiDTO> listbaithi = new List<BaiThiDTO>();
+                            string chungchi = "";
                             try
                             {
                                 if (HttpContext.Session.GetString("layphongthi") == "true")
@@ -36,6 +37,7 @@
                                 {
                                     string khoaphong = HttpContext.Session.GetString("khoaphongthi");
                                     string ma = HttpContext.Session.GetString("maphongthi");
+                                    chungchi = new PhongThiBUS().ListAll().Find(x => x.Id_PhongThi == ma).TrinhDo;
                                     listbaithi = new BaiThiBUS().ListBaiThi().FindAll(x=>x.Id_PhongThi == ma);
                                 }
                             }
@@ -77,6 +79,17 @@
                                             <td>@ten</td>
                                             <td>@gioitinh</td>
                                             <td>@sdt</td>
+                                            <td>
+                                                <form method="post">
+                                                    <input type="hidden" asp-for="ten" value="@ten" />
+                                                    <input type="hidden" asp-for="chungchi" value="@chungchi" />
+                                                    <input type="hidden" asp-for="doc" value="@item.DiemDoc" />
+                                                    <input type="hidden" asp-for="nghe"  value="@item.DiemNghe" />
+                                                    <input type="hidden" asp-for="noi" value="@item.DiemNoi" />
+                                                    <input type="hidden"  asp-for="viet" value="@item.DiemViet" />
+                                                    <input type="submit" asp-page-handler="chungchi" value="Xem giấy chứng nhận" class="btn btn-primary mr-2" />
+                                                </form>
+                                            </td>
                                         </tr>
                                             }
                                         }
