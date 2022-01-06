@@ -47,6 +47,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.DiemDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaBaiThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridGhiDiem)).BeginInit();
             this.SuspendLayout();
@@ -173,7 +174,8 @@ namespace QuanLyTrungTamNgoaiNgu
             this.DiemNoi,
             this.DiemDoc,
             this.DiemViet,
-            this.MaBaiThi});
+            this.MaBaiThi,
+            this.TrungBinh});
             this.gridGhiDiem.Location = new System.Drawing.Point(6, 81);
             this.gridGhiDiem.Name = "gridGhiDiem";
             this.gridGhiDiem.RowHeadersWidth = 51;
@@ -229,6 +231,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.MaBaiThi.ReadOnly = true;
             this.MaBaiThi.Visible = false;
             // 
+            // TrungBinh
+            // 
+            this.TrungBinh.HeaderText = "Điểm TB";
+            this.TrungBinh.MinimumWidth = 6;
+            this.TrungBinh.Name = "TrungBinh";
+            this.TrungBinh.ReadOnly = true;
+            // 
             // GhiDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,5 +276,6 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemViet;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaBaiThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrungBinh;
     }
 }

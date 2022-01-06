@@ -51,7 +51,11 @@ namespace QuanLyTrungTamNgoaiNgu
             {
                 string ten = "";
                 ten = listthisinh.Find(x => x.Cccd_TS == item.Cccd_TS).HoTen_TS;
-                gridGhiDiem.Rows.Add(item.Cccd_TS,ten,item.DiemNghe,item.DiemNoi,item.DiemDoc,item.DiemViet,item.Id_BaiThi);
+                double tb = (Int32.Parse(item.DiemNghe) +
+                    Int32.Parse(item.DiemNoi) +
+                    Int32.Parse(item.DiemDoc) +
+                    Int32.Parse(item.DiemViet)) / 4.0;
+                gridGhiDiem.Rows.Add(item.Cccd_TS,ten,item.DiemNghe,item.DiemNoi,item.DiemDoc,item.DiemViet,item.Id_BaiThi,tb);
 
             }
         }
