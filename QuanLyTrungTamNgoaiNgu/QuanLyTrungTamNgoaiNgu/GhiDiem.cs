@@ -15,7 +15,7 @@ namespace QuanLyTrungTamNgoaiNgu
 {
     public partial class GhiDiem : Form
     {
-        List<PhongThiDTO> list;
+        /*List<PhongThiDTO> list;
         List<PhongThiDTO> listsearch;
         List<KhoaThiDTO> listkhoa;
         public GhiDiem()
@@ -132,7 +132,7 @@ namespace QuanLyTrungTamNgoaiNgu
                     list = form.list;
                     BindGrid(list);
                 }
-            }*/
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -206,5 +206,10 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             listbasekhoa();
         }
+
+        private void btnTao_Click_1(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

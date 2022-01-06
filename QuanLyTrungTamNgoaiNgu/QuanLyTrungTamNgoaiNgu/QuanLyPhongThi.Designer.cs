@@ -34,21 +34,21 @@ namespace QuanLyTrungTamNgoaiNgu
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_trinhdo = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cb_khoathi = new System.Windows.Forms.ComboBox();
             this.btnChiTiet = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTao = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.datagridview_qlPhongThi = new System.Windows.Forms.DataGridView();
             this.IdPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cb_khoathi = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cb_trinhdo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.CaThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_qlPhongThi)).BeginInit();
@@ -111,6 +111,38 @@ namespace QuanLyTrungTamNgoaiNgu
             this.panel1.Size = new System.Drawing.Size(1061, 560);
             this.panel1.TabIndex = 5;
             // 
+            // cb_trinhdo
+            // 
+            this.cb_trinhdo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_trinhdo.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_trinhdo.FormattingEnabled = true;
+            this.cb_trinhdo.Location = new System.Drawing.Point(303, 19);
+            this.cb_trinhdo.Name = "cb_trinhdo";
+            this.cb_trinhdo.Size = new System.Drawing.Size(122, 37);
+            this.cb_trinhdo.TabIndex = 14;
+            this.cb_trinhdo.SelectedIndexChanged += new System.EventHandler(this.cb_trinhdo_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(220, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 22);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Trình độ";
+            // 
+            // cb_khoathi
+            // 
+            this.cb_khoathi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_khoathi.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_khoathi.FormattingEnabled = true;
+            this.cb_khoathi.Location = new System.Drawing.Point(75, 18);
+            this.cb_khoathi.Name = "cb_khoathi";
+            this.cb_khoathi.Size = new System.Drawing.Size(122, 37);
+            this.cb_khoathi.TabIndex = 3;
+            this.cb_khoathi.SelectedIndexChanged += new System.EventHandler(this.cb_khoathi_SelectedIndexChanged);
+            // 
             // btnChiTiet
             // 
             this.btnChiTiet.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,6 +187,16 @@ namespace QuanLyTrungTamNgoaiNgu
             this.btnTao.UseVisualStyleBackColor = true;
             this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 22);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Khóa";
+            // 
             // datagridview_qlPhongThi
             // 
             this.datagridview_qlPhongThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -164,7 +206,7 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Column2,
             this.Column5,
             this.Column3,
-            this.Column4});
+            this.CaThi});
             this.datagridview_qlPhongThi.Location = new System.Drawing.Point(6, 81);
             this.datagridview_qlPhongThi.Name = "datagridview_qlPhongThi";
             this.datagridview_qlPhongThi.RowHeadersWidth = 51;
@@ -212,55 +254,13 @@ namespace QuanLyTrungTamNgoaiNgu
             this.Column3.ReadOnly = true;
             this.Column3.Width = 220;
             // 
-            // Column4
+            // CaThi
             // 
-            this.Column4.HeaderText = "Ca thi";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 222;
-            // 
-            // cb_khoathi
-            // 
-            this.cb_khoathi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_khoathi.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_khoathi.FormattingEnabled = true;
-            this.cb_khoathi.Location = new System.Drawing.Point(75, 18);
-            this.cb_khoathi.Name = "cb_khoathi";
-            this.cb_khoathi.Size = new System.Drawing.Size(122, 37);
-            this.cb_khoathi.TabIndex = 3;
-            this.cb_khoathi.SelectedIndexChanged += new System.EventHandler(this.cb_khoathi_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 22);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Khóa";
-            // 
-            // cb_trinhdo
-            // 
-            this.cb_trinhdo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_trinhdo.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_trinhdo.FormattingEnabled = true;
-            this.cb_trinhdo.Location = new System.Drawing.Point(303, 19);
-            this.cb_trinhdo.Name = "cb_trinhdo";
-            this.cb_trinhdo.Size = new System.Drawing.Size(122, 37);
-            this.cb_trinhdo.TabIndex = 14;
-            this.cb_trinhdo.SelectedIndexChanged += new System.EventHandler(this.cb_trinhdo_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(220, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 22);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Trình độ";
+            this.CaThi.HeaderText = "Ca thi";
+            this.CaThi.MinimumWidth = 8;
+            this.CaThi.Name = "CaThi";
+            this.CaThi.ReadOnly = true;
+            this.CaThi.Width = 222;
             // 
             // QuanLyPhongThi
             // 
@@ -296,15 +296,15 @@ namespace QuanLyTrungTamNgoaiNgu
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTao;
         private System.Windows.Forms.DataGridView datagridview_qlPhongThi;
+        private System.Windows.Forms.ComboBox cb_khoathi;
+        private System.Windows.Forms.ComboBox cb_trinhdo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.ComboBox cb_khoathi;
-        private System.Windows.Forms.ComboBox cb_trinhdo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaThi;
     }
 }
