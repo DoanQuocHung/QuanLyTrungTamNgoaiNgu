@@ -63,6 +63,16 @@ namespace QuanLyTrungTamNgoaiNgu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ghidiem {
+            get {
+                object obj = ResourceManager.GetObject("ghidiem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ketqua {
             get {
                 object obj = ResourceManager.GetObject("ketqua", resourceCulture);
