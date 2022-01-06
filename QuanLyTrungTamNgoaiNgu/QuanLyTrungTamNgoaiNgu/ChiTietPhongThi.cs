@@ -71,6 +71,7 @@ namespace QuanLyTourDuLich
                     listdangky = new DangKyBUS().List().FindAll(x => x.Id_KhoaThi == txtKhoa.Text);
                     BindGrid(list);
                     BindGrid2(listdangky);
+                    lblSoLuong.Text = list.Count + "/30";
                 }
             }
         }
@@ -121,6 +122,7 @@ namespace QuanLyTourDuLich
                         listdangky.RemoveAll(x=>x.Cccd_TS == cccd);
                         BindGrid(list);
                         BindGrid2(listdangky);
+                        lblSoLuong.Text = list.Count + "/30";
 
                     }
                 }

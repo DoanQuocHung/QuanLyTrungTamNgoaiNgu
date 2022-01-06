@@ -7,7 +7,22 @@
 @using BUS;
 @using DTO; 
 @{
-        
+    List<PhongThiDTO> phonga2 = new PhongThiBUS().ListAll().FindAll(x=> x.TrinhDo == "A2");
+    List<PhongThiDTO> phongb1 = new PhongThiBUS().ListAll().FindAll(x => x.TrinhDo == "B1");
+    List<KhoaThiDTO> khoathi = new KhoaThiBUS().List();
+    int counta2 = 0;
+    int countb1 = 0;
+    foreach (PhongThiDTO item in new PhongThiBUS().ListAll())
+    {
+        if(item.TrinhDo == "A2")
+        {
+            counta2 = counta2 + new BaiThiBUS().ListBaiThi_MaPhong(item.Id_PhongThi).Count;
+        }
+        if (item.TrinhDo == "B1")
+        {
+            countb1 = countb1 + new BaiThiBUS().ListBaiThi_MaPhong(item.Id_PhongThi).Count;
+        }
+    }
 }
 <div class="main-panel">
     <div class="content-wrapper">
@@ -15,71 +30,29 @@
             <div class="col-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Thống kê trình độ A1</h4>
+                        <h4 class="card-title">Thống kê</h4>
                         <form class="forms-sample" method="post">
                             <div class="form-group">
                                 <label for="exampleInputName1">Số lượng khóa thi</label>
-                                <input type="text" class="form-control" placeholder="5" readonly>
+                                <input type="text" class="form-control" value="@khoathi.Count" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputName1">Phòng thi</label>
-                                <input type="text" class="form-control" placeholder="2" readonly>
+                                <label for="exampleInputName1">Phòng thi A2</label>
+                                <input type="text" class="form-control" value="@phonga2.Count" placeholder="2" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputName1">Thí sinh</label>
-                                <input type="text" class="form-control" placeholder="abc" readonly>
+                                <label for="exampleInputName1">Phòng thi B1</label>
+                                <input type="text" class="form-control" value="@phongb1.Count" placeholder="2" readonly>
                             </div>
-                            <input type="submit" value="Tìm" class="btn btn-primary mr-2" />
-                            <a class="btn btn-light">Hủy</a>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Số Thí sinh đã tham gia thi A2</label>
+                                <input type="text" class="form-control" value="@counta2" placeholder="abc" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Số Thí sinh đã tham gia thi B1</label>
+                                <input type="text" class="form-control" value="@countb1" placeholder="abc" readonly>
+                            </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Thống kê trình độ B11</h4>
-                        <form class="forms-sample" method="post">
-                            <div class="form-group">
-                                <label for="exampleInputName1">Số lượng khóa thi</label>
-                                <input type="text" class="form-control" placeholder="5" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputName1">Phòng thi</label>
-                                <input type="text" class="form-control" placeholder="2" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputName1">Thí sinh</label>
-                                <input type="text" class="form-control" placeholder="abc" readonly>
-                            </div>
-                            <input type="submit" value="Tìm" class="btn btn-primary mr-2" />
-                            <a class="btn btn-light">Hủy</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <h4 class="card-title">Thống kê tổng</h4>
-                            <form class="forms-sample" method="post">
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Số lượng khóa thi</label>
-                                    <input type="text" class="form-control" placeholder="5" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Phòng thi</label>
-                                    <input type="text" class="form-control" placeholder="2" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Thí sinh</label>
-                                    <input type="text" class="form-control" placeholder="abc" readonly>
-                                </div>
-                                <input type="submit" value="Tìm" class="btn btn-primary mr-2" />
-                                <a class="btn btn-light">Hủy</a>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
