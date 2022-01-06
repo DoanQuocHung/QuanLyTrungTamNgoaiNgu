@@ -6,6 +6,8 @@
 }
 @using BUS;
 @using DTO;
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
 @{
     KhoaThiDTO khoa = new KhoaThiBUS().List().Last<KhoaThiDTO>();
 }
@@ -15,7 +17,19 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Thí Sinh Đăng Ký</h4>
+                        <h4 class="card-title">Thí Sinh Đăng Ký Khóa thi số @khoa.Id_KhoaThi</h4>
+                        @{
+                            try
+                            {
+                                <!---------------------Thông báo Xóa----------------------------------------------->
+                                if (HttpContext.Session.GetString("themdangky") == "true")
+                                {
+                                    <h5 style="color:green">Đăng ký thành công</h5>
+                                    HttpContext.Session.Remove("themdangky");
+                                }
+                            }
+                            catch (Exception e) { }
+                        }
                         <form class="forms-sample" method="post">
                             <div class="form-group">
                                 <label for="exampleInputName1">CMND</label>
@@ -59,12 +73,12 @@
                             <div class="form-group">
                                 <label for="exampleInputName1">Trình độ</label>
                                 <select class="form-control" asp-for="dangky2.TrinhDo">
-                                    <option>Trình độ 1</option>
-                                    <option>Trình độ 2</option>
+                                    <option>A2</option>
+                                    <option>B1</option>
                                 </select>
                             </div>
                             <input type="hidden" asp-for="dangky2.Id_KhoaThi" value="@khoa.Id_KhoaThi">
-                            <input type="submit" asp-page-handler="AddKhoaThi" value="Đăng ký" class="btn btn-primary mr-2" />
+                            <input type="submit" value="Đăng ký" class="btn btn-primary mr-2" />
                         </form>
                     </div>
                 </div>

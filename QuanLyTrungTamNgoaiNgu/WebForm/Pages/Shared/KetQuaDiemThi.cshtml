@@ -5,6 +5,9 @@
     Layout = "_Layout";
 }
 @using BUS;
+@using DTO;
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
 @{
 
 }
@@ -19,8 +22,6 @@
                         <form class="form-inline" method="post">
                             <label for="exampleInputName1">Chọn khóa thi</label>
                             <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
                             </select>
                             <input type="submit" class="btn btn-warning" value="Tìm" style="margin-left:5px">
                             <input type="text" class="form-control mb-2 mr-sm-2" style="margin-left:5px" placeholder="Họ tên/SĐT">
