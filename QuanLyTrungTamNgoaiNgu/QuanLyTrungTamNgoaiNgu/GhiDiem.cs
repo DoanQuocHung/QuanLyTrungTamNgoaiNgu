@@ -15,19 +15,16 @@ namespace QuanLyTrungTamNgoaiNgu
 {
     public partial class GhiDiem : Form
     {
-        /*List<PhongThiDTO> list;
-        List<PhongThiDTO> listsearch;
+        List<PhongThiDTO> listphongthi;
+        List<ThiSinhDTO> listthisinh;
         List<KhoaThiDTO> listkhoa;
         public GhiDiem()
         {
             InitializeComponent();
-            list = new PhongThiBUS().ListAll();
+            listphongthi = new PhongThiBUS().ListAll();
             listkhoa = new KhoaThiBUS().List();
-            listsearch = new List<PhongThiDTO>();
-            datagridview_qlPhongThi.AutoGenerateColumns = false;
-            List<string> listtype = new List<string> { "Tên Phòng", "Ca thi" };
-            cbSearch.DataSource = listtype;
-            cbSearch.SelectedIndex = 0;
+            listthisinh = new ThiSinhBUS().List();
+            gridGhiDiem.AutoGenerateColumns = false;
 
             //Lấy danh sách theo khóa và trình độ
             foreach (KhoaThiDTO item in listkhoa)
@@ -36,43 +33,29 @@ namespace QuanLyTrungTamNgoaiNgu
             List<string> trinhdo = new List<string> { "A2", "B1" };
             cb_trinhdo.DataSource = trinhdo;
             cb_trinhdo.SelectedIndex = 0;
-            listbasekhoa();
+            foreach (PhongThiDTO item in listphongthi.FindAll(x=>
+            x.Id_KhoaThi == cb_khoathi.SelectedItem.ToString() &&
+            x.TrinhDo == cb_trinhdo.SelectedItem.ToString()))
+                cb_phongthi.Items.Add(item.Ten_PhongThi);
         }
         public GhiDiem(string khoa)
         {
             InitializeComponent();
-            list = new PhongThiBUS().ListAll();
-            listkhoa = new KhoaThiBUS().List();
-            listsearch = new List<PhongThiDTO>();
-            datagridview_qlPhongThi.AutoGenerateColumns = false;
-            List<string> listtype = new List<string> { "Tên Phòng", "Ca thi" };
-            cbSearch.DataSource = listtype;
-            cbSearch.SelectedIndex = 0;
-
-            //Lấy danh sách theo khóa và trình độ
-            foreach (KhoaThiDTO item in listkhoa)
-                cb_khoathi.Items.Add(item.Id_KhoaThi);
-            cb_khoathi.SelectedItem = khoa;
-            List<string> trinhdo = new List<string> { "A2", "B1" };
-            cb_trinhdo.DataSource = trinhdo;
-            cb_trinhdo.SelectedIndex = 0;
+           
         }
-        public void BindGrid(List<PhongThiDTO> list)
+        public void BindGrid(List<BaiThiDTO> list)
         {
-            datagridview_qlPhongThi.Rows.Clear();
-            datagridview_qlPhongThi.Refresh();
-            foreach (PhongThiDTO item in list)
+            gridGhiDiem.Rows.Clear();
+            gridGhiDiem.Refresh();
+            foreach (BaiThiDTO item in list)
             {
-                datagridview_qlPhongThi.Rows.Add(
-                    item.Id_PhongThi,
-                    item.Ten_PhongThi,
-                    item.Id_KhoaThi,
-                    new PhongThiBUS().getTenKhoa(item.Id_KhoaThi),
-                    item.TrinhDo,
-                    item.CaThi);
+                string ten = "";
+                ten = listthisinh.Find(x => x.Cccd_TS == item.Cccd_TS).HoTen_TS;
+                gridGhiDiem.Rows.Add(item.Cccd_TS,ten,item.DiemNghe,item.DiemNoi,item.DiemDoc,item.DiemViet,item.Id_BaiThi);
+
             }
         }
-        public void Search()
+       /* public void Search()
         {
             string typesearch = cbSearch.SelectedItem.ToString();
             string searchkey = txtSearch.Text;
@@ -124,7 +107,7 @@ namespace QuanLyTrungTamNgoaiNgu
                     BindGrid(list);
                 }
             }
-            /*using (var form = new QuanLyPhongThi_Them(list,phongmoi))
+            using (var form = new QuanLyPhongThi_Them(list,phongmoi))
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
@@ -196,20 +179,70 @@ namespace QuanLyTrungTamNgoaiNgu
                 BindGrid(listsearch);
             }
             catch (Exception e) { }
-        }
+        }*/
         private void cb_khoathi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listbasekhoa();
+            if (cb_trinhdo.SelectedItem != null)
+            {
+                cb_phongthi.Items.Clear();
+                foreach (PhongThiDTO item in listphongthi.FindAll(x =>
+                x.Id_KhoaThi == cb_khoathi.SelectedItem.ToString() &&
+                x.TrinhDo == cb_trinhdo.SelectedItem.ToString()))
+                cb_phongthi.Items.Add(item.Ten_PhongThi);
+            }
+            //listbasekhoa();
         }
 
         private void cb_trinhdo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listbasekhoa();
+            if (cb_khoathi.SelectedItem != null)
+            {
+                cb_phongthi.Items.Clear();
+                foreach (PhongThiDTO item in listphongthi.FindAll(x =>
+               x.Id_KhoaThi == cb_khoathi.SelectedItem.ToString() &&
+               x.TrinhDo == cb_trinhdo.SelectedItem.ToString()))
+                    cb_phongthi.Items.Add(item.Ten_PhongThi);
+            }
+            //listbasekhoa();
         }
 
-        private void btnTao_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            if (cb_phongthi.SelectedItem == null || cb_phongthi.SelectedItem == "")
+            {
+                MessageBox.Show("Vui Lòng chọn 1 phòng thi");
+                return;
+            }
+            string khoa = cb_khoathi.SelectedItem.ToString();
+            string trinhdo = cb_trinhdo.SelectedItem.ToString();
+            string phong = listphongthi.Find(x=>x.Ten_PhongThi == cb_phongthi.SelectedItem.ToString() && x.Id_KhoaThi == khoa).Id_PhongThi;
 
-        }*/
+            List<BaiThiDTO> listhien = new BaiThiBUS().ListBaiThi().FindAll(x=>x.Id_PhongThi == phong);
+
+            BindGrid(listhien);
+        }
+
+        private void btnTao_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i <= gridGhiDiem.SelectedCells.Count; i++)
+            {
+                DataGridViewRow selectedRow = gridGhiDiem.Rows[i];
+                string cellValue = Convert.ToString(selectedRow.Cells["DiemNghe"].Value);
+                string cellValue1 = Convert.ToString(selectedRow.Cells["DiemNoi"].Value);
+                string cellValue2 = Convert.ToString(selectedRow.Cells["DiemDoc"].Value);
+                string cellValue3 = Convert.ToString(selectedRow.Cells["DiemViet"].Value);
+                string cellValue4 = Convert.ToString(selectedRow.Cells["MaBaiThi"].Value);
+                new BaiThiBUS().UpdateDiemThi(cellValue,cellValue1,cellValue2,cellValue3,cellValue4);
+            }
+            string khoa = cb_khoathi.SelectedItem.ToString();
+            string trinhdo = cb_trinhdo.SelectedItem.ToString();
+            string phong = listphongthi.Find(x => x.Ten_PhongThi == cb_phongthi.SelectedItem.ToString() && x.Id_KhoaThi == khoa).Id_PhongThi;
+
+            List<BaiThiDTO> listhien = new BaiThiBUS().ListBaiThi().FindAll(x => x.Id_PhongThi == phong);
+
+            BindGrid(listhien);
+            MessageBox.Show("Lưu thành công");
+
+        }
     }
 }
