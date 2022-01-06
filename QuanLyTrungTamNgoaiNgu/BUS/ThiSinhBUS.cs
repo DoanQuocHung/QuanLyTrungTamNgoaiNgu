@@ -16,7 +16,7 @@ namespace BUS
         {
             return new ThiSinhDAO().ListAll();
         }
-        /*
+        
         public List<ThiSinhDTO> ListSearch(string text)
         {
             return new ThiSinhDAO().ListSearch(text);
@@ -26,24 +26,24 @@ namespace BUS
         {
             return new ThiSinhDAO().getDiaDiem(id);
         }
-        public bool Insert(ThiSinhDTO diadiem)
+        public bool Insert(ThiSinhDTO thisinh)
         {
-            return new ThiSinhDAO().Insert(diadiem);
+            return new ThiSinhDAO().Insert(thisinh);
         }
 
-        public bool Update(ThiSinhDTO diadiem)
+        public bool Update(ThiSinhDTO thisinh)
         {
-            return new ThiSinhDAO().Update(diadiem);
+            return new ThiSinhDAO().Update(thisinh);
         }
 
-        public bool Delete(string madiadiem)
+        public bool Delete(string cccdts)
         {
-            return new ThiSinhDAO().Delete(madiadiem);
+            return new ThiSinhDAO().Delete(cccdts);
         }
-        public String MakeID()
-        {
-            return new ThiSinhDAO().MakeID();
-        }
-        */
+        //public String MakeID()
+        //{
+        //    return new ThiSinhDAO().MakeID();
+        //}
+        
     }
 }

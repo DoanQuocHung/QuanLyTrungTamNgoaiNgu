@@ -66,13 +66,13 @@ namespace DAO
             }
             return thisinhs;
         }
-        /*
+        
         public List<ThiSinhDTO> ListSearch(string search)
         {
             DataProvider datapro = new DataProvider();
 
-            List<ThiSinhDTO> diadiems = new List<ThiSinhDTO>();
-            string query = "Select * from DIADIEM where Id_DiaDiem = " + search;
+            List<ThiSinhDTO> thisinhs = new List<ThiSinhDTO>();
+            string query = "Select * from ThiSinh where Cccd_TS = " + search;
             DataTable data = datapro.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
@@ -90,17 +90,17 @@ namespace DAO
                 ThiSinhDTO newThiSinh = new ThiSinhDTO(cccd_ts, hoten_ts, gioitinh_ts, ngaysinh_ts, noisinh_ts, ngaycap_ts
                     , noicap_ts, sdt_ts, email_ts);
 
-                diadiems.Add(newThiSinh);
+                thisinhs.Add(newThiSinh);
             }
-            return diadiems;
+            return thisinhs;
         }
 
         public ThiSinhDTO getDiaDiem(string search)
         {
             DataProvider datapro = new DataProvider();
 
-            List<ThiSinhDTO> tours = new List<ThiSinhDTO>();
-            string query = "Select * from DIADIEM where Id_DiaDiem = " + search;
+            List<ThiSinhDTO> thisinhs = new List<ThiSinhDTO>();
+            string query = "Select * from ThiSinh where Cccd_TS = " + search;
             DataTable data = datapro.ExecuteQuery(query);
             ThiSinhDTO newThiSinh = new ThiSinhDTO();
             foreach (DataRow item in data.Rows)
@@ -125,7 +125,7 @@ namespace DAO
         {
             DataProvider datapro = new DataProvider();
             ThiSinhDTO newThiSinh = new ThiSinhDTO();
-            string query = "Select * from DIADIEM where Id_DiaDiem = @id";
+            string query = "Select * from ThiSinh where Cccd_TS = @id";
             object[] para = new object[]
             {
                id
@@ -150,16 +150,31 @@ namespace DAO
             return newThiSinh;
         }
 
-        public bool Update(ThiSinhDTO diadiem)
+        public bool Update(ThiSinhDTO thisinh)
         {
-            string query = "update dbo.DIADIEM set " +
-                "Ten_DiaDiem = @TENDIADIEM  " +
-                "where Id_DiaDiem = @oldMADIADIEM ";
+            string query = "update dbo.ThiSinh set " +
+                "Cccd_TS = @CCCDTS  " +
+                "HoTen_TS = @HOTENTS  " +
+                "GioiTinh_TS = @GIOITINHTS  " +
+                "NgaySinh_TS = @NGAYSINHTS  " +
+                "NoiSinh_TS = @NOISINHTS  " +
+                "NgayCap_TS = @NGAYCAPTS  " +
+                "NoiCap_TS = @NOICAPTS  " +
+                "Sdt_TS = @SDTTS  " +
+                "Email_TS = @EMAILTS  " +
+                "where Id_DiaDiem = @oldCCCDTS ";
 
             object[] para = new object[]
             {
-                diadiem.Ten_DiaDiem,
-                diadiem.Id_DiaDiem
+                thisinh.HoTen_TS,
+                thisinh.GioiTinh_TS,
+                thisinh.NgaySinh_TS,
+                thisinh.NoiSinh_TS,
+                thisinh.NgayCap_TS,
+                thisinh.NoiCap_TS,
+                thisinh.Sdt_TS,
+                thisinh.Email_TS,
+                thisinh.Cccd_TS
             };
             try
             {
@@ -171,15 +186,22 @@ namespace DAO
             return false;
         }
 
-        public bool Insert(ThiSinhDTO diadiem)
+        public bool Insert(ThiSinhDTO thisinh)
         {
-            string query = "insert into DIADIEM " +
-                "values( @MADIADIEM , @TENDIADIEM )";
+            string query = "insert into ThiSinh " +
+                "values( @CCCDTS , @HOTENTS, @GIOITINHTS , @NGAYSINHTS, @NOISINHTS , @NgayCap_TS, @NoiCap_TS , @Sdt_TS, @Email_TS )";
 
             object[] para = new object[]
             {
-                diadiem.Id_DiaDiem,
-                diadiem.Ten_DiaDiem
+                thisinh.Cccd_TS,
+                thisinh.HoTen_TS,
+                thisinh.GioiTinh_TS,
+                thisinh.NgaySinh_TS,
+                thisinh.NoiSinh_TS,
+                thisinh.NgayCap_TS,
+                thisinh.NoiCap_TS,
+                thisinh.Sdt_TS,
+                thisinh.Email_TS
             };
             try
             {
@@ -193,7 +215,7 @@ namespace DAO
 
         public bool Delete(string id)
         {
-            string query = "delete from DIADIEM where Id_DiaDiem = @MADIADIEM ";
+            string query = "delete from ThiSinh where Cccd_TS = @CCCDTS ";
             //string query2 = "delete from CHITIETDIADIEM where Id_DiaDiem = @MADIADIEM";
             object[] para = new object[]
             {
@@ -209,15 +231,15 @@ namespace DAO
             catch (Exception e) { }
             return false;
         }
-        */
+        
         //===============
-        public int Count()
-        {
-            string query = "select count(*) from ThiSinh";
-            DataProvider datapro = new DataProvider();
-            int count = (int)datapro.ExecuteScalar(query);
-            return count;
-        }
+        //public int Count()
+        //{
+        //    string query = "select count(*) from ThiSinh";
+        //    DataProvider datapro = new DataProvider();
+        //    int count = (int)datapro.ExecuteScalar(query);
+        //    return count;
+        //}
         public int Exist(String id)
         {
             string query = "select count(*) from ThiSinh where Cccd_TS = '" + id + "'";
@@ -225,20 +247,20 @@ namespace DAO
             int count = (int)datapro.ExecuteScalar(query);
             return count;
         }
-        public String MakeID()
-        {
-            String id = "";
-            int count = Count();
-            while (true)
-            {
-                if (count < 10)
-                    id = "TS0" + count;
-                else id = "TS" + count;
-                if (Exist(id) == 0)
-                    break;
-                else count++;
-            }
-            return id;
-        }
+        //public String MakeID()
+        //{
+        //    String id = "";
+        //    int count = Count();
+        //    while (true)
+        //    {
+        //        if (count < 10)
+        //            id = "TS0" + count;
+        //        else id = "TS" + count;
+        //        if (Exist(id) == 0)
+        //            break;
+        //        else count++;
+        //    }
+        //    return id;
+        //}
     }
 }

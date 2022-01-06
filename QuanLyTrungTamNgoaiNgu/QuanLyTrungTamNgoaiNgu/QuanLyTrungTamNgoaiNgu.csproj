@@ -133,6 +133,18 @@
     <Compile Include="QuanLyThiSinh.Designer.cs">
       <DependentUpon>QuanLyThiSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyThiSinh_Sua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThiSinh_Sua.Designer.cs">
+      <DependentUpon>QuanLyThiSinh_Sua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThiSinh_Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyThiSinh_Them.Designer.cs">
+      <DependentUpon>QuanLyThiSinh_Them.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaKhoaThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyThiSinh.resx">
       <DependentUpon>QuanLyThiSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThiSinh_Sua.resx">
+      <DependentUpon>QuanLyThiSinh_Sua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyThiSinh_Them.resx">
+      <DependentUpon>QuanLyThiSinh_Them.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaKhoaThi.resx">
       <DependentUpon>SuaKhoaThi.cs</DependentUpon>
