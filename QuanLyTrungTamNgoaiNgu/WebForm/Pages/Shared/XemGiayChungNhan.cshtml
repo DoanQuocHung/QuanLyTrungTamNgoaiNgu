@@ -12,6 +12,7 @@
     string noi = "";
     string doc = "";
     string viet = "";
+    string tb = "";
     string ten = "";
     string chungchi = "";
     try
@@ -22,6 +23,7 @@
             noi = HttpContext.Session.GetString("noi");
             doc = HttpContext.Session.GetString("doc");
             viet = HttpContext.Session.GetString("viet");
+            tb = HttpContext.Session.GetString("tb");
             ten = HttpContext.Session.GetString("ten");
             chungchi = HttpContext.Session.GetString("chungchi");
         }
@@ -40,9 +42,10 @@
                         <h3 style="text-align: center;">Loại : @chungchi</h3>
                         <h2 style="text-align: left;">Họ Tên: @ten</h2>
                         <h2 style="text-align: left;">Điểm Nghe: @nghe</h2>
+                        <h2 style="text-align: left;">Điểm Nói: @noi</h2>
                         <h2 style="text-align: left;">Điểm Đọc: @doc</h2>
                         <h2 style="text-align: left;">Điểm Viết: @viet</h2>
-                        <h2 style="text-align: left;">Điểm Nói: @noi</h2>
+                        <h2 style="text-align: left;">Điểm TB: @tb</h2>
                     </div>
                 </div>
             </div>

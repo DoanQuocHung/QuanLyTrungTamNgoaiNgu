@@ -54,18 +54,21 @@
                                         <th>Họ tên</th>
                                         <th>Số điện thoại</th>
                                         <th>Phòng Thi</th>
-                                        <th>Điểm thi</th>
                                         <th>Điểm nghe</th>
                                         <th>Điểm nói</th>
                                         <th>Điểm đọc</th>
                                         <th>Điểm viết</th>
+                                        <td>Điểm TB</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @{
                                         foreach (KetQuaThiDTO item in list)
                                         {
-
+                                            double tb = (Double.Parse(item.DiemNghe) +
+                                            Double.Parse(item.DiemNoi) +
+                                            Double.Parse(item.DiemDoc) +
+                                            Double.Parse(item.DiemViet)) / 4.0;
                                             <tr>
                                                 <td>@item.SoBaoDanh</td>
                                                 <td>@item.NgayThi</td>
@@ -73,12 +76,11 @@
                                                 <td>@item.HoTen_TS</td>
                                                 <td>@item.Sdt_TS</td>
                                                 <td>@item.Ten_PhongThi</td>
-                                                <td>chua co</td>
                                                 <td>@item.DiemNghe</td>
                                                 <td>@item.DiemNoi</td>
                                                 <td>@item.DiemDoc</td>
                                                 <td>@item.DiemViet</td>
-
+                                                <td>@tb</td>
                                                 <td>
                                                     <input type="hidden" asp-for="ketquathi.SoBaoDanh" value="@item.SoBaoDanh" />
                                                     <input type="hidden" asp-for="ketquathi.NgayThi" value="@item.NgayThi" />
@@ -86,7 +88,6 @@
                                                     <input type="hidden" asp-for="ketquathi.HoTen_TS" value="@item.HoTen_TS" />
                                                     <input type="hidden" asp-for="ketquathi.Sdt_TS" value="@item.Sdt_TS" />
                                                     <input type="hidden" asp-for="ketquathi.Ten_PhongThi" value="@item.Ten_PhongThi" />
-                                                    
                                                     <input type="hidden" asp-for="ketquathi.DiemNghe" value="@item.DiemNghe" />
                                                     <input type="hidden" asp-for="ketquathi.DiemNoi" value="@item.DiemNoi" />
                                                     <input type="hidden" asp-for="ketquathi.DiemDoc" value="@item.DiemDoc" />

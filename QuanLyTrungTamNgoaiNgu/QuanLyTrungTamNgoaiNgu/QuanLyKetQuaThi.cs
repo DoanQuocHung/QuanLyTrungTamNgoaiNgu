@@ -38,7 +38,10 @@ namespace QuanLyTrungTamNgoaiNgu
             datagridview_qlketquathi.Refresh();
             foreach (KetQuaThiDTO item in list)
             {
-                
+                double tb = (Double.Parse(item.DiemNghe) +
+                    Double.Parse(item.DiemNoi) +
+                    Double.Parse(item.DiemDoc) +
+                    Double.Parse(item.DiemViet)) / 4.0;
                 datagridview_qlketquathi.Rows.Add(
                     item.Ten_KhoaThi,
                     item.NgayThi,
@@ -52,7 +55,8 @@ namespace QuanLyTrungTamNgoaiNgu
                     item.DiemNghe,
                     item.DiemNoi, 
                     item.DiemDoc,
-                    item.DiemViet);
+                    item.DiemViet,
+                    tb);
             }
         }
 

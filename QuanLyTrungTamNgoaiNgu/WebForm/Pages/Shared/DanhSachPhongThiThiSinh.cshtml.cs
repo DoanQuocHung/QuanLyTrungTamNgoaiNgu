@@ -30,6 +30,7 @@ namespace WebForm.Pages.Shared
         public string  viet { get; set; }
         [BindProperty]
         public string ten { get; set; }
+       
         [BindProperty]
         public string chungchi { get; set; }
         public void OnGet()

@@ -13,6 +13,8 @@ namespace WebForm.Pages.Shared
     public class XemChungNhanModel : PageModel
     {
         [BindProperty]
+        public string tb { get; set; }
+        [BindProperty]
         public string sobaodanh { set; get; }
         public void OnGet()
         {
@@ -27,6 +29,7 @@ namespace WebForm.Pages.Shared
             HttpContext.Session.SetString("noi", list.DiemNghe);
             HttpContext.Session.SetString("doc", list.DiemNghe);
             HttpContext.Session.SetString("viet", list.DiemNghe);
+            HttpContext.Session.SetString("tb", tb);
             HttpContext.Session.SetString("ten", ts.HoTen_TS);
             HttpContext.Session.SetString("chungchi", phong.TrinhDo);
             return Redirect("/Shared/XemGiayChungNhan");
