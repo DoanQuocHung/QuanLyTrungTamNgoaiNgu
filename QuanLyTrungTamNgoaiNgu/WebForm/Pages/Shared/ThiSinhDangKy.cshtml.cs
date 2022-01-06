@@ -22,9 +22,18 @@ namespace WebForm.Pages.Shared
 
         public IActionResult OnPost()
         {
-            dangky2.Cccd_TS = dangky.Cccd_TS;
-            dangky2.LePhiThi = "500,000 VND";
-            return Page();
+            if (new ThiSinhBUS().Insert(new ThiSinhDTO(dangky.Cccd_TS, dangky.HoTen_TS, dangky.GioiTinh_TS, dangky.NgaySinh_TS,
+                dangky.NoiSinh_TS, dangky.NgayCap_TS, dangky.NoiCap_TS, dangky.Sdt_TS, dangky.Email_TS)))
+            {
+                HttpContext.Session.SetString("themdangky", "true");
+                return Redirect("/Shared/ThiSinhDangKy");
+            }
+            HttpContext.Session.SetString("themdangky", "false");
+            return Redirect("/Shared/ThiSinhDangKy");
+
+            //dangky2.Cccd_TS = dangky.Cccd_TS;
+            //dangky2.LePhiThi = "500,000 VND";
+            //return Page();
         }
     }
 }
