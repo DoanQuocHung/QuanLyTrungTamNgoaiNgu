@@ -24,6 +24,10 @@ namespace WebForm.Pages.Shared
             BaiThiDTO list = new BaiThiBUS().ListBaiThi().Find(x=>x.SoBaoDanh == sobaodanh);
             ThiSinhDTO ts = new ThiSinhBUS().List().Find(x => x.Cccd_TS == list.Cccd_TS);
             PhongThiDTO phong = new PhongThiBUS().ListAll().Find(x=>x.Id_PhongThi == list.Id_PhongThi);
+            tb =  ((Double.Parse(list.DiemNghe) +
+                                           Double.Parse(list.DiemNoi) +
+                                           Double.Parse(list.DiemDoc) +
+                                           Double.Parse(list.DiemViet)) / 4.0).ToString();
             HttpContext.Session.SetString("xemchungchi", "true");
             HttpContext.Session.SetString("nghe", list.DiemNghe);
             HttpContext.Session.SetString("noi", list.DiemNghe);
