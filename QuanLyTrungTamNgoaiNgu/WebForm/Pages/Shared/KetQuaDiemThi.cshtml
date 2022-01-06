@@ -29,8 +29,9 @@
                                 {
                                     list = bus.List();
                                     list = list.FindAll(x => x.HoTen_TS.Contains(search));
-                                    if (list == null)
+                                    if (list.Count == 0)
                                     {
+                                        list = bus.List();
                                         list = list.FindAll(x => x.Sdt_TS.Contains(search));
                                     }
 
