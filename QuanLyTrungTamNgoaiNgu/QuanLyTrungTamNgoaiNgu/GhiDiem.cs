@@ -228,7 +228,7 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btnTao_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i <= gridGhiDiem.SelectedCells.Count; i++)
+            for (int i = 0; i < gridGhiDiem.Rows.Count; i++)
             {
                 DataGridViewRow selectedRow = gridGhiDiem.Rows[i];
                 string cellValue = Convert.ToString(selectedRow.Cells["DiemNghe"].Value);
@@ -240,11 +240,11 @@ namespace QuanLyTrungTamNgoaiNgu
             }
             string khoa = cb_khoathi.SelectedItem.ToString();
             string trinhdo = cb_trinhdo.SelectedItem.ToString();
-            string phong = listphongthi.Find(x => x.Ten_PhongThi == cb_phongthi.SelectedItem.ToString() && x.Id_KhoaThi == khoa).Id_PhongThi;
+                string phong = listphongthi.Find(x => x.Ten_PhongThi == cb_phongthi.SelectedItem.ToString() && x.Id_KhoaThi == khoa).Id_PhongThi;
 
-            List<BaiThiDTO> listhien = new BaiThiBUS().ListBaiThi().FindAll(x => x.Id_PhongThi == phong);
+                List<BaiThiDTO> listhien = new BaiThiBUS().ListBaiThi().FindAll(x => x.Id_PhongThi == phong);
 
-            BindGrid(listhien);
+                BindGrid(listhien);
             MessageBox.Show("Lưu thành công");
 
         }

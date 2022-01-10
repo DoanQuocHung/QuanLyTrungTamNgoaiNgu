@@ -56,12 +56,17 @@ namespace WebForm.Pages.Shared
         }
         public IActionResult OnPostChungchi()
         {
+            double tb = (Double.Parse(nghe) +
+                                            Double.Parse(noi) +
+                                            Double.Parse(doc) +
+                                            Double.Parse(viet)) / 4.0;
             HttpContext.Session.SetString("xemchungchi", "true");
             HttpContext.Session.SetString("nghe", nghe);
             HttpContext.Session.SetString("noi", noi);
             HttpContext.Session.SetString("doc", doc);
             HttpContext.Session.SetString("viet", viet);
             HttpContext.Session.SetString("ten", ten);
+            HttpContext.Session.SetString("tb", tb.ToString());
             HttpContext.Session.SetString("chungchi", chungchi);
             return Redirect("/Shared/XemGiayChungNhan");
         }

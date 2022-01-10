@@ -202,7 +202,6 @@ namespace QuanLyTrungTamNgoaiNgu
             this.DiemNghe.HeaderText = "Điểm Nghe";
             this.DiemNghe.MinimumWidth = 6;
             this.DiemNghe.Name = "DiemNghe";
-            this.DiemNghe.ReadOnly = true;
             this.DiemNghe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // DiemNoi
